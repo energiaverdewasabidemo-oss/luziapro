@@ -108,7 +108,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900">
       <Header onChatOpen={handleChatOpen} onPageChange={handlePageChange} onGoToSubirFactura={handleGoToSubirFactura} />
       <HeroSection onGoToSubirFactura={handleGoToSubirFactura} onChatOpen={handleChatOpen} />
       <BenefitsSection onGoToSubirFactura={handleGoToSubirFactura} />

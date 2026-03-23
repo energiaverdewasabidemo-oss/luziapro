@@ -35,11 +35,11 @@ const Footer: React.FC<FooterProps> = ({ onPageChange }) => {
   };
 
   return (
-    <footer className="bg-gradient-to-br from-indigo-900 via-purple-900 to-gray-900 text-white relative overflow-hidden">
+    <footer className="bg-slate-950 text-white relative overflow-hidden border-t border-pink-400/20">
       {/* Background Effects */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-2xl opacity-50"></div>
-        <div className="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full blur-2xl opacity-50"></div>
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-0 left-0 w-64 h-64 bg-pink-500/10 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-2xl"></div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -47,30 +47,30 @@ const Footer: React.FC<FooterProps> = ({ onPageChange }) => {
           {/* Brand Section */}
           <div className="space-y-6 lg:space-y-8 relative text-center lg:text-left">
             <div className="flex items-center justify-center lg:justify-start space-x-2 lg:space-x-3">
-              <div className="flex items-center justify-center w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-purple-400 via-pink-400 to-cyan-500 rounded-xl lg:rounded-2xl shadow-xl lg:shadow-2xl">
+              <div className="flex items-center justify-center w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-pink-500 to-cyan-500 rounded-xl lg:rounded-2xl shadow-xl lg:shadow-2xl">
                 <Zap className="h-6 w-6 lg:h-8 lg:w-8 text-white drop-shadow-lg" />
               </div>
-              <span className="text-3xl lg:text-4xl font-black bg-gradient-to-r from-purple-300 via-pink-300 to-cyan-300 bg-clip-text text-transparent">
+              <span className="text-3xl lg:text-4xl font-black bg-gradient-to-r from-pink-400 via-white to-cyan-400 bg-clip-text text-transparent">
                 LUZIA
               </span>
             </div>
             
-            <p className="text-purple-200 leading-relaxed max-w-lg text-base lg:text-lg font-medium mx-auto lg:mx-0">
-              El comparador de luz y gas más avanzado de España. 
-              <span className="font-black text-cyan-200">Inteligencia artificial</span> que encuentra la tarifa más barata, 
-              respaldado por un equipo humano de <span className="font-black text-pink-200">expertos energéticos.</span>
+            <p className="text-gray-400 leading-relaxed max-w-lg text-base lg:text-lg font-medium mx-auto lg:mx-0">
+              El comparador de luz y gas más avanzado de España.
+              <span className="font-black text-cyan-400"> Inteligencia artificial</span> que encuentra la tarifa más barata,
+              respaldado por un equipo humano de <span className="font-black text-pink-400">expertos energéticos.</span>
             </p>
             
             <div className="space-y-3 lg:space-y-4">
-              <div className="flex items-center space-x-4 text-purple-200 hover:text-cyan-300 transition-colors">
+              <div className="flex items-center space-x-4 text-gray-400 hover:text-pink-400 transition-colors">
                 <Mail className="h-5 w-5" />
                 <span className="font-semibold text-sm lg:text-base">info@luzia.pro</span>
               </div>
-              <div className="flex items-center space-x-4 text-purple-200 hover:text-cyan-300 transition-colors">
+              <div className="flex items-center space-x-4 text-gray-400 hover:text-pink-400 transition-colors">
                 <Phone className="h-5 w-5" />
                 <span className="font-semibold text-sm lg:text-base">621 50 83 00</span>
               </div>
-              <div className="flex items-center space-x-4 text-purple-200 hover:text-cyan-300 transition-colors">
+              <div className="flex items-center space-x-4 text-gray-400 hover:text-pink-400 transition-colors">
                 <MapPin className="h-5 w-5" />
                 <span className="font-semibold text-sm lg:text-base">Calle Andarella 2 pt 9, España</span>
               </div>
@@ -90,12 +90,12 @@ const Footer: React.FC<FooterProps> = ({ onPageChange }) => {
                           const element = document.getElementById(link.href.replace('#', ''));
                           element?.scrollIntoView({ behavior: 'smooth' });
                         }}
-                        className="text-purple-200 hover:text-cyan-300 transition-colors font-semibold text-left text-sm lg:text-base"
+                        className="text-gray-400 hover:text-pink-400 transition-colors font-semibold text-left text-sm lg:text-base"
                       >
                         {link.name}
                       </button>
                     ) : (
-                      <a href={link.href} className="text-purple-200 hover:text-cyan-300 transition-colors font-semibold text-sm lg:text-base">
+                      <a href={link.href} className="text-gray-400 hover:text-pink-400 transition-colors font-semibold text-sm lg:text-base">
                         {link.name}
                       </a>
                     )}
@@ -110,13 +110,13 @@ const Footer: React.FC<FooterProps> = ({ onPageChange }) => {
                 {footerLinks.empresa.map((link, index) => (
                   <li key={index}>
                     {link.external ? (
-                      <a href={link.href} className="text-purple-200 hover:text-cyan-300 transition-colors font-semibold text-sm lg:text-base">
+                      <a href={link.href} className="text-gray-400 hover:text-pink-400 transition-colors font-semibold text-sm lg:text-base">
                         {link.name}
                       </a>
                     ) : link.page ? (
                       <button
                         onClick={() => onPageChange(link.page)}
-                        className="text-purple-200 hover:text-cyan-300 transition-colors font-semibold text-left text-sm lg:text-base"
+                        className="text-gray-400 hover:text-pink-400 transition-colors font-semibold text-left text-sm lg:text-base"
                       >
                         {link.name}
                       </button>
@@ -126,12 +126,12 @@ const Footer: React.FC<FooterProps> = ({ onPageChange }) => {
                           const element = document.getElementById(link.href.replace('#', ''));
                           element?.scrollIntoView({ behavior: 'smooth' });
                         }}
-                        className="text-purple-200 hover:text-cyan-300 transition-colors font-semibold text-left text-sm lg:text-base"
+                        className="text-gray-400 hover:text-pink-400 transition-colors font-semibold text-left text-sm lg:text-base"
                       >
                         {link.name}
                       </button>
                     ) : (
-                      <a href={link.href} className="text-purple-200 hover:text-cyan-300 transition-colors font-semibold text-sm lg:text-base" target={link.href.startsWith('http') ? '_blank' : '_self'}>
+                      <a href={link.href} className="text-gray-400 hover:text-pink-400 transition-colors font-semibold text-sm lg:text-base" target={link.href.startsWith('http') ? '_blank' : '_self'}>
                         {link.name}
                       </a>
                     )}
@@ -148,12 +148,12 @@ const Footer: React.FC<FooterProps> = ({ onPageChange }) => {
                     {link.action === 'chat' ? (
                       <button
                         onClick={() => onPageChange('chat')}
-                        className="text-purple-200 hover:text-cyan-300 transition-colors font-semibold text-left text-sm lg:text-base"
+                        className="text-gray-400 hover:text-pink-400 transition-colors font-semibold text-left text-sm lg:text-base"
                       >
                         {link.name}
                       </button>
                     ) : (
-                      <a href={link.href} className="text-purple-200 hover:text-cyan-300 transition-colors font-semibold text-sm lg:text-base" target={link.href.startsWith('http') ? '_blank' : '_self'}>
+                      <a href={link.href} className="text-gray-400 hover:text-pink-400 transition-colors font-semibold text-sm lg:text-base" target={link.href.startsWith('http') ? '_blank' : '_self'}>
                         {link.name}
                       </a>
                     )}
@@ -169,7 +169,7 @@ const Footer: React.FC<FooterProps> = ({ onPageChange }) => {
                   <li key={index}>
                     <button 
                       onClick={() => onPageChange(link.page)}
-                      className="text-purple-200 hover:text-cyan-300 transition-colors font-semibold text-left text-sm lg:text-base"
+                      className="text-gray-400 hover:text-pink-400 transition-colors font-semibold text-left text-sm lg:text-base"
                     >
                       {link.name}
                     </button>
@@ -181,22 +181,22 @@ const Footer: React.FC<FooterProps> = ({ onPageChange }) => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t-2 border-white/30 pt-6 lg:pt-10 relative">
+        <div className="border-t-2 border-pink-400/20 pt-6 lg:pt-10 relative">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-purple-300 text-sm lg:text-lg font-semibold text-center md:text-left">
+            <p className="text-gray-400 text-sm lg:text-lg font-semibold text-center md:text-left">
               © 2025 LUZIA. Todos los derechos reservados.
             </p>
-            
+
             <div className="flex items-center space-x-6">
-              <span className="text-purple-300 text-sm lg:text-lg font-semibold">Síguenos:</span>
+              <span className="text-gray-400 text-sm lg:text-lg font-semibold">Síguenos:</span>
               <div className="flex space-x-4">
                 {['LinkedIn', 'Twitter', 'Instagram'].map((social) => (
                   <a
                     key={social}
                     href={`#${social.toLowerCase()}`}
-                    className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 backdrop-blur-xl rounded-xl lg:rounded-2xl flex items-center justify-center hover:bg-gradient-to-r hover:from-purple-500/40 hover:to-cyan-500/40 transition-all duration-300 transform hover:scale-110 border border-white/20"
+                    className="w-10 h-10 lg:w-12 lg:h-12 bg-slate-800 hover:bg-pink-400/20 transition-all duration-300 transform hover:scale-110 border border-pink-400/20 hover:border-pink-400/50 rounded-xl lg:rounded-2xl flex items-center justify-center"
                   >
-                    <span className="text-xs lg:text-xs font-black text-cyan-300">
+                    <span className="text-xs lg:text-xs font-black text-gray-400 hover:text-pink-400">
                       {social.slice(0, 2)}
                     </span>
                   </a>
