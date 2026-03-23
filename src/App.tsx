@@ -51,7 +51,7 @@ function App() {
   }, []);
 
   if (currentPage === 'subir-factura') {
-    return <SubirFactura />;
+    return <SubirFactura onPageChange={handlePageChange} />;
   }
 
   if (currentPage === 'privacy') {

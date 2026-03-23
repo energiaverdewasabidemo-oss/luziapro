@@ -2,7 +2,11 @@ import { useState, useEffect } from 'react';
 import { Upload, CheckCircle, FileText, Phone, TrendingDown, ArrowRight, Zap, Shield, Star, Clock } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
-export default function SubirFactura() {
+interface SubirFacturaProps {
+  onPageChange?: (page: string) => void;
+}
+
+export default function SubirFactura({ onPageChange }: SubirFacturaProps) {
   const [file, setFile] = useState<File | null>(null);
   const [formData, setFormData] = useState({
     nombre: '',
@@ -1050,38 +1054,30 @@ export default function SubirFactura() {
             <div>
               <h4 className="text-pink-400 font-bold mb-4 text-lg">Información Legal</h4>
               <div className="space-y-2">
-                <a
-                  href="https://luzia.pro/privacidad"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-gray-400 hover:text-pink-400 transition-colors text-sm"
+                <button
+                  onClick={() => onPageChange?.('privacy')}
+                  className="block text-gray-400 hover:text-pink-400 transition-colors text-sm text-left"
                 >
                   Política de Privacidad
-                </a>
-                <a
-                  href="https://luzia.pro/aviso-legal"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-gray-400 hover:text-pink-400 transition-colors text-sm"
+                </button>
+                <button
+                  onClick={() => onPageChange?.('legal')}
+                  className="block text-gray-400 hover:text-pink-400 transition-colors text-sm text-left"
                 >
                   Aviso Legal
-                </a>
-                <a
-                  href="https://luzia.pro/terminos"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-gray-400 hover:text-pink-400 transition-colors text-sm"
+                </button>
+                <button
+                  onClick={() => onPageChange?.('terms')}
+                  className="block text-gray-400 hover:text-pink-400 transition-colors text-sm text-left"
                 >
                   Términos y Condiciones
-                </a>
-                <a
-                  href="https://luzia.pro/cookies"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-gray-400 hover:text-pink-400 transition-colors text-sm"
+                </button>
+                <button
+                  onClick={() => onPageChange?.('cookies')}
+                  className="block text-gray-400 hover:text-pink-400 transition-colors text-sm text-left"
                 >
                   Política de Cookies
-                </a>
+                </button>
               </div>
             </div>
 
