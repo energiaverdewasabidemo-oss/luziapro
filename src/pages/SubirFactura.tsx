@@ -268,28 +268,28 @@ export default function SubirFactura() {
           <h2 className="text-xl md:text-3xl font-bold text-white mb-4 md:mb-6 text-center">
             La realidad que <span className="text-pink-400">nadie te cuenta</span>
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center p-6 bg-slate-900/50 rounded-2xl border border-pink-400/20 hover:border-pink-400/40 transition-all duration-300">
-              <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <TrendingDown className="w-8 h-8 text-red-400" />
+          <div className="grid md:grid-cols-3 gap-3 md:gap-6">
+            <div className="text-center p-4 md:p-6 bg-slate-900/50 rounded-xl md:rounded-2xl border border-pink-400/20 hover:border-pink-400/40 transition-all duration-300">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+                <TrendingDown className="w-6 h-6 md:w-8 md:h-8 text-red-400" />
               </div>
-              <p className="text-gray-300 font-medium mb-2">
+              <p className="text-gray-300 font-medium text-sm md:text-base mb-2">
                 Estás pagando más que otros consumiendo menos
               </p>
             </div>
-            <div className="text-center p-6 bg-slate-900/50 rounded-2xl border border-pink-400/20 hover:border-pink-400/40 transition-all duration-300">
-              <div className="w-16 h-16 bg-yellow-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <FileText className="w-8 h-8 text-yellow-400" />
+            <div className="text-center p-4 md:p-6 bg-slate-900/50 rounded-xl md:rounded-2xl border border-pink-400/20 hover:border-pink-400/40 transition-all duration-300">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-yellow-500/20 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+                <FileText className="w-6 h-6 md:w-8 md:h-8 text-yellow-400" />
               </div>
-              <p className="text-gray-300 font-medium mb-2">
+              <p className="text-gray-300 font-medium text-sm md:text-base mb-2">
                 No entiendes tu factura y estás pagando conceptos innecesarios
               </p>
             </div>
-            <div className="text-center p-6 bg-slate-900/50 rounded-2xl border border-pink-400/20 hover:border-pink-400/40 transition-all duration-300">
-              <div className="w-16 h-16 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="w-8 h-8 text-orange-400" />
+            <div className="text-center p-4 md:p-6 bg-slate-900/50 rounded-xl md:rounded-2xl border border-pink-400/20 hover:border-pink-400/40 transition-all duration-300">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+                <CheckCircle className="w-6 h-6 md:w-8 md:h-8 text-orange-400" />
               </div>
-              <p className="text-gray-300 font-medium mb-2">
+              <p className="text-gray-300 font-medium text-sm md:text-base mb-2">
                 Estás en una tarifa antigua sin saberlo
               </p>
             </div>
@@ -335,21 +335,21 @@ export default function SubirFactura() {
           </h2>
           <p className="text-sm md:text-xl text-gray-400 text-center mb-6 md:mb-12">Solo 3 pasos simples para empezar a ahorrar</p>
 
-          <div className="grid md:grid-cols-3 gap-8 relative">
+          <div className="grid md:grid-cols-3 gap-4 md:gap-8 relative">
             {/* Líneas conectoras en desktop */}
             <div className="hidden md:block absolute top-16 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-pink-400/50 via-pink-400/50 to-pink-400/50"></div>
 
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-pink-400 to-cyan-400 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
-              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl shadow-2xl p-8 h-full border-2 border-pink-400/30 hover:border-pink-400 transition-all duration-500 hover:shadow-pink-400/40 transform hover:scale-105 hover:-translate-y-2">
-                <div className="w-20 h-20 bg-gradient-to-br from-pink-400 to-cyan-400 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-pink-400/50 group-hover:shadow-2xl group-hover:shadow-pink-400/70 transition-all duration-500 relative">
-                  <span className="text-white text-3xl font-black">1</span>
-                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-pink-400 rounded-full animate-ping"></div>
+              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl shadow-2xl p-5 md:p-8 h-full border-2 border-pink-400/30 hover:border-pink-400 transition-all duration-500 hover:shadow-pink-400/40 transform hover:scale-105 hover:-translate-y-2">
+                <div className="w-14 h-14 md:w-20 md:h-20 bg-gradient-to-br from-pink-400 to-cyan-400 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 shadow-lg shadow-pink-400/50 group-hover:shadow-2xl group-hover:shadow-pink-400/70 transition-all duration-500 relative">
+                  <span className="text-white text-2xl md:text-3xl font-black">1</span>
+                  <div className="absolute -top-1 -right-1 w-3 h-3 md:w-4 md:h-4 bg-pink-400 rounded-full animate-ping"></div>
                 </div>
-                <h3 className="text-2xl font-black text-white mb-4 group-hover:text-pink-400 transition-colors">
+                <h3 className="text-lg md:text-2xl font-black text-white mb-2 md:mb-4 group-hover:text-pink-400 transition-colors">
                   Subes tu factura
                 </h3>
-                <p className="text-gray-300 text-lg leading-relaxed">
+                <p className="text-gray-300 text-sm md:text-lg leading-relaxed">
                   Rellena el formulario y adjunta tu última factura de luz. Tarda menos de 2 minutos.
                 </p>
               </div>
@@ -357,15 +357,15 @@ export default function SubirFactura() {
 
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-pink-400 to-cyan-400 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
-              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl shadow-2xl p-8 h-full border-2 border-pink-400/30 hover:border-pink-400 transition-all duration-500 hover:shadow-pink-400/40 transform hover:scale-105 hover:-translate-y-2">
-                <div className="w-20 h-20 bg-gradient-to-br from-pink-400 to-cyan-400 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-pink-400/50 group-hover:shadow-2xl group-hover:shadow-pink-400/70 transition-all duration-500 relative">
-                  <span className="text-white text-3xl font-black">2</span>
-                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-pink-400 rounded-full animate-ping" style={{animationDelay: '0.5s'}}></div>
+              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl shadow-2xl p-5 md:p-8 h-full border-2 border-pink-400/30 hover:border-pink-400 transition-all duration-500 hover:shadow-pink-400/40 transform hover:scale-105 hover:-translate-y-2">
+                <div className="w-14 h-14 md:w-20 md:h-20 bg-gradient-to-br from-pink-400 to-cyan-400 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 shadow-lg shadow-pink-400/50 group-hover:shadow-2xl group-hover:shadow-pink-400/70 transition-all duration-500 relative">
+                  <span className="text-white text-2xl md:text-3xl font-black">2</span>
+                  <div className="absolute -top-1 -right-1 w-3 h-3 md:w-4 md:h-4 bg-pink-400 rounded-full animate-ping" style={{animationDelay: '0.5s'}}></div>
                 </div>
-                <h3 className="text-2xl font-black text-white mb-4 group-hover:text-pink-400 transition-colors">
+                <h3 className="text-lg md:text-2xl font-black text-white mb-2 md:mb-4 group-hover:text-pink-400 transition-colors">
                   Analizamos tu contrato
                 </h3>
-                <p className="text-gray-300 text-lg leading-relaxed">
+                <p className="text-gray-300 text-sm md:text-lg leading-relaxed">
                   Nuestro equipo revisa cada detalle y compara con las mejores opciones del mercado.
                 </p>
               </div>
@@ -373,15 +373,15 @@ export default function SubirFactura() {
 
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-pink-400 to-cyan-400 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
-              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl shadow-2xl p-8 h-full border-2 border-pink-400/30 hover:border-pink-400 transition-all duration-500 hover:shadow-pink-400/40 transform hover:scale-105 hover:-translate-y-2">
-                <div className="w-20 h-20 bg-gradient-to-br from-pink-400 to-cyan-400 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-pink-400/50 group-hover:shadow-2xl group-hover:shadow-pink-400/70 transition-all duration-500 relative">
-                  <span className="text-white text-3xl font-black">3</span>
-                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-pink-400 rounded-full animate-ping" style={{animationDelay: '1s'}}></div>
+              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl shadow-2xl p-5 md:p-8 h-full border-2 border-pink-400/30 hover:border-pink-400 transition-all duration-500 hover:shadow-pink-400/40 transform hover:scale-105 hover:-translate-y-2">
+                <div className="w-14 h-14 md:w-20 md:h-20 bg-gradient-to-br from-pink-400 to-cyan-400 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 shadow-lg shadow-pink-400/50 group-hover:shadow-2xl group-hover:shadow-pink-400/70 transition-all duration-500 relative">
+                  <span className="text-white text-2xl md:text-3xl font-black">3</span>
+                  <div className="absolute -top-1 -right-1 w-3 h-3 md:w-4 md:h-4 bg-pink-400 rounded-full animate-ping" style={{animationDelay: '1s'}}></div>
                 </div>
-                <h3 className="text-2xl font-black text-white mb-4 group-hover:text-pink-400 transition-colors">
+                <h3 className="text-lg md:text-2xl font-black text-white mb-2 md:mb-4 group-hover:text-pink-400 transition-colors">
                   Te llamamos solo si podemos mejorarlo
                 </h3>
-                <p className="text-gray-300 text-lg leading-relaxed">
+                <p className="text-gray-300 text-sm md:text-lg leading-relaxed">
                   Si no hay mejora, no te molestamos. Así de simple.
                 </p>
               </div>
@@ -625,11 +625,11 @@ export default function SubirFactura() {
           </div>
 
           {/* Resto del equipo */}
-          <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-3xl p-8 border border-pink-400/20">
-            <h3 className="text-3xl font-black text-white text-center mb-8">
+          <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-2xl md:rounded-3xl p-5 md:p-8 border border-pink-400/20">
+            <h3 className="text-xl md:text-3xl font-black text-white text-center mb-5 md:mb-8">
               Nuestro <span className="text-pink-400">equipo de asesores</span>
             </h3>
-            <div className="grid md:grid-cols-6 gap-4 max-w-5xl mx-auto">
+            <div className="grid grid-cols-3 md:grid-cols-6 gap-3 md:gap-4 max-w-5xl mx-auto">
               {[
                 { name: 'Carlos M.', role: 'Especialista', emoji: '💡' },
                 { name: 'Ana R.', role: 'Asesora', emoji: '⚡' },
@@ -642,7 +642,7 @@ export default function SubirFactura() {
                   key={index}
                   className="bg-slate-900/70 rounded-xl p-4 border border-pink-400/20 hover:border-pink-400/60 transition-all duration-300 text-center group hover:scale-105"
                 >
-                  <div className="text-4xl mb-2 group-hover:scale-110 transition-transform">{asesor.emoji}</div>
+                  <div className="text-2xl md:text-4xl mb-1 md:mb-2 group-hover:scale-110 transition-transform">{asesor.emoji}</div>
                   <h4 className="text-white font-bold text-sm mb-1">{asesor.name}</h4>
                   <p className="text-pink-400 text-xs font-semibold">{asesor.role}</p>
                 </div>
@@ -669,15 +669,15 @@ export default function SubirFactura() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-4 md:gap-8 max-w-7xl mx-auto">
             {/* Testimonio 1 */}
             <div className="group relative">
               {/* Glow effect */}
               <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-400 to-cyan-400 rounded-3xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
 
-              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-8 border-2 border-pink-400/20 group-hover:border-pink-400/60 transition-all duration-300 h-full flex flex-col">
+              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl md:rounded-3xl p-5 md:p-8 border-2 border-pink-400/20 group-hover:border-pink-400/60 transition-all duration-300 h-full flex flex-col">
                 {/* Quote icon */}
-                <div className="text-pink-400/30 text-6xl font-serif mb-4 leading-none">"</div>
+                <div className="text-pink-400/30 text-4xl md:text-6xl font-serif mb-3 md:mb-4 leading-none">"</div>
 
                 {/* Stars */}
                 <div className="flex items-center gap-1 mb-6">
@@ -720,9 +720,9 @@ export default function SubirFactura() {
               {/* Glow effect más fuerte */}
               <div className="absolute -inset-1 bg-gradient-to-r from-pink-400 to-cyan-400 rounded-3xl blur-lg opacity-40 group-hover:opacity-60 transition duration-500 animate-pulse"></div>
 
-              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-8 border-2 border-pink-400/60 group-hover:border-pink-400 transition-all duration-300 h-full flex flex-col shadow-2xl shadow-pink-400/20">
+              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl md:rounded-3xl p-5 md:p-8 border-2 border-pink-400/60 group-hover:border-pink-400 transition-all duration-300 h-full flex flex-col shadow-2xl shadow-pink-400/20">
                 {/* Quote icon */}
-                <div className="text-pink-400/30 text-6xl font-serif mb-4 leading-none">"</div>
+                <div className="text-pink-400/30 text-4xl md:text-6xl font-serif mb-3 md:mb-4 leading-none">"</div>
 
                 {/* Stars */}
                 <div className="flex items-center gap-1 mb-6">
@@ -770,21 +770,21 @@ export default function SubirFactura() {
               {/* Glow effect */}
               <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-400 to-cyan-400 rounded-3xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
 
-              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-8 border-2 border-pink-400/20 group-hover:border-pink-400/60 transition-all duration-300 h-full flex flex-col">
+              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl md:rounded-3xl p-5 md:p-8 border-2 border-pink-400/20 group-hover:border-pink-400/60 transition-all duration-300 h-full flex flex-col">
                 {/* Quote icon */}
-                <div className="text-pink-400/30 text-6xl font-serif mb-4 leading-none">"</div>
+                <div className="text-pink-400/30 text-4xl md:text-6xl font-serif mb-3 md:mb-4 leading-none">"</div>
 
                 {/* Stars */}
-                <div className="flex items-center gap-1 mb-6">
+                <div className="flex items-center gap-1 mb-4 md:mb-6">
                   {[...Array(5)].map((_, i) => (
                     <div key={i} className="relative">
-                      <Star className="w-6 h-6 fill-yellow-400 text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]" />
+                      <Star className="w-5 h-5 md:w-6 md:h-6 fill-yellow-400 text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]" />
                     </div>
                   ))}
                 </div>
 
                 {/* Testimonial text */}
-                <p className="text-gray-300 text-lg leading-relaxed mb-4 flex-grow">
+                <p className="text-gray-300 text-sm md:text-lg leading-relaxed mb-4 flex-grow">
                   Me llamaron en menos de un día y ahora ahorro <span className="text-pink-400 font-bold">240€ al año</span>. Proceso súper rápido y sin complicaciones.
                 </p>
 
@@ -812,40 +812,40 @@ export default function SubirFactura() {
           </div>
 
           {/* Stats bar */}
-          <div className="mt-12 bg-gradient-to-r from-slate-800 via-slate-900 to-slate-800 rounded-2xl p-8 border border-pink-400/30">
-            <div className="grid md:grid-cols-4 gap-8 text-center">
+          <div className="mt-6 md:mt-12 bg-gradient-to-r from-slate-800 via-slate-900 to-slate-800 rounded-xl md:rounded-2xl p-4 md:p-8 border border-pink-400/30">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center">
               <div>
-                <p className="text-4xl font-black text-pink-400 mb-2">30K+</p>
-                <p className="text-gray-400 font-semibold">Clientes satisfechos</p>
+                <p className="text-2xl md:text-4xl font-black text-pink-400 mb-1 md:mb-2">30K+</p>
+                <p className="text-gray-400 font-semibold text-xs md:text-base">Clientes satisfechos</p>
               </div>
               <div>
-                <p className="text-4xl font-black text-pink-400 mb-2">250€</p>
-                <p className="text-gray-400 font-semibold">Ahorro medio/año</p>
+                <p className="text-2xl md:text-4xl font-black text-pink-400 mb-1 md:mb-2">250€</p>
+                <p className="text-gray-400 font-semibold text-xs md:text-base">Ahorro medio/año</p>
               </div>
               <div>
-                <p className="text-4xl font-black text-pink-400 mb-2">24h</p>
-                <p className="text-gray-400 font-semibold">Tiempo de respuesta</p>
+                <p className="text-2xl md:text-4xl font-black text-pink-400 mb-1 md:mb-2">24h</p>
+                <p className="text-gray-400 font-semibold text-xs md:text-base">Tiempo de respuesta</p>
               </div>
               <div>
-                <p className="text-4xl font-black text-pink-400 mb-2">98%</p>
-                <p className="text-gray-400 font-semibold">Tasa de satisfacción</p>
+                <p className="text-2xl md:text-4xl font-black text-pink-400 mb-1 md:mb-2">98%</p>
+                <p className="text-gray-400 font-semibold text-xs md:text-base">Tasa de satisfacción</p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Oficinas y Ubicación */}
-        <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-10 mb-16 border border-pink-400/30">
-          <div className="text-center mb-10">
-            <h3 className="text-4xl font-black text-white mb-4">
+        <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl md:rounded-3xl p-5 md:p-10 mb-8 md:mb-16 border border-pink-400/30">
+          <div className="text-center mb-6 md:mb-10">
+            <h3 className="text-xl md:text-4xl font-black text-white mb-3 md:mb-4">
               Visítanos en nuestras <span className="text-pink-400">oficinas</span>
             </h3>
-            <p className="text-xl text-gray-400">Con presencia física en Valencia y Albacete</p>
+            <p className="text-sm md:text-xl text-gray-400">Con presencia física en Valencia y Albacete</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-8">
+          <div className="grid md:grid-cols-2 gap-4 md:gap-8 max-w-5xl mx-auto mb-5 md:mb-8">
             {/* Oficina Valencia */}
-            <div className="group bg-slate-900/50 rounded-2xl p-8 border-2 border-pink-400/20 hover:border-pink-400/60 transition-all duration-300">
+            <div className="group bg-slate-900/50 rounded-xl md:rounded-2xl p-5 md:p-8 border-2 border-pink-400/20 hover:border-pink-400/60 transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-14 h-14 bg-pink-400/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                   <span className="text-3xl">📍</span>
@@ -876,7 +876,7 @@ export default function SubirFactura() {
             </div>
 
             {/* Oficina Albacete */}
-            <div className="group bg-slate-900/50 rounded-2xl p-8 border-2 border-pink-400/20 hover:border-pink-400/60 transition-all duration-300">
+            <div className="group bg-slate-900/50 rounded-xl md:rounded-2xl p-5 md:p-8 border-2 border-pink-400/20 hover:border-pink-400/60 transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-14 h-14 bg-pink-400/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                   <span className="text-3xl">📍</span>
@@ -908,7 +908,7 @@ export default function SubirFactura() {
           </div>
 
           {/* Horario */}
-          <div className="bg-slate-900/50 rounded-2xl p-8 border border-pink-400/20 max-w-3xl mx-auto">
+          <div className="bg-slate-900/50 rounded-xl md:rounded-2xl p-5 md:p-8 border border-pink-400/20 max-w-3xl mx-auto">
             <div className="flex items-center gap-4 mb-6 justify-center">
               <div className="w-12 h-12 bg-pink-400/20 rounded-full flex items-center justify-center">
                 <span className="text-2xl">🕐</span>
@@ -936,21 +936,21 @@ export default function SubirFactura() {
         </div>
 
         {/* Oportunidad actual */}
-        <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border-2 border-yellow-500/30 rounded-3xl p-8 md:p-12 mb-16">
-          <h2 className="text-3xl font-bold text-white mb-4 text-center">
+        <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border-2 border-yellow-500/30 rounded-2xl md:rounded-3xl p-5 md:p-12 mb-8 md:mb-16">
+          <h2 className="text-xl md:text-3xl font-bold text-white mb-3 md:mb-4 text-center">
             El mejor momento es <span className="text-pink-400">ahora</span>
           </h2>
-          <p className="text-xl text-gray-300 text-center max-w-3xl mx-auto mb-6">
+          <p className="text-sm md:text-xl text-gray-300 text-center max-w-3xl mx-auto mb-4 md:mb-6">
             El mercado energético está en constante cambio. Cuando los precios están favorables, es cuando debes actuar.
             El mejor momento para revisar tu contrato no es cuando vuelve a subir.
           </p>
-          <p className="text-2xl font-bold text-pink-400 text-center">
+          <p className="text-lg md:text-2xl font-bold text-pink-400 text-center">
             Es ahora.
           </p>
         </div>
 
         {/* Cierre final */}
-        <div className="relative text-center bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 rounded-3xl p-12 md:p-16 shadow-2xl border-2 border-pink-400/40 overflow-hidden">
+        <div className="relative text-center bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 rounded-2xl md:rounded-3xl p-6 md:p-12 lg:p-16 shadow-2xl border-2 border-pink-400/40 overflow-hidden">
           {/* Efectos de fondo */}
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute top-10 left-10 w-64 h-64 bg-pink-400/5 rounded-full blur-3xl animate-pulse"></div>
@@ -1003,8 +1003,8 @@ export default function SubirFactura() {
         </div>
 
         {/* Garantía de confianza */}
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-4 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-lg border border-pink-400/30">
+        <div className="mt-8 md:mt-16 text-center">
+          <div className="inline-flex items-center gap-3 md:gap-4 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl md:rounded-2xl p-4 md:p-6 shadow-lg border border-pink-400/30">
             <Phone className="w-8 h-8 text-pink-400" />
             <div className="text-left">
               <p className="font-semibold text-white">
@@ -1023,7 +1023,7 @@ export default function SubirFactura() {
         <div className="container mx-auto px-4 max-w-6xl relative z-10">
 
           {/* Disclaimer de Meta/Facebook */}
-          <div className="bg-slate-900/80 rounded-2xl p-8 mb-10 border border-gray-700/50">
+          <div className="bg-slate-900/80 rounded-xl md:rounded-2xl p-5 md:p-8 mb-6 md:mb-10 border border-gray-700/50">
             <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-2">
               <Shield className="w-5 h-5 text-gray-400" />
               Aviso Legal sobre Publicidad
