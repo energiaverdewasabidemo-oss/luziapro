@@ -1,5 +1,6 @@
 import React from 'react';
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
 import CookiePolicy from './components/CookiePolicy';
@@ -19,12 +20,28 @@ import Footer from './components/Footer';
 import FloatingChatButton from './components/FloatingChatButton';
 import ChatBot from './components/ChatBot';
 import CookiePopup from './components/CookiePopup';
-import SubirFactura from './pages/SubirFactura';
+
+const PATH_TO_PAGE: Record<string, string> = {
+  '/privacidad': 'privacy',
+  '/aviso-legal': 'legal',
+  '/terminos': 'terms',
+  '/cookies': 'cookies',
+  '/sobre-nosotros': 'about',
+  '/confianza': 'trust',
+  '/contacto': 'contact',
+};
 
 function App() {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [initialMessage, setInitialMessage] = useState('');
-  const [currentPage, setCurrentPage] = useState('home');
+  const [currentPage, setCurrentPage] = useState(() => PATH_TO_PAGE[location.pathname] ?? 'home');
+
+  useEffect(() => {
+    const page = PATH_TO_PAGE[location.pathname] ?? 'home';
+    setCurrentPage(page);
+  }, [location.pathname]);
 
   const handleChatOpen = useCallback((message = '') => {
     setInitialMessage(message);
@@ -37,22 +54,30 @@ function App() {
   };
 
   const handlePageChange = (page: string) => {
-    setCurrentPage(page);
+    const PAGE_TO_PATH: Record<string, string> = {
+      privacy: '/privacidad',
+      legal: '/aviso-legal',
+      terms: '/terminos',
+      cookies: '/cookies',
+      about: '/sobre-nosotros',
+      trust: '/confianza',
+      contact: '/contacto',
+      home: '/',
+    };
+    const path = PAGE_TO_PATH[page] ?? '/';
+    navigate(path);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleBackToHome = () => {
-    setCurrentPage('home');
+    navigate('/');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleGoToSubirFactura = useCallback(() => {
-    handlePageChange('subir-factura');
+    navigate('/subir-factura');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
-
-  if (currentPage === 'subir-factura') {
-    return <SubirFactura onPageChange={handlePageChange} />;
-  }
 
   if (currentPage === 'privacy') {
     return <PrivacyPolicy onBack={handleBackToHome} />;
