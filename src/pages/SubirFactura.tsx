@@ -564,7 +564,7 @@ export default function SubirFactura() {
         <div className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-5xl md:text-6xl font-black text-white mb-4">
-              El <span className="text-[#A8FF00]">equipo</span> detrás de Wasabi
+              El <span className="text-[#A8FF00]">equipo</span> detrás de LUZIA
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Caras reales, personas reales comprometidas con tu ahorro
@@ -587,7 +587,7 @@ export default function SubirFactura() {
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-8">
                   <div className="inline-flex items-center gap-2 bg-[#A8FF00] text-[#1A1A1A] px-4 py-1 rounded-full text-xs font-black uppercase mb-3">
-                    <span>⭐</span> Fundador de Wasabi
+                    <span>⭐</span> Fundador de LUZIA
                   </div>
                   <h3 className="text-3xl font-black text-white mb-2">José Calero</h3>
                   <p className="text-[#A8FF00] font-bold text-lg mb-3">CEO & Fundador</p>
@@ -868,8 +868,8 @@ export default function SubirFactura() {
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-gray-500">📧</span>
-                  <a href="mailto:info@wasabienergia.com" className="text-[#A8FF00] font-semibold hover:text-[#96E600] transition-colors">
-                    info@wasabienergia.com
+                  <a href="mailto:info@luzia.pro" className="text-[#A8FF00] font-semibold hover:text-[#96E600] transition-colors">
+                    info@luzia.pro
                   </a>
                 </div>
               </div>
@@ -899,8 +899,8 @@ export default function SubirFactura() {
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-gray-500">📧</span>
-                  <a href="mailto:info@wasabienergia.com" className="text-[#A8FF00] font-semibold hover:text-[#96E600] transition-colors">
-                    info@wasabienergia.com
+                  <a href="mailto:info@luzia.pro" className="text-[#A8FF00] font-semibold hover:text-[#96E600] transition-colors">
+                    info@luzia.pro
                   </a>
                 </div>
               </div>
@@ -1051,33 +1051,25 @@ export default function SubirFactura() {
               <h4 className="text-[#A8FF00] font-bold mb-4 text-lg">Información Legal</h4>
               <div className="space-y-2">
                 <a
-                  href="/politica-privacidad.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/"
                   className="block text-gray-400 hover:text-[#A8FF00] transition-colors text-sm"
                 >
                   Política de Privacidad
                 </a>
                 <a
-                  href="/aviso-legal.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/"
                   className="block text-gray-400 hover:text-[#A8FF00] transition-colors text-sm"
                 >
                   Aviso Legal
                 </a>
                 <a
-                  href="/terminos-condiciones.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/"
                   className="block text-gray-400 hover:text-[#A8FF00] transition-colors text-sm"
                 >
                   Términos y Condiciones
                 </a>
                 <a
-                  href="/cookies.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/"
                   className="block text-gray-400 hover:text-[#A8FF00] transition-colors text-sm"
                 >
                   Política de Cookies
@@ -1088,7 +1080,7 @@ export default function SubirFactura() {
             <div>
               <h4 className="text-[#A8FF00] font-bold mb-4 text-lg">Contacto</h4>
               <div className="space-y-2 text-gray-400 text-sm">
-                <p>Email: info@wasabienergia.com</p>
+                <p>Email: info@luzia.pro</p>
                 <p>Teléfono: +34 621 50 83 00</p>
               </div>
             </div>
@@ -1122,7 +1114,7 @@ export default function SubirFactura() {
           <div className="border-t border-gray-700/50 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
               <div className="text-gray-400 text-sm">
-                <p className="mb-1">© 2025 Energía Verde Wasabi SL - Todos los derechos reservados</p>
+                <p className="mb-1">© 2025 LUZIA - Todos los derechos reservados</p>
                 <p className="text-xs text-gray-500">CIF: B42709378 | Energía 100% renovable certificada</p>
               </div>
               <div className="flex items-center gap-3">
