@@ -16,7 +16,9 @@ const Footer: React.FC<FooterProps> = ({ onPageChange }) => {
     empresa: [
       { name: "Sobre nosotros", href: "#sobre-nosotros", page: "about" },
       { name: "Confianza", href: "#confianza", scroll: true, page: "trust" },
-      { name: "Contacto", href: "#contacto", page: "contact" }
+      { name: "Contacto", href: "#contacto", page: "contact" },
+      { name: "Programa de afiliados", href: "/afiliados", external: true },
+      { name: "Subir factura", href: "/subir-factura", external: true }
     ],
     soporte: [
       { name: "WhatsApp", href: "https://wa.me/34621508300?text=Hola,%20vengo%20de%20luzia.pro" },
@@ -107,7 +109,11 @@ const Footer: React.FC<FooterProps> = ({ onPageChange }) => {
               <ul className="space-y-2 lg:space-y-3">
                 {footerLinks.empresa.map((link, index) => (
                   <li key={index}>
-                    {link.page ? (
+                    {link.external ? (
+                      <a href={link.href} className="text-purple-200 hover:text-cyan-300 transition-colors font-semibold text-sm lg:text-base">
+                        {link.name}
+                      </a>
+                    ) : link.page ? (
                       <button
                         onClick={() => onPageChange(link.page)}
                         className="text-purple-200 hover:text-cyan-300 transition-colors font-semibold text-left text-sm lg:text-base"
