@@ -35,7 +35,10 @@ const CookiePolicy: React.FC<CookiePolicyProps> = ({ onBack }) => {
           <section>
             <h2 className="text-2xl font-black text-gray-900 mb-4">1. Información del Responsable</h2>
             <div className="bg-purple-50 rounded-2xl p-6 space-y-3">
-              <p className="font-bold text-gray-800 text-lg">LUZIA - Comparador de Luz y Gas</p>
+              <p className="font-bold text-gray-800 text-lg">
+                LUZIA - Comparador de Luz y Gas &mdash;{' '}
+                <a href="https://www.luzia.pro" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">www.luzia.pro</a>
+              </p>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-purple-600" />
                 <span className="font-semibold">Dirección: Calle Andarella 2 pt 9, España</span>
@@ -54,8 +57,9 @@ const CookiePolicy: React.FC<CookiePolicyProps> = ({ onBack }) => {
           <section>
             <h2 className="text-2xl font-black text-gray-900 mb-4">2. ¿Qué son las Cookies?</h2>
             <p className="text-gray-600 leading-relaxed">
-              Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando 
-              visita nuestro sitio web. Nos ayudan a mejorar su experiencia de navegación, recordar 
+              Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando
+              visita{' '}<a href="https://www.luzia.pro" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-semibold">www.luzia.pro</a>.
+              {' '}Nos ayudan a mejorar su experiencia de navegación, recordar
               sus preferencias y analizar cómo utiliza nuestros servicios.
             </p>
           </section>
@@ -77,7 +81,7 @@ const CookiePolicy: React.FC<CookiePolicyProps> = ({ onBack }) => {
 
               <div className="bg-green-50 rounded-2xl p-6">
                 <h3 className="text-lg font-bold text-green-800 mb-3">📊 Cookies Analíticas</h3>
-                <p className="text-gray-700 mb-2">Nos ayudan a entender cómo los usuarios interactúan con nuestro sitio.</p>
+                <p className="text-gray-700 mb-2">Nos ayudan a entender cómo los usuarios interactúan con <a href="https://www.luzia.pro" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-semibold">www.luzia.pro</a>.</p>
                 <ul className="list-disc list-inside text-gray-600 space-y-1 ml-4">
                   <li>Google Analytics (tráfico y comportamiento)</li>
                   <li>Estadísticas de uso del comparador</li>
