@@ -70,7 +70,7 @@ const TermsOfService: React.FC<TermsOfServiceProps> = ({ onBack }) => {
           <section>
             <h2 className="text-2xl font-black text-gray-900 mb-4">2. Objeto y Ámbito de Aplicación</h2>
             <p className="text-gray-600 leading-relaxed mb-4 text-sm">
-              Los presentes Términos y Condiciones regulan el uso del servicio de comparación de tarifas de luz y gas ofrecido por <strong>Wasabi Trader SL</strong> a través de <a href="https://www.luzia.pro" target={`_blank`} rel=\"noopener noreferrer" className=\"text-cyan-600 hover:underline font-semibold">www.luzia.pro</a> (marca Luzia) y cualquier aplicación o canal digital asociado.
+              Los presentes Términos y Condiciones regulan el uso del servicio de comparación de tarifas de luz y gas ofrecido por <strong>Wasabi Trader SL</strong> a través de <a href="https://www.luzia.pro" target=\"_blank" rel="noopener noreferrer\" className="text-cyan-600 hover:underline font-semibold">www.luzia.pro</a> (marca Luzia) y cualquier aplicación o canal digital asociado.
             </p>
             <p className="text-gray-600 leading-relaxed text-sm">
               El uso de nuestros servicios implica la aceptación plena de estos términos y condiciones.
@@ -198,7 +198,7 @@ const TermsOfService: React.FC<TermsOfServiceProps> = ({ onBack }) => {
             <h2 className="text-2xl font-black text-gray-900 mb-4">8. Limitación de Responsabilidad</h2>
             <div className="bg-slate-50 rounded-2xl p-6">
               <p className="text-gray-700 text-sm leading-relaxed mb-3">
-                <strong>Wasabi Trader SL</strong>, a través de <a href="https://www.luzia.pro" target={`_blank`} rel=\"noopener noreferrer" className=\"text-cyan-600 hover:underline">www.luzia.pro</a>, actúa como intermediario entre el usuario y las compañías energéticas. No nos responsabilizamos de:
+                <strong>Wasabi Trader SL</strong>, a través de <a href="https://www.luzia.pro" target=\"_blank" rel="noopener noreferrer\" className="text-cyan-600 hover:underline">www.luzia.pro</a>, actúa como intermediario entre el usuario y las compañías energéticas. No nos responsabilizamos de:
               </p>
               <ul className="list-disc list-inside text-gray-600 space-y-1 ml-4 text-sm">
                 <li>Cambios en las tarifas por parte de las compañías</li>
@@ -236,7 +236,7 @@ const TermsOfService: React.FC<TermsOfServiceProps> = ({ onBack }) => {
           <section>
             <h2 className="text-2xl font-black text-gray-900 mb-4">10. Propiedad Intelectual</h2>
             <p className="text-gray-600 leading-relaxed text-sm">
-              Todos los contenidos, marcas (incluyendo la marca <strong>Luzia</strong>), logos, diseños y tecnología del sitio <a href="https://www.luzia.pro" target={`_blank`} rel=\"noopener noreferrer" className=\"text-cyan-600 hover:underline">www.luzia.pro</a> son propiedad de <strong>Wasabi Trader SL</strong> y están protegidos por derechos de propiedad intelectual. Queda prohibida su reproducción, distribución o modificación sin autorización expresa y por escrito.
+              Todos los contenidos, marcas (incluyendo la marca <strong>Luzia</strong>), logos, diseños y tecnología del sitio <a href="https://www.luzia.pro" target=\"_blank" rel="noopener noreferrer\" className="text-cyan-600 hover:underline">www.luzia.pro</a> son propiedad de <strong>Wasabi Trader SL</strong> y están protegidos por derechos de propiedad intelectual. Queda prohibida su reproducción, distribución o modificación sin autorización expresa y por escrito.
             </p>
           </section>
 
