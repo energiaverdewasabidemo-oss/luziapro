@@ -16,41 +16,49 @@ interface ChatBotProps {
 }
 
 const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose, initialMessage = '' }) => {
-  const [messages, setMessages] = useState<Message[]>([
+  const getInitialMessages = (): Message[] => [
     {
       id: 1,
-      text: "¡Hola! Soy LUZIA, tu comparador inteligente de luz y gas. ¿En qué puedo ayudarte hoy?",
+      text: "¡Hola! Soy LUZIA 👋 Tu comparadora inteligente de luz y gas.",
+      isUser: false,
+      timestamp: new Date()
+    },
+    {
+      id: 2,
+      text: "¿Quieres saber cuánto puedes ahorrar en tu factura? Puedo analizar tu consumo y encontrar la tarifa más barata entre +1.000 compañías. ¿Empezamos?",
       isUser: false,
       timestamp: new Date()
     }
-  ]);
+  ];
+
+  const [messages, setMessages] = useState<Message[]>(getInitialMessages());
   const [inputText, setInputText] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
-  
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  
+
   const quickReplies = [
     "📄 Subir mi factura",
     "¿Cuánto puedo ahorrar?",
     "¿Cómo funciona?",
     "💬 Hablar con asistente"
   ];
-  
+
+  // Reset messages when chat is opened
+  useEffect(() => {
+    if (isOpen) {
+      setMessages(getInitialMessages());
+      setInputText('');
+      setUploadedFile(null);
+    }
+  }, [isOpen]);
+
   // Scroll to bottom when new messages are added
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
-  
-  // Auto-send initial message if provided
-  useEffect(() => {
-    if (initialMessage && isOpen) {
-      setTimeout(() => {
-        handleSendMessage(initialMessage);
-      }, 500);
-    }
-  }, [initialMessage, isOpen]);
   
   const redirectToWhatsApp = (message: string) => {
     const phoneNumber = '34621508300'; // 621 50 83 00 with country code

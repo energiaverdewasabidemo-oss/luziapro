@@ -19,6 +19,7 @@ import Footer from './components/Footer';
 import FloatingChatButton from './components/FloatingChatButton';
 import ChatBot from './components/ChatBot';
 import CookiePopup from './components/CookiePopup';
+import SubirFactura from './pages/SubirFactura';
 
 function App() {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -37,60 +38,60 @@ function App() {
 
   const handlePageChange = (page: string) => {
     setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleBackToHome = () => {
     setCurrentPage('home');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleChatAction = () => {
-    handleChatOpen('Hola, quiero información sobre LUZIA');
-  };
+  const handleGoToSubirFactura = useCallback(() => {
+    handlePageChange('subir-factura');
+  }, []);
 
-  // Render legal pages
+  if (currentPage === 'subir-factura') {
+    return <SubirFactura />;
+  }
+
   if (currentPage === 'privacy') {
     return <PrivacyPolicy onBack={handleBackToHome} />;
   }
-  
+
   if (currentPage === 'terms') {
     return <TermsOfService onBack={handleBackToHome} />;
   }
-  
+
   if (currentPage === 'cookies') {
     return <CookiePolicy onBack={handleBackToHome} />;
   }
-  
+
   if (currentPage === 'legal') {
     return <LegalNotice onBack={handleBackToHome} />;
   }
-  
+
   if (currentPage === 'about') {
     return <AboutUsPage onBack={handleBackToHome} />;
   }
-  
+
   if (currentPage === 'trust') {
     return <TrustPage onBack={handleBackToHome} />;
   }
-  
+
   if (currentPage === 'contact') {
     return <ContactPage onBack={handleBackToHome} />;
-  }
-  
-  if (currentPage === 'chat') {
-    handleChatAction();
-    setCurrentPage('home');
   }
 
   return (
     <div className="min-h-screen bg-white">
-      <Header onChatOpen={handleChatOpen} onPageChange={handlePageChange} />
-      <HeroSection onChatOpen={handleChatOpen} />
-      <BenefitsSection onChatOpen={handleChatOpen} />
-      <HowItWorksSection onChatOpen={handleChatOpen} />
+      <Header onChatOpen={handleChatOpen} onPageChange={handlePageChange} onGoToSubirFactura={handleGoToSubirFactura} />
+      <HeroSection onGoToSubirFactura={handleGoToSubirFactura} onChatOpen={handleChatOpen} />
+      <BenefitsSection onGoToSubirFactura={handleGoToSubirFactura} />
+      <HowItWorksSection onGoToSubirFactura={handleGoToSubirFactura} />
       <TestimonialsSection />
-      <ComparatorSection onChatOpen={handleChatOpen} />
+      <ComparatorSection onGoToSubirFactura={handleGoToSubirFactura} />
       <TrustSection />
-      <FinalCTASection onChatOpen={handleChatOpen} />
+      <FinalCTASection onGoToSubirFactura={handleGoToSubirFactura} />
       <Footer onPageChange={handlePageChange} />
       <FloatingChatButton onClick={handleChatOpen} />
       <ChatBot isOpen={isChatOpen} onClose={handleChatClose} initialMessage={initialMessage} />

@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Filter, Zap, Flame, BarChart3, CheckCircle } from 'lucide-react';
 
 interface ComparatorSectionProps {
-  onChatOpen: (message?: string) => void;
+  onGoToSubirFactura: () => void;
 }
 
-const ComparatorSection: React.FC<ComparatorSectionProps> = ({ onChatOpen }) => {
+const ComparatorSection: React.FC<ComparatorSectionProps> = ({ onGoToSubirFactura }) => {
   const [activeFilter, setActiveFilter] = useState('dual');
   const [consumption, setConsumption] = useState('medio');
 
@@ -153,8 +153,8 @@ const ComparatorSection: React.FC<ComparatorSectionProps> = ({ onChatOpen }) => 
                 </div>
                 
                 <div className="flex flex-col space-y-2 lg:space-y-3 w-full lg:w-auto">
-                  <button 
-                    onClick={() => onChatOpen(`Quiero contratar la tarifa de ${tariff.company}`)}
+                  <button
+                    onClick={onGoToSubirFactura}
                     className={`px-6 lg:px-8 py-3 lg:py-4 rounded-xl lg:rounded-2xl font-black text-base lg:text-lg transition-all duration-500 transform hover:scale-105 ${
                     tariff.recommended
                       ? 'bg-gradient-to-r from-purple-600 to-cyan-600 text-white hover:from-purple-500 hover:to-cyan-500 shadow-xl lg:shadow-2xl'
@@ -163,8 +163,8 @@ const ComparatorSection: React.FC<ComparatorSectionProps> = ({ onChatOpen }) => 
                   >
                     🚀 CONTRATAR AHORA
                   </button>
-                  <button 
-                    onClick={() => onChatOpen(`Quiero ver más detalles de la tarifa de ${tariff.company}`)}
+                  <button
+                    onClick={onGoToSubirFactura}
                     className="text-gray-600 text-xs lg:text-sm hover:text-purple-600 transition-colors font-semibold text-center lg:text-left"
                   >
                     Ver detalles completos
@@ -177,8 +177,8 @@ const ComparatorSection: React.FC<ComparatorSectionProps> = ({ onChatOpen }) => 
 
         <div className="text-center mt-8 lg:mt-12">
           <p className="text-gray-700 mb-4 lg:mb-6 text-lg lg:text-xl font-semibold">¿Quieres ver más opciones personalizadas para tu consumo?</p>
-          <button 
-            onClick={() => onChatOpen('Quiero una comparación personalizada para mi consumo')}
+          <button
+            onClick={onGoToSubirFactura}
             className="bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 text-white px-8 lg:px-12 py-4 lg:py-6 rounded-2xl lg:rounded-3xl font-black text-lg lg:text-2xl hover:from-purple-500 hover:via-pink-500 hover:to-cyan-500 transition-all duration-500 transform hover:scale-105 lg:hover:scale-110 shadow-xl lg:shadow-2xl hover:shadow-purple-500/50 border-2 lg:border-4 border-white/20"
           >
             💡 OBTENER COMPARACIÓN PERSONALIZADA

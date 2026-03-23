@@ -2,10 +2,10 @@ import React from 'react';
 import { Upload, Brain, Zap, CheckCircle } from 'lucide-react';
 
 interface HowItWorksSectionProps {
-  onChatOpen: (message?: string) => void;
+  onGoToSubirFactura: () => void;
 }
 
-const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({ onChatOpen }) => {
+const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({ onGoToSubirFactura }) => {
   const steps = [
     {
       number: "01",
@@ -107,8 +107,8 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({ onChatOpen }) => 
             </div>
           </div>
           
-          <button 
-            onClick={() => onChatOpen('Quiero subir mi factura para comparar tarifas')}
+          <button
+            onClick={onGoToSubirFactura}
             className="bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 text-white px-8 lg:px-16 py-4 lg:py-8 rounded-2xl lg:rounded-3xl font-black text-xl lg:text-3xl hover:from-purple-500 hover:via-pink-500 hover:to-cyan-500 transition-all duration-500 transform hover:scale-105 lg:hover:scale-110 shadow-xl lg:shadow-2xl hover:shadow-purple-500/50 border-2 lg:border-4 border-white/20"
           >
             💡 COMPARAR TARIFAS GRATIS

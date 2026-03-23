@@ -4,9 +4,10 @@ import { Zap, Sparkles, Brain } from 'lucide-react';
 interface HeaderProps {
   onChatOpen: (message?: string) => void;
   onPageChange?: (page: string) => void;
+  onGoToSubirFactura: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ onChatOpen, onPageChange }) => {
+const Header: React.FC<HeaderProps> = ({ onChatOpen, onPageChange, onGoToSubirFactura }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   return (
@@ -88,8 +89,8 @@ const Header: React.FC<HeaderProps> = ({ onChatOpen, onPageChange }) => {
           </nav>
 
           {/* Desktop CTA Button */}
-          <button 
-            onClick={() => onChatOpen('Quiero comparar tarifas de luz y gas')}
+          <button
+            onClick={onGoToSubirFactura}
             className="hidden md:block relative bg-gradient-to-r from-purple-600 via-pink-500 to-cyan-500 text-white px-4 lg:px-10 py-2 lg:py-4 rounded-xl lg:rounded-2xl font-black text-sm lg:text-xl hover:from-purple-500 hover:via-pink-400 hover:to-cyan-400 transition-all duration-500 transform hover:scale-110 shadow-lg lg:shadow-2xl hover:shadow-purple-500/50 border border-white/30 lg:border-2 group overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
@@ -139,10 +140,10 @@ const Header: React.FC<HeaderProps> = ({ onChatOpen, onPageChange }) => {
               >
                 Sobre nosotros
               </a>
-              <button 
+              <button
                 onClick={() => {
                   setIsMobileMenuOpen(false);
-                  onChatOpen('Quiero comparar tarifas de luz y gas');
+                  onGoToSubirFactura();
                 }}
                 className="w-full bg-gradient-to-r from-purple-600 via-pink-500 to-cyan-500 text-white px-6 py-4 rounded-xl font-black text-lg shadow-lg flex items-center justify-center space-x-3"
               >
