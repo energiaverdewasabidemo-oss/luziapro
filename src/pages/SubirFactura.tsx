@@ -1051,25 +1051,33 @@ export default function SubirFactura() {
               <h4 className="text-pink-400 font-bold mb-4 text-lg">Información Legal</h4>
               <div className="space-y-2">
                 <a
-                  href="/"
+                  href="https://luzia.pro/privacidad"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block text-gray-400 hover:text-pink-400 transition-colors text-sm"
                 >
                   Política de Privacidad
                 </a>
                 <a
-                  href="/"
+                  href="https://luzia.pro/aviso-legal"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block text-gray-400 hover:text-pink-400 transition-colors text-sm"
                 >
                   Aviso Legal
                 </a>
                 <a
-                  href="/"
+                  href="https://luzia.pro/terminos"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block text-gray-400 hover:text-pink-400 transition-colors text-sm"
                 >
                   Términos y Condiciones
                 </a>
                 <a
-                  href="/"
+                  href="https://luzia.pro/cookies"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block text-gray-400 hover:text-pink-400 transition-colors text-sm"
                 >
                   Política de Cookies
