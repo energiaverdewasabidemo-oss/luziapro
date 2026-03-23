@@ -126,10 +126,10 @@ export default function SubirFactura() {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-[#1A1A1A] via-[#2A2A2A] to-[#1A1A1A] flex items-center justify-center px-4">
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 flex items-center justify-center px-4">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="w-20 h-20 bg-[#A8FF00] rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
-            <CheckCircle className="w-12 h-12 text-[#1A1A1A]" />
+          <div className="w-20 h-20 bg-pink-400 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
+            <CheckCircle className="w-12 h-12 text-white" />
           </div>
           <h1 className="text-4xl font-bold text-white mb-4">
             ¡Factura recibida con éxito!
@@ -138,14 +138,14 @@ export default function SubirFactura() {
             Nuestro equipo está analizando tu factura en este momento.<br />
             Te llamaremos en menos de 24 horas solo si podemos mejorar tu tarifa.
           </p>
-          <div className="bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-2xl shadow-xl p-8 border border-[#A8FF00]/30">
-            <h2 className="text-2xl font-semibold text-[#A8FF00] mb-4">
+          <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl shadow-xl p-8 border border-pink-400/30">
+            <h2 className="text-2xl font-semibold text-pink-400 mb-4">
               ¿Qué ocurre ahora?
             </h2>
             <div className="space-y-4 text-left">
               <div className="flex items-start gap-4">
-                <div className="w-8 h-8 bg-[#A8FF00]/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-[#A8FF00] font-semibold">1</span>
+                <div className="w-8 h-8 bg-pink-400/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-pink-400 font-semibold">1</span>
                 </div>
                 <div>
                   <p className="text-white font-medium">Análisis detallado</p>
@@ -153,8 +153,8 @@ export default function SubirFactura() {
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="w-8 h-8 bg-[#A8FF00]/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-[#A8FF00] font-semibold">2</span>
+                <div className="w-8 h-8 bg-pink-400/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-pink-400 font-semibold">2</span>
                 </div>
                 <div>
                   <p className="text-white font-medium">Identificamos ahorros</p>
@@ -162,8 +162,8 @@ export default function SubirFactura() {
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="w-8 h-8 bg-[#A8FF00]/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-[#A8FF00] font-semibold">3</span>
+                <div className="w-8 h-8 bg-pink-400/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-pink-400 font-semibold">3</span>
                 </div>
                 <div>
                   <p className="text-white font-medium">Te contactamos</p>
@@ -178,12 +178,12 @@ export default function SubirFactura() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1A1A1A] via-[#2A2A2A] to-[#1A1A1A] relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 relative overflow-hidden">
       {/* Efectos de fondo animados */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-[#A8FF00]/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-[600px] h-[600px] bg-[#A8FF00]/15 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}} />
-        <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-[#96E600]/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '4s'}} />
+        <div className="absolute top-20 left-10 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-[600px] h-[600px] bg-pink-500/15 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}} />
+        <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '4s'}} />
       </div>
 
       <div className="container mx-auto px-4 py-12 max-w-6xl relative z-10">
@@ -191,29 +191,29 @@ export default function SubirFactura() {
         {/* Hero Section con más impacto */}
         <div className="text-center mb-16 relative">
           {/* Badge superior */}
-          <div className="inline-flex items-center gap-2 bg-[#A8FF00]/20 border border-[#A8FF00]/40 rounded-full px-6 py-2 mb-6 backdrop-blur-sm animate-pulse">
-            <Zap className="w-4 h-4 text-[#A8FF00]" />
-            <span className="text-[#A8FF00] font-semibold text-sm">Análisis gratuito en menos de 24h</span>
+          <div className="inline-flex items-center gap-2 bg-pink-400/20 border border-pink-400/40 rounded-full px-6 py-2 mb-6 backdrop-blur-sm animate-pulse">
+            <Zap className="w-4 h-4 text-pink-400" />
+            <span className="text-pink-400 font-semibold text-sm">Análisis gratuito en menos de 24h</span>
           </div>
 
           <h1 className="text-6xl md:text-7xl font-black text-white mb-6 leading-tight relative z-10">
             ¿Estás pagando de más en tu<br />
-            <span className="text-[#A8FF00] relative inline-block">
+            <span className="text-pink-400 relative inline-block">
               factura de luz
-              <div className="absolute -bottom-2 left-0 right-0 h-3 bg-[#A8FF00]/20 blur-lg"></div>
+              <div className="absolute -bottom-2 left-0 right-0 h-3 bg-pink-400/20 blur-lg"></div>
             </span>
-            <span className="text-[#A8FF00]">?</span>
+            <span className="text-pink-400">?</span>
           </h1>
 
           <p className="text-2xl md:text-3xl text-gray-300 mb-4 max-w-3xl mx-auto relative z-10 font-light">
             Descúbrelo en menos de 24 horas. Sube tu factura y recibe un estudio gratuito sin compromiso.
           </p>
 
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-[#A8FF00]/20 to-[#96E600]/20 border-2 border-[#A8FF00] rounded-2xl px-8 py-4 mb-10">
-            <TrendingDown className="w-8 h-8 text-[#A8FF00]" />
+          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-pink-400/20 to-pink-500/20 border-2 border-pink-400 rounded-2xl px-8 py-4 mb-10">
+            <TrendingDown className="w-8 h-8 text-pink-400" />
             <div className="text-left">
               <p className="text-white font-black text-2xl">Ahorra hasta 450€/año</p>
-              <p className="text-[#A8FF00] text-sm font-semibold">Solo con subir tu factura ahora</p>
+              <p className="text-pink-400 text-sm font-semibold">Solo con subir tu factura ahora</p>
             </div>
           </div>
 
@@ -234,15 +234,15 @@ export default function SubirFactura() {
           {/* Trust badges */}
           <div className="flex items-center justify-center gap-8 mt-10">
             <div className="flex items-center gap-2">
-              <Shield className="w-5 h-5 text-[#A8FF00]" />
+              <Shield className="w-5 h-5 text-pink-400" />
               <span className="text-gray-400 text-sm">100% Seguro</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle className="w-5 h-5 text-[#A8FF00]" />
+              <CheckCircle className="w-5 h-5 text-pink-400" />
               <span className="text-gray-400 text-sm">Sin compromiso</span>
             </div>
             <div className="flex items-center gap-2">
-              <Star className="w-5 h-5 text-[#A8FF00]" />
+              <Star className="w-5 h-5 text-pink-400" />
               <span className="text-gray-400 text-sm">Gratis</span>
             </div>
           </div>
@@ -264,12 +264,12 @@ export default function SubirFactura() {
         </div>
 
         {/* Validación del problema */}
-        <div className="bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-3xl shadow-2xl p-8 md:p-12 mb-16 border border-[#A8FF00]/30">
+        <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl shadow-2xl p-8 md:p-12 mb-16 border border-pink-400/30">
           <h2 className="text-3xl font-bold text-white mb-6 text-center">
-            La realidad que <span className="text-[#A8FF00]">nadie te cuenta</span>
+            La realidad que <span className="text-pink-400">nadie te cuenta</span>
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center p-6 bg-[#1A1A1A]/50 rounded-2xl border border-[#A8FF00]/20 hover:border-[#A8FF00]/40 transition-all duration-300">
+            <div className="text-center p-6 bg-slate-900/50 rounded-2xl border border-pink-400/20 hover:border-pink-400/40 transition-all duration-300">
               <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <TrendingDown className="w-8 h-8 text-red-400" />
               </div>
@@ -277,7 +277,7 @@ export default function SubirFactura() {
                 Estás pagando más que otros consumiendo menos
               </p>
             </div>
-            <div className="text-center p-6 bg-[#1A1A1A]/50 rounded-2xl border border-[#A8FF00]/20 hover:border-[#A8FF00]/40 transition-all duration-300">
+            <div className="text-center p-6 bg-slate-900/50 rounded-2xl border border-pink-400/20 hover:border-pink-400/40 transition-all duration-300">
               <div className="w-16 h-16 bg-yellow-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <FileText className="w-8 h-8 text-yellow-400" />
               </div>
@@ -285,7 +285,7 @@ export default function SubirFactura() {
                 No entiendes tu factura y estás pagando conceptos innecesarios
               </p>
             </div>
-            <div className="text-center p-6 bg-[#1A1A1A]/50 rounded-2xl border border-[#A8FF00]/20 hover:border-[#A8FF00]/40 transition-all duration-300">
+            <div className="text-center p-6 bg-slate-900/50 rounded-2xl border border-pink-400/20 hover:border-pink-400/40 transition-all duration-300">
               <div className="w-16 h-16 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <CheckCircle className="w-8 h-8 text-orange-400" />
               </div>
@@ -297,32 +297,32 @@ export default function SubirFactura() {
         </div>
 
         {/* Sección de Autoridad - Barra de progreso */}
-        <div className="bg-gradient-to-br from-[#A8FF00]/10 to-[#96E600]/10 border-2 border-[#A8FF00]/40 rounded-3xl p-10 mb-16 text-center">
+        <div className="bg-gradient-to-br from-pink-400/10 to-cyan-500/10 border-2 border-pink-400/40 rounded-3xl p-10 mb-16 text-center">
           <h3 className="text-4xl font-black text-white mb-8">
-            Somos una de las asesorías energéticas que <span className="text-[#A8FF00]">más dinero ha ahorrado</span> a españoles
+            Somos una de las asesorías energéticas que <span className="text-pink-400">más dinero ha ahorrado</span> a españoles
           </h3>
 
           <div className="max-w-4xl mx-auto mb-8">
             <div className="flex items-center justify-between mb-3">
               <span className="text-white font-bold text-lg">Ahorro total generado</span>
-              <span className="text-[#A8FF00] font-black text-2xl">7.500.000€</span>
+              <span className="text-pink-400 font-black text-2xl">7.500.000€</span>
             </div>
-            <div className="h-6 bg-[#1A1A1A] rounded-full overflow-hidden border-2 border-[#A8FF00]/30">
-              <div className="h-full bg-gradient-to-r from-[#A8FF00] to-[#96E600] rounded-full animate-pulse" style={{width: '85%'}}></div>
+            <div className="h-6 bg-slate-900 rounded-full overflow-hidden border-2 border-pink-400/30">
+              <div className="h-full bg-gradient-to-r from-pink-400 to-cyan-400 rounded-full animate-pulse" style={{width: '85%'}}></div>
             </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="bg-[#1A1A1A]/50 rounded-2xl p-6 border border-[#A8FF00]/30">
-              <p className="text-[#A8FF00] font-black text-4xl mb-2">+30.000</p>
+            <div className="bg-slate-900/50 rounded-2xl p-6 border border-pink-400/30">
+              <p className="text-pink-400 font-black text-4xl mb-2">+30.000</p>
               <p className="text-gray-300 font-semibold">Clientes satisfechos</p>
             </div>
-            <div className="bg-[#1A1A1A]/50 rounded-2xl p-6 border border-[#A8FF00]/30">
-              <p className="text-[#A8FF00] font-black text-4xl mb-2">250€</p>
+            <div className="bg-slate-900/50 rounded-2xl p-6 border border-pink-400/30">
+              <p className="text-pink-400 font-black text-4xl mb-2">250€</p>
               <p className="text-gray-300 font-semibold">Ahorro medio anual</p>
             </div>
-            <div className="bg-[#1A1A1A]/50 rounded-2xl p-6 border border-[#A8FF00]/30">
-              <p className="text-[#A8FF00] font-black text-4xl mb-2">97%</p>
+            <div className="bg-slate-900/50 rounded-2xl p-6 border border-pink-400/30">
+              <p className="text-pink-400 font-black text-4xl mb-2">97%</p>
               <p className="text-gray-300 font-semibold">Tasa de satisfacción</p>
             </div>
           </div>
@@ -331,22 +331,22 @@ export default function SubirFactura() {
         {/* Cómo funciona */}
         <div className="mb-16">
           <h2 className="text-5xl font-black text-white mb-4 text-center">
-            Cómo <span className="text-[#A8FF00]">funciona</span>
+            Cómo <span className="text-pink-400">funciona</span>
           </h2>
           <p className="text-xl text-gray-400 text-center mb-12">Solo 3 pasos simples para empezar a ahorrar</p>
 
           <div className="grid md:grid-cols-3 gap-8 relative">
             {/* Líneas conectoras en desktop */}
-            <div className="hidden md:block absolute top-16 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-[#A8FF00]/50 via-[#A8FF00]/50 to-[#A8FF00]/50"></div>
+            <div className="hidden md:block absolute top-16 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-pink-400/50 via-pink-400/50 to-pink-400/50"></div>
 
             <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#A8FF00] to-[#96E600] rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
-              <div className="relative bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-2xl shadow-2xl p-8 h-full border-2 border-[#A8FF00]/30 hover:border-[#A8FF00] transition-all duration-500 hover:shadow-[#A8FF00]/40 transform hover:scale-105 hover:-translate-y-2">
-                <div className="w-20 h-20 bg-gradient-to-br from-[#A8FF00] to-[#96E600] rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-[#A8FF00]/50 group-hover:shadow-2xl group-hover:shadow-[#A8FF00]/70 transition-all duration-500 relative">
-                  <span className="text-[#1A1A1A] text-3xl font-black">1</span>
-                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-[#A8FF00] rounded-full animate-ping"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-pink-400 to-cyan-400 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl shadow-2xl p-8 h-full border-2 border-pink-400/30 hover:border-pink-400 transition-all duration-500 hover:shadow-pink-400/40 transform hover:scale-105 hover:-translate-y-2">
+                <div className="w-20 h-20 bg-gradient-to-br from-pink-400 to-cyan-400 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-pink-400/50 group-hover:shadow-2xl group-hover:shadow-pink-400/70 transition-all duration-500 relative">
+                  <span className="text-white text-3xl font-black">1</span>
+                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-pink-400 rounded-full animate-ping"></div>
                 </div>
-                <h3 className="text-2xl font-black text-white mb-4 group-hover:text-[#A8FF00] transition-colors">
+                <h3 className="text-2xl font-black text-white mb-4 group-hover:text-pink-400 transition-colors">
                   Subes tu factura
                 </h3>
                 <p className="text-gray-300 text-lg leading-relaxed">
@@ -356,13 +356,13 @@ export default function SubirFactura() {
             </div>
 
             <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#A8FF00] to-[#96E600] rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
-              <div className="relative bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-2xl shadow-2xl p-8 h-full border-2 border-[#A8FF00]/30 hover:border-[#A8FF00] transition-all duration-500 hover:shadow-[#A8FF00]/40 transform hover:scale-105 hover:-translate-y-2">
-                <div className="w-20 h-20 bg-gradient-to-br from-[#A8FF00] to-[#96E600] rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-[#A8FF00]/50 group-hover:shadow-2xl group-hover:shadow-[#A8FF00]/70 transition-all duration-500 relative">
-                  <span className="text-[#1A1A1A] text-3xl font-black">2</span>
-                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-[#A8FF00] rounded-full animate-ping" style={{animationDelay: '0.5s'}}></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-pink-400 to-cyan-400 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl shadow-2xl p-8 h-full border-2 border-pink-400/30 hover:border-pink-400 transition-all duration-500 hover:shadow-pink-400/40 transform hover:scale-105 hover:-translate-y-2">
+                <div className="w-20 h-20 bg-gradient-to-br from-pink-400 to-cyan-400 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-pink-400/50 group-hover:shadow-2xl group-hover:shadow-pink-400/70 transition-all duration-500 relative">
+                  <span className="text-white text-3xl font-black">2</span>
+                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-pink-400 rounded-full animate-ping" style={{animationDelay: '0.5s'}}></div>
                 </div>
-                <h3 className="text-2xl font-black text-white mb-4 group-hover:text-[#A8FF00] transition-colors">
+                <h3 className="text-2xl font-black text-white mb-4 group-hover:text-pink-400 transition-colors">
                   Analizamos tu contrato
                 </h3>
                 <p className="text-gray-300 text-lg leading-relaxed">
@@ -372,13 +372,13 @@ export default function SubirFactura() {
             </div>
 
             <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#A8FF00] to-[#96E600] rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
-              <div className="relative bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-2xl shadow-2xl p-8 h-full border-2 border-[#A8FF00]/30 hover:border-[#A8FF00] transition-all duration-500 hover:shadow-[#A8FF00]/40 transform hover:scale-105 hover:-translate-y-2">
-                <div className="w-20 h-20 bg-gradient-to-br from-[#A8FF00] to-[#96E600] rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-[#A8FF00]/50 group-hover:shadow-2xl group-hover:shadow-[#A8FF00]/70 transition-all duration-500 relative">
-                  <span className="text-[#1A1A1A] text-3xl font-black">3</span>
-                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-[#A8FF00] rounded-full animate-ping" style={{animationDelay: '1s'}}></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-pink-400 to-cyan-400 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl shadow-2xl p-8 h-full border-2 border-pink-400/30 hover:border-pink-400 transition-all duration-500 hover:shadow-pink-400/40 transform hover:scale-105 hover:-translate-y-2">
+                <div className="w-20 h-20 bg-gradient-to-br from-pink-400 to-cyan-400 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-pink-400/50 group-hover:shadow-2xl group-hover:shadow-pink-400/70 transition-all duration-500 relative">
+                  <span className="text-white text-3xl font-black">3</span>
+                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-pink-400 rounded-full animate-ping" style={{animationDelay: '1s'}}></div>
                 </div>
-                <h3 className="text-2xl font-black text-white mb-4 group-hover:text-[#A8FF00] transition-colors">
+                <h3 className="text-2xl font-black text-white mb-4 group-hover:text-pink-400 transition-colors">
                   Te llamamos solo si podemos mejorarlo
                 </h3>
                 <p className="text-gray-300 text-lg leading-relaxed">
@@ -390,7 +390,7 @@ export default function SubirFactura() {
         </div>
 
         {/* Enemigo Común */}
-        <div className="bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-3xl p-10 mb-16 border-2 border-[#A8FF00]/40 text-center">
+        <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-10 mb-16 border-2 border-pink-400/40 text-center">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-red-500/20 rounded-full mb-6">
             <span className="text-4xl">🚫</span>
           </div>
@@ -399,7 +399,7 @@ export default function SubirFactura() {
           </h3>
           <div className="max-w-3xl mx-auto space-y-4">
             <p className="text-xl text-gray-300">
-              <span className="text-[#A8FF00] font-bold">Nuestra metodología es diferente.</span> No somos los vendedores de luz de turno que te acosan sin parar.
+              <span className="text-pink-400 font-bold">Nuestra metodología es diferente.</span> No somos los vendedores de luz de turno que te acosan sin parar.
             </p>
             <p className="text-lg text-gray-400">
               Te contactamos una sola vez, con un análisis real. Si podemos ahorrarte dinero, te lo contamos. Si no, no te molestamos más. Así de simple y transparente.
@@ -408,34 +408,34 @@ export default function SubirFactura() {
         </div>
 
         {/* Metodología - Objeto Brillante */}
-        <div className="bg-gradient-to-br from-[#A8FF00]/5 to-[#96E600]/5 rounded-3xl p-10 mb-16 border border-[#A8FF00]/30">
+        <div className="bg-gradient-to-br from-pink-400/5 to-cyan-500/5 rounded-3xl p-10 mb-16 border border-pink-400/30">
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-[#A8FF00] rounded-full mb-6">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-pink-400 rounded-full mb-6">
               <span className="text-4xl">🎯</span>
             </div>
             <h3 className="text-4xl font-black text-white mb-4">
-              Nuestra <span className="text-[#A8FF00]">metodología de análisis</span>
+              Nuestra <span className="text-pink-400">metodología de análisis</span>
             </h3>
           </div>
           <div className="max-w-4xl mx-auto">
             <p className="text-xl text-gray-300 text-center mb-8">
-              Basada en más de <span className="text-[#A8FF00] font-bold">200.000 contratos revisados</span> y herramientas de inteligencia artificial
+              Basada en más de <span className="text-pink-400 font-bold">200.000 contratos revisados</span> y herramientas de inteligencia artificial
             </p>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-[#1A1A1A]/50 rounded-2xl p-6 border border-[#A8FF00]/20">
-                <h4 className="text-[#A8FF00] font-black text-xl mb-3">✓ Análisis predictivo con IA</h4>
+              <div className="bg-slate-900/50 rounded-2xl p-6 border border-pink-400/20">
+                <h4 className="text-pink-400 font-black text-xl mb-3">✓ Análisis predictivo con IA</h4>
                 <p className="text-gray-400">Comparamos tu factura con miles de tarifas en tiempo real para encontrar la mejor opción.</p>
               </div>
-              <div className="bg-[#1A1A1A]/50 rounded-2xl p-6 border border-[#A8FF00]/20">
-                <h4 className="text-[#A8FF00] font-black text-xl mb-3">✓ Base de datos actualizada</h4>
+              <div className="bg-slate-900/50 rounded-2xl p-6 border border-pink-400/20">
+                <h4 className="text-pink-400 font-black text-xl mb-3">✓ Base de datos actualizada</h4>
                 <p className="text-gray-400">Acceso a todas las ofertas del mercado, incluyendo las que no se publicitan.</p>
               </div>
-              <div className="bg-[#1A1A1A]/50 rounded-2xl p-6 border border-[#A8FF00]/20">
-                <h4 className="text-[#A8FF00] font-black text-xl mb-3">✓ Análisis de consumo</h4>
+              <div className="bg-slate-900/50 rounded-2xl p-6 border border-pink-400/20">
+                <h4 className="text-pink-400 font-black text-xl mb-3">✓ Análisis de consumo</h4>
                 <p className="text-gray-400">Estudiamos tu patrón de consumo para optimizar al máximo tu ahorro.</p>
               </div>
-              <div className="bg-[#1A1A1A]/50 rounded-2xl p-6 border border-[#A8FF00]/20">
-                <h4 className="text-[#A8FF00] font-black text-xl mb-3">✓ 92% de éxito</h4>
+              <div className="bg-slate-900/50 rounded-2xl p-6 border border-pink-400/20">
+                <h4 className="text-pink-400 font-black text-xl mb-3">✓ 92% de éxito</h4>
                 <p className="text-gray-400">En más del 92% de casos encontramos ahorros significativos.</p>
               </div>
             </div>
@@ -464,7 +464,7 @@ export default function SubirFactura() {
                 {/* Glow effect */}
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#25D366] via-[#128C7E] to-[#25D366] rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition duration-500 animate-pulse"></div>
 
-                <div className="relative bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-3xl overflow-hidden border-2 border-[#25D366]/60 shadow-2xl">
+                <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl overflow-hidden border-2 border-[#25D366]/60 shadow-2xl">
                   {/* Efectos de fondo */}
                   <div className="absolute inset-0 overflow-hidden">
                     <div className="absolute top-10 right-10 w-96 h-96 bg-[#25D366]/10 rounded-full blur-3xl animate-pulse"></div>
@@ -550,7 +550,7 @@ export default function SubirFactura() {
                 </p>
                 <a
                   href="tel:+34621508300"
-                  className="inline-flex items-center gap-3 bg-[#2A2A2A] hover:bg-[#3A3A3A] text-white px-8 py-4 rounded-full font-bold transition-all duration-300 border border-[#25D366]/30 hover:border-[#25D366]/60"
+                  className="inline-flex items-center gap-3 bg-slate-800 hover:bg-slate-700 text-white px-8 py-4 rounded-full font-bold transition-all duration-300 border border-[#25D366]/30 hover:border-[#25D366]/60"
                 >
                   <Phone className="w-5 h-5 text-[#25D366]" />
                   <span>+34 621 50 83 00</span>
@@ -564,7 +564,7 @@ export default function SubirFactura() {
         <div className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-5xl md:text-6xl font-black text-white mb-4">
-              El <span className="text-[#A8FF00]">equipo</span> detrás de LUZIA
+              El <span className="text-pink-400">equipo</span> detrás de LUZIA
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Caras reales, personas reales comprometidas con tu ahorro
@@ -575,22 +575,22 @@ export default function SubirFactura() {
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
             {/* José Calero - CEO */}
             <div className="group relative">
-              <div className="absolute -inset-1 bg-gradient-to-r from-[#A8FF00] to-[#96E600] rounded-3xl blur-lg opacity-30 group-hover:opacity-50 transition duration-500"></div>
-              <div className="relative bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-3xl overflow-hidden border-2 border-[#A8FF00]/40 group-hover:border-[#A8FF00] transition-all duration-300">
+              <div className="absolute -inset-1 bg-gradient-to-r from-pink-400 to-cyan-400 rounded-3xl blur-lg opacity-30 group-hover:opacity-50 transition duration-500"></div>
+              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl overflow-hidden border-2 border-pink-400/40 group-hover:border-pink-400 transition-all duration-300">
                 <div className="aspect-[4/5] overflow-hidden">
                   <img
                     src="/WhatsApp_Image_2026-03-03_at_20.47.45.jpeg"
                     alt="José Calero - Fundador de Wasabi"
                     className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/50 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent"></div>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <div className="inline-flex items-center gap-2 bg-[#A8FF00] text-[#1A1A1A] px-4 py-1 rounded-full text-xs font-black uppercase mb-3">
+                  <div className="inline-flex items-center gap-2 bg-pink-400 text-white px-4 py-1 rounded-full text-xs font-black uppercase mb-3">
                     <span>⭐</span> Fundador de LUZIA
                   </div>
                   <h3 className="text-3xl font-black text-white mb-2">José Calero</h3>
-                  <p className="text-[#A8FF00] font-bold text-lg mb-3">CEO & Fundador</p>
+                  <p className="text-pink-400 font-bold text-lg mb-3">CEO & Fundador</p>
                   <p className="text-gray-300 text-sm leading-relaxed">
                     Creador de la metodología que ha ayudado a más de 15.000 familias a ahorrar en su factura de luz
                   </p>
@@ -601,17 +601,17 @@ export default function SubirFactura() {
             {/* Franco Tenaglia - Patrocinador */}
             <div className="group relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-3xl blur-lg opacity-30 group-hover:opacity-50 transition duration-500"></div>
-              <div className="relative bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-3xl overflow-hidden border-2 border-yellow-500/40 group-hover:border-yellow-500 transition-all duration-300">
+              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl overflow-hidden border-2 border-yellow-500/40 group-hover:border-yellow-500 transition-all duration-300">
                 <div className="aspect-[4/5] overflow-hidden">
                   <img
                     src="/641231069_18530982796069231_5302681181679109432_n.jpg"
                     alt="Franco Tenaglia - Patrocinador"
                     className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/50 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent"></div>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <div className="inline-flex items-center gap-2 bg-yellow-500 text-[#1A1A1A] px-4 py-1 rounded-full text-xs font-black uppercase mb-3">
+                  <div className="inline-flex items-center gap-2 bg-yellow-500 text-slate-900 px-4 py-1 rounded-full text-xs font-black uppercase mb-3">
                     <span>🏆</span> Patrocinador
                   </div>
                   <h3 className="text-3xl font-black text-white mb-2">Franco Tenaglia</h3>
@@ -625,9 +625,9 @@ export default function SubirFactura() {
           </div>
 
           {/* Resto del equipo */}
-          <div className="bg-gradient-to-br from-[#2A2A2A]/50 to-[#1A1A1A]/50 rounded-3xl p-8 border border-[#A8FF00]/20">
+          <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-3xl p-8 border border-pink-400/20">
             <h3 className="text-3xl font-black text-white text-center mb-8">
-              Nuestro <span className="text-[#A8FF00]">equipo de asesores</span>
+              Nuestro <span className="text-pink-400">equipo de asesores</span>
             </h3>
             <div className="grid md:grid-cols-6 gap-4 max-w-5xl mx-auto">
               {[
@@ -640,16 +640,16 @@ export default function SubirFactura() {
               ].map((asesor, index) => (
                 <div
                   key={index}
-                  className="bg-[#1A1A1A]/70 rounded-xl p-4 border border-[#A8FF00]/20 hover:border-[#A8FF00]/60 transition-all duration-300 text-center group hover:scale-105"
+                  className="bg-slate-900/70 rounded-xl p-4 border border-pink-400/20 hover:border-pink-400/60 transition-all duration-300 text-center group hover:scale-105"
                 >
                   <div className="text-4xl mb-2 group-hover:scale-110 transition-transform">{asesor.emoji}</div>
                   <h4 className="text-white font-bold text-sm mb-1">{asesor.name}</h4>
-                  <p className="text-[#A8FF00] text-xs font-semibold">{asesor.role}</p>
+                  <p className="text-pink-400 text-xs font-semibold">{asesor.role}</p>
                 </div>
               ))}
             </div>
             <p className="text-gray-400 text-center mt-6">
-              Y más de <span className="text-[#A8FF00] font-bold">15 profesionales certificados</span> listos para ayudarte
+              Y más de <span className="text-pink-400 font-bold">15 profesionales certificados</span> listos para ayudarte
             </p>
           </div>
         </div>
@@ -657,12 +657,12 @@ export default function SubirFactura() {
         {/* Testimonios Premium */}
         <div className="mb-16">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#A8FF00]/20 to-[#96E600]/20 border border-[#A8FF00]/40 rounded-full px-6 py-3 mb-6 backdrop-blur-sm">
-              <Star className="w-6 h-6 text-[#A8FF00] fill-[#A8FF00]" />
-              <span className="text-[#A8FF00] font-black text-lg">+30.000 clientes satisfechos</span>
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-400/20 to-cyan-400/20 border border-pink-400/40 rounded-full px-6 py-3 mb-6 backdrop-blur-sm">
+              <Star className="w-6 h-6 text-pink-400 fill-pink-400" />
+              <span className="text-pink-400 font-black text-lg">+30.000 clientes satisfechos</span>
             </div>
             <h2 className="text-5xl md:text-6xl font-black text-white mb-4">
-              Lo que dicen <span className="text-[#A8FF00]">nuestros clientes</span>
+              Lo que dicen <span className="text-pink-400">nuestros clientes</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Miles de personas ya están ahorrando en su factura de luz
@@ -673,11 +673,11 @@ export default function SubirFactura() {
             {/* Testimonio 1 */}
             <div className="group relative">
               {/* Glow effect */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-[#A8FF00] to-[#96E600] rounded-3xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-400 to-cyan-400 rounded-3xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
 
-              <div className="relative bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-3xl p-8 border-2 border-[#A8FF00]/20 group-hover:border-[#A8FF00]/60 transition-all duration-300 h-full flex flex-col">
+              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-8 border-2 border-pink-400/20 group-hover:border-pink-400/60 transition-all duration-300 h-full flex flex-col">
                 {/* Quote icon */}
-                <div className="text-[#A8FF00]/30 text-6xl font-serif mb-4 leading-none">"</div>
+                <div className="text-pink-400/30 text-6xl font-serif mb-4 leading-none">"</div>
 
                 {/* Stars */}
                 <div className="flex items-center gap-1 mb-6">
@@ -690,16 +690,16 @@ export default function SubirFactura() {
 
                 {/* Testimonial text */}
                 <p className="text-gray-300 text-lg leading-relaxed mb-4 flex-grow">
-                  Solo con una llamada en 24 horas, ya pude ahorrar <span className="text-[#A8FF00] font-bold">250€ al año</span>. Increíble lo fácil que fue.
+                  Solo con una llamada en 24 horas, ya pude ahorrar <span className="text-pink-400 font-bold">250€ al año</span>. Increíble lo fácil que fue.
                 </p>
 
-                <div className="bg-[#A8FF00]/10 rounded-xl p-3 mb-6 border border-[#A8FF00]/30">
-                  <p className="text-[#A8FF00] text-sm font-semibold">💰 Con ese ahorro me fui de vacaciones a Portugal</p>
+                <div className="bg-pink-400/10 rounded-xl p-3 mb-6 border border-pink-400/30">
+                  <p className="text-pink-400 text-sm font-semibold">💰 Con ese ahorro me fui de vacaciones a Portugal</p>
                 </div>
 
                 {/* Author */}
-                <div className="flex items-center gap-4 pt-6 border-t border-[#A8FF00]/20">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#A8FF00] to-[#96E600] flex items-center justify-center text-[#1A1A1A] font-black text-xl shadow-lg shadow-[#A8FF00]/30">
+                <div className="flex items-center gap-4 pt-6 border-t border-pink-400/20">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-400 to-cyan-400 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-pink-400/30">
                     M
                   </div>
                   <div>
@@ -710,7 +710,7 @@ export default function SubirFactura() {
 
                 {/* Badge de ahorro */}
                 <div className="absolute -top-4 -right-4 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl px-4 py-2 shadow-xl shadow-yellow-500/30 rotate-6 group-hover:rotate-12 transition-transform duration-300">
-                  <p className="text-[#1A1A1A] font-black text-sm">250€/año</p>
+                  <p className="text-slate-900 font-black text-sm">250€/año</p>
                 </div>
               </div>
             </div>
@@ -718,11 +718,11 @@ export default function SubirFactura() {
             {/* Testimonio 2 - Destacado */}
             <div className="group relative md:-translate-y-4">
               {/* Glow effect más fuerte */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-[#A8FF00] to-[#96E600] rounded-3xl blur-lg opacity-40 group-hover:opacity-60 transition duration-500 animate-pulse"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-pink-400 to-cyan-400 rounded-3xl blur-lg opacity-40 group-hover:opacity-60 transition duration-500 animate-pulse"></div>
 
-              <div className="relative bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-3xl p-8 border-2 border-[#A8FF00]/60 group-hover:border-[#A8FF00] transition-all duration-300 h-full flex flex-col shadow-2xl shadow-[#A8FF00]/20">
+              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-8 border-2 border-pink-400/60 group-hover:border-pink-400 transition-all duration-300 h-full flex flex-col shadow-2xl shadow-pink-400/20">
                 {/* Quote icon */}
-                <div className="text-[#A8FF00]/30 text-6xl font-serif mb-4 leading-none">"</div>
+                <div className="text-pink-400/30 text-6xl font-serif mb-4 leading-none">"</div>
 
                 {/* Stars */}
                 <div className="flex items-center gap-1 mb-6">
@@ -735,16 +735,16 @@ export default function SubirFactura() {
 
                 {/* Testimonial text */}
                 <p className="text-gray-300 text-lg leading-relaxed mb-4 flex-grow">
-                  En 24 horas me llamaron con un análisis completo. Ahora mi empresa ahorra <span className="text-[#A8FF00] font-bold">6.800€ al año</span>.
+                  En 24 horas me llamaron con un análisis completo. Ahora mi empresa ahorra <span className="text-pink-400 font-bold">6.800€ al año</span>.
                 </p>
 
-                <div className="bg-[#A8FF00]/10 rounded-xl p-3 mb-6 border border-[#A8FF00]/30">
-                  <p className="text-[#A8FF00] text-sm font-semibold">🏢 Ese dinero lo invertimos en ampliar el negocio</p>
+                <div className="bg-pink-400/10 rounded-xl p-3 mb-6 border border-pink-400/30">
+                  <p className="text-pink-400 text-sm font-semibold">🏢 Ese dinero lo invertimos en ampliar el negocio</p>
                 </div>
 
                 {/* Author */}
-                <div className="flex items-center gap-4 pt-6 border-t border-[#A8FF00]/20">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#A8FF00] to-[#96E600] flex items-center justify-center text-[#1A1A1A] font-black text-xl shadow-lg shadow-[#A8FF00]/30">
+                <div className="flex items-center gap-4 pt-6 border-t border-pink-400/20">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-400 to-cyan-400 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-pink-400/30">
                     C
                   </div>
                   <div>
@@ -755,11 +755,11 @@ export default function SubirFactura() {
 
                 {/* Badge de ahorro */}
                 <div className="absolute -top-4 -right-4 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl px-4 py-2 shadow-xl shadow-yellow-500/30 rotate-6 group-hover:rotate-12 transition-transform duration-300">
-                  <p className="text-[#1A1A1A] font-black text-sm">6.800€/año</p>
+                  <p className="text-slate-900 font-black text-sm">6.800€/año</p>
                 </div>
 
                 {/* Badge "Más popular" */}
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#A8FF00] text-[#1A1A1A] px-4 py-1 rounded-full text-xs font-black uppercase">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-pink-400 text-white px-4 py-1 rounded-full text-xs font-black uppercase">
                   Caso destacado
                 </div>
               </div>
@@ -768,11 +768,11 @@ export default function SubirFactura() {
             {/* Testimonio 3 */}
             <div className="group relative">
               {/* Glow effect */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-[#A8FF00] to-[#96E600] rounded-3xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-400 to-cyan-400 rounded-3xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
 
-              <div className="relative bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-3xl p-8 border-2 border-[#A8FF00]/20 group-hover:border-[#A8FF00]/60 transition-all duration-300 h-full flex flex-col">
+              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-8 border-2 border-pink-400/20 group-hover:border-pink-400/60 transition-all duration-300 h-full flex flex-col">
                 {/* Quote icon */}
-                <div className="text-[#A8FF00]/30 text-6xl font-serif mb-4 leading-none">"</div>
+                <div className="text-pink-400/30 text-6xl font-serif mb-4 leading-none">"</div>
 
                 {/* Stars */}
                 <div className="flex items-center gap-1 mb-6">
@@ -785,16 +785,16 @@ export default function SubirFactura() {
 
                 {/* Testimonial text */}
                 <p className="text-gray-300 text-lg leading-relaxed mb-4 flex-grow">
-                  Me llamaron en menos de un día y ahora ahorro <span className="text-[#A8FF00] font-bold">240€ al año</span>. Proceso súper rápido y sin complicaciones.
+                  Me llamaron en menos de un día y ahora ahorro <span className="text-pink-400 font-bold">240€ al año</span>. Proceso súper rápido y sin complicaciones.
                 </p>
 
-                <div className="bg-[#A8FF00]/10 rounded-xl p-3 mb-6 border border-[#A8FF00]/30">
-                  <p className="text-[#A8FF00] text-sm font-semibold">✈️ Ese dinero lo usé para un viaje con mi familia</p>
+                <div className="bg-pink-400/10 rounded-xl p-3 mb-6 border border-pink-400/30">
+                  <p className="text-pink-400 text-sm font-semibold">✈️ Ese dinero lo usé para un viaje con mi familia</p>
                 </div>
 
                 {/* Author */}
-                <div className="flex items-center gap-4 pt-6 border-t border-[#A8FF00]/20">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#A8FF00] to-[#96E600] flex items-center justify-center text-[#1A1A1A] font-black text-xl shadow-lg shadow-[#A8FF00]/30">
+                <div className="flex items-center gap-4 pt-6 border-t border-pink-400/20">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-400 to-cyan-400 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-pink-400/30">
                     A
                   </div>
                   <div>
@@ -805,29 +805,29 @@ export default function SubirFactura() {
 
                 {/* Badge de ahorro */}
                 <div className="absolute -top-4 -right-4 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl px-4 py-2 shadow-xl shadow-yellow-500/30 rotate-6 group-hover:rotate-12 transition-transform duration-300">
-                  <p className="text-[#1A1A1A] font-black text-sm">240€/año</p>
+                  <p className="text-slate-900 font-black text-sm">240€/año</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Stats bar */}
-          <div className="mt-12 bg-gradient-to-r from-[#2A2A2A] via-[#1A1A1A] to-[#2A2A2A] rounded-2xl p-8 border border-[#A8FF00]/30">
+          <div className="mt-12 bg-gradient-to-r from-slate-800 via-slate-900 to-slate-800 rounded-2xl p-8 border border-pink-400/30">
             <div className="grid md:grid-cols-4 gap-8 text-center">
               <div>
-                <p className="text-4xl font-black text-[#A8FF00] mb-2">30K+</p>
+                <p className="text-4xl font-black text-pink-400 mb-2">30K+</p>
                 <p className="text-gray-400 font-semibold">Clientes satisfechos</p>
               </div>
               <div>
-                <p className="text-4xl font-black text-[#A8FF00] mb-2">250€</p>
+                <p className="text-4xl font-black text-pink-400 mb-2">250€</p>
                 <p className="text-gray-400 font-semibold">Ahorro medio/año</p>
               </div>
               <div>
-                <p className="text-4xl font-black text-[#A8FF00] mb-2">24h</p>
+                <p className="text-4xl font-black text-pink-400 mb-2">24h</p>
                 <p className="text-gray-400 font-semibold">Tiempo de respuesta</p>
               </div>
               <div>
-                <p className="text-4xl font-black text-[#A8FF00] mb-2">98%</p>
+                <p className="text-4xl font-black text-pink-400 mb-2">98%</p>
                 <p className="text-gray-400 font-semibold">Tasa de satisfacción</p>
               </div>
             </div>
@@ -835,22 +835,22 @@ export default function SubirFactura() {
         </div>
 
         {/* Oficinas y Ubicación */}
-        <div className="bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-3xl p-10 mb-16 border border-[#A8FF00]/30">
+        <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-10 mb-16 border border-pink-400/30">
           <div className="text-center mb-10">
             <h3 className="text-4xl font-black text-white mb-4">
-              Visítanos en nuestras <span className="text-[#A8FF00]">oficinas</span>
+              Visítanos en nuestras <span className="text-pink-400">oficinas</span>
             </h3>
             <p className="text-xl text-gray-400">Con presencia física en Valencia y Albacete</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-8">
             {/* Oficina Valencia */}
-            <div className="group bg-[#1A1A1A]/50 rounded-2xl p-8 border-2 border-[#A8FF00]/20 hover:border-[#A8FF00]/60 transition-all duration-300">
+            <div className="group bg-slate-900/50 rounded-2xl p-8 border-2 border-pink-400/20 hover:border-pink-400/60 transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 bg-[#A8FF00]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 bg-pink-400/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                   <span className="text-3xl">📍</span>
                 </div>
-                <h4 className="text-[#A8FF00] font-black text-2xl">Valencia</h4>
+                <h4 className="text-pink-400 font-black text-2xl">Valencia</h4>
               </div>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
@@ -862,13 +862,13 @@ export default function SubirFactura() {
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-gray-500">📞</span>
-                  <a href="tel:+34621508300" className="text-[#A8FF00] font-semibold hover:text-[#96E600] transition-colors">
+                  <a href="tel:+34621508300" className="text-pink-400 font-semibold hover:text-pink-500 transition-colors">
                     +34 621 50 83 00
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-gray-500">📧</span>
-                  <a href="mailto:info@luzia.pro" className="text-[#A8FF00] font-semibold hover:text-[#96E600] transition-colors">
+                  <a href="mailto:info@luzia.pro" className="text-pink-400 font-semibold hover:text-pink-500 transition-colors">
                     info@luzia.pro
                   </a>
                 </div>
@@ -876,12 +876,12 @@ export default function SubirFactura() {
             </div>
 
             {/* Oficina Albacete */}
-            <div className="group bg-[#1A1A1A]/50 rounded-2xl p-8 border-2 border-[#A8FF00]/20 hover:border-[#A8FF00]/60 transition-all duration-300">
+            <div className="group bg-slate-900/50 rounded-2xl p-8 border-2 border-pink-400/20 hover:border-pink-400/60 transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 bg-[#A8FF00]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 bg-pink-400/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                   <span className="text-3xl">📍</span>
                 </div>
-                <h4 className="text-[#A8FF00] font-black text-2xl">Albacete</h4>
+                <h4 className="text-pink-400 font-black text-2xl">Albacete</h4>
               </div>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
@@ -893,13 +893,13 @@ export default function SubirFactura() {
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-gray-500">📞</span>
-                  <a href="tel:+34621508300" className="text-[#A8FF00] font-semibold hover:text-[#96E600] transition-colors">
+                  <a href="tel:+34621508300" className="text-pink-400 font-semibold hover:text-pink-500 transition-colors">
                     +34 621 50 83 00
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-gray-500">📧</span>
-                  <a href="mailto:info@luzia.pro" className="text-[#A8FF00] font-semibold hover:text-[#96E600] transition-colors">
+                  <a href="mailto:info@luzia.pro" className="text-pink-400 font-semibold hover:text-pink-500 transition-colors">
                     info@luzia.pro
                   </a>
                 </div>
@@ -908,17 +908,17 @@ export default function SubirFactura() {
           </div>
 
           {/* Horario */}
-          <div className="bg-[#1A1A1A]/50 rounded-2xl p-8 border border-[#A8FF00]/20 max-w-3xl mx-auto">
+          <div className="bg-slate-900/50 rounded-2xl p-8 border border-pink-400/20 max-w-3xl mx-auto">
             <div className="flex items-center gap-4 mb-6 justify-center">
-              <div className="w-12 h-12 bg-[#A8FF00]/20 rounded-full flex items-center justify-center">
+              <div className="w-12 h-12 bg-pink-400/20 rounded-full flex items-center justify-center">
                 <span className="text-2xl">🕐</span>
               </div>
-              <h4 className="text-[#A8FF00] font-black text-2xl">Horario de Atención</h4>
+              <h4 className="text-pink-400 font-black text-2xl">Horario de Atención</h4>
             </div>
             <div className="grid md:grid-cols-2 gap-6 text-center">
               <div>
                 <p className="text-white font-semibold text-lg mb-2">Lunes a Viernes</p>
-                <p className="text-[#A8FF00] text-2xl font-bold">09:00 - 17:00h</p>
+                <p className="text-pink-400 text-2xl font-bold">09:00 - 17:00h</p>
               </div>
               <div>
                 <p className="text-white font-semibold text-lg mb-2">Fin de Semana</p>
@@ -928,8 +928,8 @@ export default function SubirFactura() {
           </div>
 
           <div className="mt-8 text-center">
-            <div className="inline-flex items-center gap-3 bg-[#A8FF00]/10 rounded-2xl px-6 py-4 border border-[#A8FF00]/30">
-              <Shield className="w-6 h-6 text-[#A8FF00]" />
+            <div className="inline-flex items-center gap-3 bg-pink-400/10 rounded-2xl px-6 py-4 border border-pink-400/30">
+              <Shield className="w-6 h-6 text-pink-400" />
               <p className="text-white font-semibold">Empresa registrada y certificada en España</p>
             </div>
           </div>
@@ -938,32 +938,32 @@ export default function SubirFactura() {
         {/* Oportunidad actual */}
         <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border-2 border-yellow-500/30 rounded-3xl p-8 md:p-12 mb-16">
           <h2 className="text-3xl font-bold text-white mb-4 text-center">
-            El mejor momento es <span className="text-[#A8FF00]">ahora</span>
+            El mejor momento es <span className="text-pink-400">ahora</span>
           </h2>
           <p className="text-xl text-gray-300 text-center max-w-3xl mx-auto mb-6">
             El mercado energético está en constante cambio. Cuando los precios están favorables, es cuando debes actuar.
             El mejor momento para revisar tu contrato no es cuando vuelve a subir.
           </p>
-          <p className="text-2xl font-bold text-[#A8FF00] text-center">
+          <p className="text-2xl font-bold text-pink-400 text-center">
             Es ahora.
           </p>
         </div>
 
         {/* Cierre final */}
-        <div className="relative text-center bg-gradient-to-br from-[#2A2A2A] via-[#1A1A1A] to-[#2A2A2A] rounded-3xl p-12 md:p-16 shadow-2xl border-2 border-[#A8FF00]/40 overflow-hidden">
+        <div className="relative text-center bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 rounded-3xl p-12 md:p-16 shadow-2xl border-2 border-pink-400/40 overflow-hidden">
           {/* Efectos de fondo */}
           <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-10 left-10 w-64 h-64 bg-[#A8FF00]/5 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-10 right-10 w-64 h-64 bg-[#96E600]/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+            <div className="absolute top-10 left-10 w-64 h-64 bg-pink-400/5 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-10 right-10 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
           </div>
 
           <div className="relative z-10">
-            <div className="inline-block p-4 bg-[#A8FF00]/20 rounded-2xl mb-6">
-              <Zap className="w-12 h-12 text-[#A8FF00] animate-pulse" />
+            <div className="inline-block p-4 bg-pink-400/20 rounded-2xl mb-6">
+              <Zap className="w-12 h-12 text-pink-400 animate-pulse" />
             </div>
 
             <h2 className="text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
-              Sube tu factura y <span className="text-[#A8FF00]">sal de dudas</span> hoy mismo
+              Sube tu factura y <span className="text-pink-400">sal de dudas</span> hoy mismo
             </h2>
 
             <p className="text-2xl text-gray-300 mb-10 max-w-2xl mx-auto">
@@ -986,16 +986,16 @@ export default function SubirFactura() {
 
             {/* Garantías */}
             <div className="flex flex-wrap items-center justify-center gap-6 mt-10">
-              <div className="flex items-center gap-2 bg-[#2A2A2A]/80 px-4 py-2 rounded-full border border-[#A8FF00]/30">
-                <CheckCircle className="w-5 h-5 text-[#A8FF00]" />
+              <div className="flex items-center gap-2 bg-slate-800/80 px-4 py-2 rounded-full border border-pink-400/30">
+                <CheckCircle className="w-5 h-5 text-pink-400" />
                 <span className="text-gray-300 font-semibold">Respuesta en 24h</span>
               </div>
-              <div className="flex items-center gap-2 bg-[#2A2A2A]/80 px-4 py-2 rounded-full border border-[#A8FF00]/30">
-                <Shield className="w-5 h-5 text-[#A8FF00]" />
+              <div className="flex items-center gap-2 bg-slate-800/80 px-4 py-2 rounded-full border border-pink-400/30">
+                <Shield className="w-5 h-5 text-pink-400" />
                 <span className="text-gray-300 font-semibold">100% Seguro</span>
               </div>
-              <div className="flex items-center gap-2 bg-[#2A2A2A]/80 px-4 py-2 rounded-full border border-[#A8FF00]/30">
-                <Star className="w-5 h-5 text-[#A8FF00]" />
+              <div className="flex items-center gap-2 bg-slate-800/80 px-4 py-2 rounded-full border border-pink-400/30">
+                <Star className="w-5 h-5 text-pink-400" />
                 <span className="text-gray-300 font-semibold">Totalmente gratis</span>
               </div>
             </div>
@@ -1004,8 +1004,8 @@ export default function SubirFactura() {
 
         {/* Garantía de confianza */}
         <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-4 bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-2xl p-6 shadow-lg border border-[#A8FF00]/30">
-            <Phone className="w-8 h-8 text-[#A8FF00]" />
+          <div className="inline-flex items-center gap-4 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-lg border border-pink-400/30">
+            <Phone className="w-8 h-8 text-pink-400" />
             <div className="text-left">
               <p className="font-semibold text-white">
                 Llevamos años analizando facturas energéticas
@@ -1019,11 +1019,11 @@ export default function SubirFactura() {
       </div>
 
       {/* Footer Legal */}
-      <footer className="bg-gradient-to-br from-[#2A2A2A] via-[#1A1A1A] to-[#2A2A2A] border-t border-[#A8FF00]/20 py-12 relative">
+      <footer className="bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 border-t border-pink-400/20 py-12 relative">
         <div className="container mx-auto px-4 max-w-6xl relative z-10">
 
           {/* Disclaimer de Meta/Facebook */}
-          <div className="bg-[#1A1A1A]/80 rounded-2xl p-8 mb-10 border border-gray-700/50">
+          <div className="bg-slate-900/80 rounded-2xl p-8 mb-10 border border-gray-700/50">
             <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-2">
               <Shield className="w-5 h-5 text-gray-400" />
               Aviso Legal sobre Publicidad
@@ -1048,29 +1048,29 @@ export default function SubirFactura() {
           {/* Enlaces Legales */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
             <div>
-              <h4 className="text-[#A8FF00] font-bold mb-4 text-lg">Información Legal</h4>
+              <h4 className="text-pink-400 font-bold mb-4 text-lg">Información Legal</h4>
               <div className="space-y-2">
                 <a
                   href="/"
-                  className="block text-gray-400 hover:text-[#A8FF00] transition-colors text-sm"
+                  className="block text-gray-400 hover:text-pink-400 transition-colors text-sm"
                 >
                   Política de Privacidad
                 </a>
                 <a
                   href="/"
-                  className="block text-gray-400 hover:text-[#A8FF00] transition-colors text-sm"
+                  className="block text-gray-400 hover:text-pink-400 transition-colors text-sm"
                 >
                   Aviso Legal
                 </a>
                 <a
                   href="/"
-                  className="block text-gray-400 hover:text-[#A8FF00] transition-colors text-sm"
+                  className="block text-gray-400 hover:text-pink-400 transition-colors text-sm"
                 >
                   Términos y Condiciones
                 </a>
                 <a
                   href="/"
-                  className="block text-gray-400 hover:text-[#A8FF00] transition-colors text-sm"
+                  className="block text-gray-400 hover:text-pink-400 transition-colors text-sm"
                 >
                   Política de Cookies
                 </a>
@@ -1078,7 +1078,7 @@ export default function SubirFactura() {
             </div>
 
             <div>
-              <h4 className="text-[#A8FF00] font-bold mb-4 text-lg">Contacto</h4>
+              <h4 className="text-pink-400 font-bold mb-4 text-lg">Contacto</h4>
               <div className="space-y-2 text-gray-400 text-sm">
                 <p>Email: info@luzia.pro</p>
                 <p>Teléfono: +34 621 50 83 00</p>
@@ -1086,7 +1086,7 @@ export default function SubirFactura() {
             </div>
 
             <div>
-              <h4 className="text-[#A8FF00] font-bold mb-4 text-lg">Oficinas</h4>
+              <h4 className="text-pink-400 font-bold mb-4 text-lg">Oficinas</h4>
               <div className="space-y-3 text-gray-400 text-sm">
                 <div>
                   <p className="font-semibold text-white">Valencia</p>
@@ -1102,7 +1102,7 @@ export default function SubirFactura() {
             </div>
 
             <div>
-              <h4 className="text-[#A8FF00] font-bold mb-4 text-lg">Horario</h4>
+              <h4 className="text-pink-400 font-bold mb-4 text-lg">Horario</h4>
               <div className="space-y-2 text-gray-400 text-sm">
                 <p>Lunes a Viernes</p>
                 <p className="text-white font-semibold">09:00 - 17:00h</p>
@@ -1118,7 +1118,7 @@ export default function SubirFactura() {
                 <p className="text-xs text-gray-500">CIF: B42709378 | Energía 100% renovable certificada</p>
               </div>
               <div className="flex items-center gap-3">
-                <Shield className="w-5 h-5 text-[#A8FF00]" />
+                <Shield className="w-5 h-5 text-pink-400" />
                 <span className="text-gray-400 text-sm">Sitio web seguro y protegido</span>
               </div>
             </div>
@@ -1128,34 +1128,34 @@ export default function SubirFactura() {
       </footer>
 
       {/* Contador fijo minimalista en el footer */}
-      <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-[#1A1A1A]/95 via-[#2A2A2A]/95 to-[#1A1A1A]/95 backdrop-blur-lg border-t border-[#A8FF00]/30 py-3 px-4 z-50 shadow-lg shadow-[#A8FF00]/20">
+      <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-slate-900/95 via-blue-950/95 to-slate-900/95 backdrop-blur-lg border-t border-pink-400/30 py-3 px-4 z-50 shadow-lg shadow-pink-400/20">
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
             {/* Texto */}
             <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4 text-[#A8FF00]" />
+              <Clock className="w-4 h-4 text-pink-400" />
               <span className="text-white text-sm font-semibold">Oferta termina en:</span>
             </div>
 
             {/* Contador */}
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-1">
-                <span className="text-[#A8FF00] text-2xl font-black tabular-nums">{String(timeLeft.days).padStart(2, '0')}</span>
+                <span className="text-pink-400 text-2xl font-black tabular-nums">{String(timeLeft.days).padStart(2, '0')}</span>
                 <span className="text-gray-400 text-xs font-medium">d</span>
               </div>
               <span className="text-gray-600">:</span>
               <div className="flex items-center gap-1">
-                <span className="text-[#A8FF00] text-2xl font-black tabular-nums">{String(timeLeft.hours).padStart(2, '0')}</span>
+                <span className="text-pink-400 text-2xl font-black tabular-nums">{String(timeLeft.hours).padStart(2, '0')}</span>
                 <span className="text-gray-400 text-xs font-medium">h</span>
               </div>
               <span className="text-gray-600">:</span>
               <div className="flex items-center gap-1">
-                <span className="text-[#A8FF00] text-2xl font-black tabular-nums">{String(timeLeft.minutes).padStart(2, '0')}</span>
+                <span className="text-pink-400 text-2xl font-black tabular-nums">{String(timeLeft.minutes).padStart(2, '0')}</span>
                 <span className="text-gray-400 text-xs font-medium">m</span>
               </div>
               <span className="text-gray-600">:</span>
               <div className="flex items-center gap-1">
-                <span className="text-[#A8FF00] text-2xl font-black tabular-nums">{String(timeLeft.seconds).padStart(2, '0')}</span>
+                <span className="text-pink-400 text-2xl font-black tabular-nums">{String(timeLeft.seconds).padStart(2, '0')}</span>
                 <span className="text-gray-400 text-xs font-medium">s</span>
               </div>
             </div>
@@ -1163,7 +1163,7 @@ export default function SubirFactura() {
             {/* CTA */}
             <button
               onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-              className="bg-[#A8FF00] hover:bg-[#96E600] text-[#1A1A1A] px-5 py-2 rounded-full text-sm font-bold transition-all duration-300 hover:scale-105 whitespace-nowrap"
+              className="bg-pink-400 hover:bg-pink-500 text-white px-5 py-2 rounded-full text-sm font-bold transition-all duration-300 hover:scale-105 whitespace-nowrap"
             >
               Chatear ahora
             </button>
