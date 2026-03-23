@@ -35,9 +35,12 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onBack }) => {
           <section>
             <h2 className="text-2xl font-black text-gray-900 mb-4">1. Información del Responsable</h2>
             <div className="bg-purple-50 rounded-2xl p-6 space-y-3">
+              <p className="text-gray-700 leading-relaxed mb-4">
+                <strong>LUZIA</strong> es una marca comercial gestionada por <strong>Wasabi Trader SL</strong>, empresa debidamente registrada en España.
+              </p>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-purple-600" />
-                <span className="font-semibold">Dirección: Calle Andarella 2 pt 9, España</span>
+                <span className="font-semibold">Dirección: Polígono Campollano - Calle A, 7. 02006 Albacete, España</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-purple-600" />
@@ -45,7 +48,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onBack }) => {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-purple-600" />
-                <span className="font-semibold">Teléfono: 621 50 83 00</span>
+                <span className="font-semibold">Teléfono: +34 621 50 83 00</span>
               </div>
             </div>
           </section>
