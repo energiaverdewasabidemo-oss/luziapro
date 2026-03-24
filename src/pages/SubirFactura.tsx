@@ -69,9 +69,26 @@ export default function SubirFactura({ onPageChange }: SubirFacturaProps) {
   }, []);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setFile(e.target.files[0]);
+    const selected = e.target.files?.[0];
+    if (!selected) return;
+
+    const allowedTypes = ['application/pdf', 'image/jpeg', 'image/jpg', 'image/png'];
+    const maxSizeBytes = 5 * 1024 * 1024;
+
+    if (!allowedTypes.includes(selected.type)) {
+      setError('Formato no permitido. Sube un archivo PDF, JPG o PNG.');
+      e.target.value = '';
+      return;
     }
+
+    if (selected.size > maxSizeBytes) {
+      setError('El archivo es demasiado grande. El tamaño máximo es 5 MB.');
+      e.target.value = '';
+      return;
+    }
+
+    setError(null);
+    setFile(selected);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -213,13 +230,14 @@ export default function SubirFactura({ onPageChange }: SubirFacturaProps) {
             Descúbrelo en menos de 24 horas. Sube tu factura y recibe un estudio gratuito sin compromiso.
           </p>
 
-          <div className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-pink-400/20 to-pink-500/20 border-2 border-pink-400 rounded-xl md:rounded-2xl px-4 md:px-8 py-3 md:py-4 mb-6 md:mb-10">
+          <div className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-pink-400/20 to-pink-500/20 border-2 border-pink-400 rounded-xl md:rounded-2xl px-4 md:px-8 py-3 md:py-4 mb-3 md:mb-4">
             <TrendingDown className="w-5 h-5 md:w-8 md:h-8 text-pink-400 flex-shrink-0" />
             <div className="text-left">
               <p className="text-white font-black text-lg md:text-2xl">Ahorra hasta 450€/año</p>
               <p className="text-pink-400 text-xs md:text-sm font-semibold">Solo con subir tu factura ahora</p>
             </div>
           </div>
+          <p className="text-gray-500 text-xs mb-6 md:mb-10">* Resultados basados en casos reales. El ahorro varía según consumo y tarifa actual.</p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
             <button
@@ -323,7 +341,7 @@ export default function SubirFactura({ onPageChange }: SubirFacturaProps) {
             </div>
             <div className="bg-slate-900/50 rounded-xl md:rounded-2xl p-3 md:p-6 border border-pink-400/30">
               <p className="text-pink-400 font-black text-2xl md:text-4xl mb-1 md:mb-2">287€</p>
-              <p className="text-gray-300 font-semibold text-xs md:text-base">Ahorro/año</p>
+              <p className="text-gray-300 font-semibold text-xs md:text-base">Ahorro medio/año*</p>
             </div>
             <div className="bg-slate-900/50 rounded-xl md:rounded-2xl p-3 md:p-6 border border-pink-400/30">
               <p className="text-pink-400 font-black text-2xl md:text-4xl mb-1 md:mb-2">97%</p>
@@ -824,7 +842,7 @@ export default function SubirFactura({ onPageChange }: SubirFacturaProps) {
               </div>
               <div>
                 <p className="text-2xl md:text-4xl font-black text-pink-400 mb-1 md:mb-2">287€</p>
-                <p className="text-gray-400 font-semibold text-xs md:text-base">Ahorro medio/año</p>
+                <p className="text-gray-400 font-semibold text-xs md:text-base">Ahorro medio/año*</p>
               </div>
               <div>
                 <p className="text-2xl md:text-4xl font-black text-pink-400 mb-1 md:mb-2">24h</p>
@@ -835,6 +853,9 @@ export default function SubirFactura({ onPageChange }: SubirFacturaProps) {
                 <p className="text-gray-400 font-semibold text-xs md:text-base">Tasa de satisfacción</p>
               </div>
             </div>
+            <p className="text-gray-500 text-xs text-center mt-4 border-t border-slate-700 pt-4">
+              * Ahorro medio basado en casos reales gestionados por LUZIA. Los resultados varían según el consumo, la tarifa actual y la zona geográfica de cada cliente.
+            </p>
           </div>
         </div>
 

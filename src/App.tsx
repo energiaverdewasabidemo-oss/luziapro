@@ -119,7 +119,7 @@ function App() {
       <FinalCTASection onGoToSubirFactura={handleGoToSubirFactura} />
       <Footer onPageChange={handlePageChange} />
       <FloatingChatButton onClick={handleChatOpen} />
-      <ChatBot isOpen={isChatOpen} onClose={handleChatClose} initialMessage={initialMessage} />
+      <ChatBot isOpen={isChatOpen} onClose={handleChatClose} initialMessage={initialMessage} onNavigateToSubirFactura={handleGoToSubirFactura} />
       <CookiePopup onPageChange={handlePageChange} />
     </div>
   );

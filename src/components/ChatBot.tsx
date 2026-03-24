@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { X, Send, Zap, User, Bot, Sparkles, Upload, FileText } from 'lucide-react';
+import { X, Send, Zap, User, Bot, Sparkles, Upload } from 'lucide-react';
 
 interface Message {
   id: number;
@@ -7,15 +7,17 @@ interface Message {
   isUser: boolean;
   timestamp: Date;
   hasWhatsAppButton?: boolean;
+  hasLandingButton?: boolean;
 }
 
 interface ChatBotProps {
   isOpen: boolean;
   onClose: () => void;
   initialMessage?: string;
+  onNavigateToSubirFactura?: () => void;
 }
 
-const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose, initialMessage = '' }) => {
+const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose, initialMessage = '', onNavigateToSubirFactura }) => {
   const getInitialMessages = (): Message[] => [
     {
       id: 1,
@@ -34,16 +36,14 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose, initialMessage = '' 
   const [messages, setMessages] = useState<Message[]>(getInitialMessages());
   const [inputText, setInputText] = useState('');
   const [isTyping, setIsTyping] = useState(false);
-  const [uploadedFile, setUploadedFile] = useState<File | null>(null);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const quickReplies = [
     "📄 Subir mi factura",
     "¿Cuánto puedo ahorrar?",
     "¿Cómo funciona?",
-    "💬 Hablar con asistente"
+    "💬 Hablar con un asesor"
   ];
 
   // Reset messages when chat is opened
@@ -51,7 +51,6 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose, initialMessage = '' 
     if (isOpen) {
       setMessages(getInitialMessages());
       setInputText('');
-      setUploadedFile(null);
     }
   }, [isOpen]);
 
@@ -72,112 +71,56 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose, initialMessage = '' 
   };
   
   const triggerFileUpload = () => {
-    fileInputRef.current?.click();
+    navigateToLanding();
   };
-  
-  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      setUploadedFile(file);
-      
-      // Auto-send message about file upload
-      const fileMessage: Message = {
-        id: messages.length + 1,
-        text: `📄 He subido mi factura: ${file.name}`,
-        isUser: true,
-        timestamp: new Date()
+
+  const navigateToLanding = () => {
+    setIsTyping(true);
+    setTimeout(() => {
+      const landingMessage: Message = {
+        id: messages.length + 10,
+        text: "Para analizar tu factura y encontrar el mejor precio, usa nuestro formulario. Es rápido, gratis y sin compromiso.",
+        isUser: false,
+        timestamp: new Date(),
+        hasLandingButton: true
       };
-      
-      setMessages(prev => [...prev, fileMessage]);
-      setIsTyping(true);
-      
-      // Start analysis simulation
-      setTimeout(() => {
-        const analysisMessage: Message = {
-          id: messages.length + 2,
-          text: "¡Perfecto! Analizando tu consumo y comparando con +1,000 tarifas... 🔍",
-          isUser: false,
-          timestamp: new Date()
-        };
-        setMessages(prev => [...prev, analysisMessage]);
-        
-        // Continue with typing indicator
-        setTimeout(() => {
-          const resultsMessage: Message = {
-            id: messages.length + 3,
-            text: "📊 ¡Análisis completado! He encontrado tarifas que pueden ahorrarte hasta €450/año",
-            isUser: false,
-            timestamp: new Date()
-          };
-          setMessages(prev => [...prev, resultsMessage]);
-          
-          // Show WhatsApp button after 2 more seconds
-          setTimeout(() => {
-            const whatsappMessage: Message = {
-              id: messages.length + 4,
-              text: "Nuestra asistente especializada te ayudará a completar el cambio y gestionar todo el papeleo. ¡Es gratis y sin compromiso!",
-              isUser: false,
-              timestamp: new Date(),
-              hasWhatsAppButton: true
-            };
-            setMessages(prev => [...prev, whatsappMessage]);
-            setIsTyping(false);
-          }, 2000);
-        }, 1500);
-      }, 1000);
-    }
+      setMessages(prev => [...prev, landingMessage]);
+      setIsTyping(false);
+    }, 800);
   };
+
   
   const getBotResponse = (userMessage: string): string => {
     const message = userMessage.toLowerCase();
-    
-    // Si ya subieron archivo
-    if (uploadedFile) {
-      return "Ya he recibido tu factura y está siendo analizada. Nuestra asistente te contactará por WhatsApp para ayudarte con el cambio de tarifa. ¿Necesitas ayuda con algo más?";
+
+    if (message.includes('tarifa') || message.includes('comparar') || message.includes('subir') || message.includes('factura') || message.includes('📄') || message.includes('ahorrar') || message.includes('ahorro')) {
+      return "Para conseguirte el máximo ahorro necesito ver tu factura actual. Te llevo directamente al formulario donde puedes subirla en menos de 2 minutos.";
     }
-    
-    // Respuestas específicas para subir factura
-    if (message.includes('subir') && message.includes('factura')) {
-      return "¡Perfecto! Puedes subir tu factura directamente aquí usando el botón 📄 que está junto al campo de mensaje. También puedo conectarte con nuestra asistente por WhatsApp si prefieres. ¿Cómo quieres proceder?";
-    }
-    
-    if (message.includes('factura') || message.includes('📄')) {
-      return "¡Genial! Subir tu factura es la mejor forma de encontrar tu tarifa ideal. Te conectaré con nuestra asistente que analizará tu factura y te conseguirá la mejor oferta. ¿Continuamos por WhatsApp o prefieres que te llamemos?";
-    }
-    
-    // Respuestas para comparar tarifas
-    if (message.includes('tarifa') || message.includes('comparar')) {
-      return "¡Perfecto! Para comparar tarifas y encontrar la más barata, lo mejor es que subas tu factura actual. Así puedo analizar tu consumo real y conseguirte el máximo ahorro. ¿Tienes tu factura a mano para subirla?";
-    }
-    
-    if (message.includes('ahorrar') || message.includes('ahorro')) {
-      return "¡Excelente! Nuestros usuarios ahorran una media de €287 al año. Para calcular tu ahorro exacto, necesito analizar tu factura actual. ¿Puedes subirla para que te consiga la mejor oferta personalizada?";
-    }
-    
+
     if (message.includes('funciona') || message.includes('cómo')) {
-      return "¡Es súper fácil! 1️⃣ Subes tu factura 2️⃣ Analizo +1000 tarifas 3️⃣ Te muestro las mejores opciones 4️⃣ Te ayudo a cambiar y ahorrar. ¿Empezamos subiendo tu factura?";
+      return "Es muy fácil: subes tu factura en nuestro formulario, nuestro equipo la analiza y si encontramos una tarifa mejor te llamamos. Sin compromiso y totalmente gratis.";
     }
-    
+
     if (message.includes('asistente') || message.includes('hablar') || message.includes('💬')) {
-      return "¡Por supuesto! Te conectaré directamente con nuestra asistente especializada en energía. Ella te ayudará personalmente a encontrar la mejor tarifa y gestionar el cambio. ¿Prefieres WhatsApp o que te llame?";
+      return "Nuestro equipo de asesores te atenderá en cuanto subas tu factura. Empieza por el formulario y te contactamos en menos de 24 horas.";
     }
-    
+
     if (message.includes('precio') || message.includes('coste') || message.includes('gratis')) {
-      return "¡LUZIA es 100% GRATIS! No pagas nada. Solo ganamos si tú ahorras. Para empezar, sube tu factura y te conseguiré la mejor oferta sin coste alguno. ¿Empezamos?";
+      return "LUZIA es 100% gratuito. Solo ganamos si tú ahorras. Sube tu factura y te buscamos la mejor oferta sin coste alguno.";
     }
-    
+
     if (message.includes('tiempo') || message.includes('cuánto tarda')) {
-      return "El cambio se produce entre los días 1 al 5 del mes y tu luz nunca se corta. Nosotros gestionamos todo el papeleo. Para empezar ya mismo, ¿puedes subir tu factura?";
+      return "El cambio se realiza entre los días 1 y 5 del mes y tu suministro nunca se interrumpe. Nosotros gestionamos todo el papeleo. Empieza subiendo tu factura.";
     }
-    
+
     if (message.includes('whatsapp') || message.includes('llamar') || message.includes('teléfono')) {
       setTimeout(() => {
         redirectToWhatsApp('comparar tarifas de luz y gas desde luzia.pro');
       }, 2000);
-      return "¡Perfecto! Te estoy redirigiendo a WhatsApp donde nuestra asistente te ayudará personalmente. También puedes llamarnos al 621 50 83 00. ¡En 2 segundos te abro WhatsApp!";
+      return "¡Por supuesto! Te estoy redirigiendo a WhatsApp ahora mismo. También puedes llamarnos al 621 50 83 00.";
     }
-    
-    return "Para ayudarte mejor, lo ideal es que subas tu factura de luz y gas. Así puedo analizar tu caso específico y conseguirte el máximo ahorro. ¿Tienes tu factura para subirla? Si prefieres, también puedo conectarte con nuestra asistente por WhatsApp.";
+
+    return "Para ayudarte con tu factura de luz o gas, lo más rápido es que la subas en nuestro formulario. Te analizamos el caso y te llamamos solo si podemos mejorar tu tarifa.";
   };
 
   const handleSendMessage = async (messageText?: string) => {
@@ -207,21 +150,17 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose, initialMessage = '' 
       setMessages(prev => [...prev, botResponse]);
       setIsTyping(false);
       
-      // Check if user wants to upload bill or contact assistant
       const message = textToSend.toLowerCase();
-      if (message.includes('subir') || message.includes('factura') || message.includes('📄')) {
+      if (message.includes('subir') || message.includes('factura') || message.includes('📄') || message.includes('ahorrar') || message.includes('ahorro') || message.includes('tarifa') || message.includes('comparar') || message.includes('asistente') || message.includes('hablar') || message.includes('💬')) {
         setTimeout(() => {
-          const followUpMessage: Message = {
+          const landingFollowUp: Message = {
             id: messages.length + 3,
-            text: "Te conectaré con nuestra asistente especializada que te ayudará a subir tu factura de forma segura y encontrar la mejor tarifa para ti. 📱",
+            text: "Accede ahora a nuestro formulario gratuito y empieza a ahorrar hoy mismo.",
             isUser: false,
-            timestamp: new Date()
+            timestamp: new Date(),
+            hasLandingButton: true
           };
-          setMessages(prev => [...prev, followUpMessage]);
-          
-          setTimeout(() => {
-            redirectToWhatsApp('subir mi factura de luz y gas desde luzia.pro');
-          }, 2000);
+          setMessages(prev => [...prev, landingFollowUp]);
         }, 2000);
       }
     }, 1500);
@@ -311,6 +250,22 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose, initialMessage = '' 
                       </button>
                     </div>
                   )}
+
+                  {/* Landing Button */}
+                  {message.hasLandingButton && (
+                    <div className="mt-3 md:mt-4">
+                      <button
+                        onClick={() => {
+                          onClose();
+                          onNavigateToSubirFactura?.();
+                        }}
+                        className="bg-gradient-to-r from-pink-500 to-cyan-500 hover:from-pink-600 hover:to-cyan-600 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg md:rounded-xl font-bold text-xs md:text-sm transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center space-x-2 w-full justify-center"
+                      >
+                        <span>📄</span>
+                        <span>SUBIR MI FACTURA AHORA</span>
+                      </button>
+                    </div>
+                  )}
                   
                   <span className={`text-xs mt-1 block ${
                     message.isUser ? 'text-blue-200' : 'text-gray-500'
@@ -366,20 +321,11 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose, initialMessage = '' 
 
         {/* Input */}
         <div className="p-3 md:p-4 bg-white border-t border-gray-200 flex-shrink-0 rounded-none md:rounded-b-2xl">
-          {/* Hidden file input */}
-          <input
-            ref={fileInputRef}
-            type="file"
-            accept=".pdf,.jpg,.jpeg,.png,.gif"
-            onChange={handleFileUpload}
-            className="hidden"
-          />
-          
-          <div className="flex space-x-2">
-            {/* File upload button */}
+            <div className="flex space-x-2">
+            {/* File upload button - leads to landing */}
             <button
               onClick={triggerFileUpload}
-              className="bg-gradient-to-r from-purple-600 to-cyan-600 text-white p-2 rounded-lg hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 flex items-center justify-center group flex-shrink-0"
+              className="bg-gradient-to-r from-pink-500 to-cyan-500 text-white p-2 rounded-lg hover:from-pink-600 hover:to-cyan-600 transition-all duration-300 flex items-center justify-center group flex-shrink-0"
               title="Subir factura"
             >
               <Upload className="h-4 w-4 md:h-5 md:w-5 group-hover:scale-110 transition-transform" />
@@ -390,7 +336,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose, initialMessage = '' 
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder={uploadedFile ? "Factura subida ✓ Escribe tu mensaje..." : "Escribe tu mensaje o sube tu factura..."}
+              placeholder="Escribe tu mensaje o sube tu factura..."
               className="flex-1 border border-gray-300 rounded-lg px-3 md:px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-sm"
               disabled={isTyping}
             />
@@ -403,14 +349,6 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose, initialMessage = '' 
             </button>
           </div>
           
-          {/* File upload status */}
-          {uploadedFile && (
-            <div className="mt-2 flex items-center space-x-2 text-xs md:text-sm text-green-600 bg-green-50 px-2 md:px-3 py-1 md:py-2 rounded-lg">
-              <FileText className="h-3 w-3 md:h-4 md:w-4" />
-              <span className="truncate">Factura subida: {uploadedFile.name}</span>
-              <span className="text-green-500">✓</span>
-            </div>
-          )}
         </div>
       </div>
 
