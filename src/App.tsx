@@ -21,6 +21,7 @@ import FloatingChatButton from './components/FloatingChatButton';
 import ChatBot from './components/ChatBot';
 import CookiePopup from './components/CookiePopup';
 import { trackEvent } from './lib/metaPixel';
+
 const PATH_TO_PAGE: Record<string, string> = {
   '/privacidad': 'privacy',
   '/aviso-legal': 'legal',
@@ -42,6 +43,10 @@ function App() {
     const page = PATH_TO_PAGE[location.pathname] ?? 'home';
     setCurrentPage(page);
   }, [location.pathname]);
+
+  useEffect(() => {
+    trackEvent('PageView');
+  }, []);
 
   const handleChatOpen = useCallback((message = '') => {
     setInitialMessage(message);
