@@ -20,7 +20,7 @@ import Footer from './components/Footer';
 import FloatingChatButton from './components/FloatingChatButton';
 import ChatBot from './components/ChatBot';
 import CookiePopup from './components/CookiePopup';
-
+import { trackEvent } from './lib/metaPixel';
 const PATH_TO_PAGE: Record<string, string> = {
   '/privacidad': 'privacy',
   '/aviso-legal': 'legal',
