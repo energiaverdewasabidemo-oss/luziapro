@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Upload, CheckCircle, FileText, Phone, TrendingDown, ArrowRight, Zap, Shield, Star, Clock } from 'lucide-react';
 import { supabase } from '../lib/supabase';
-
+import { trackEvent } from '../lib/metaPixel';
 interface SubirFacturaProps {
   onPageChange?: (page: string) => void;
 }
