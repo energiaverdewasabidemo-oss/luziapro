@@ -27,12 +27,11 @@ const TestimonialsSection = () => {
   ];
 
   const partners = [
-    { name: "Iberdrola", logo: "IB" },
-    { name: "Endesa", logo: "EN" },
-    { name: "Naturgy", logo: "NT" },
-    { name: "Repsol", logo: "RP" },
-    { name: "TotalEnergies", logo: "TE" },
-    { name: "Octopus Energy", logo: "OE" }
+    { name: "Iberdrola", img: "/logo-iberdolaa-1100x612.png" },
+    { name: "Endesa", img: "/Captura-de-pantalla-2016-01-28-a-las-19.00.55.jpg" },
+    { name: "Naturgy", img: "/naturgy_pantone_principal_positiva.jpg" },
+    { name: "Repsol", img: "/Repsol_2025_(vertical).svg.png" },
+    { name: "Wasabi Energía Verde", img: "/wasabi-logo-main.png" },
   ];
 
   return (
@@ -94,15 +93,21 @@ const TestimonialsSection = () => {
 
         {/* Partners */}
         <div className="text-center">
-          <h3 className="text-2xl lg:text-3xl font-black text-white mb-8 lg:mb-10">
+          <h3 className="text-2xl lg:text-3xl font-black text-white mb-8 lg:mb-12">
             Colaboramos con las <span className="text-pink-400">principales energéticas</span> de España
           </h3>
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-6 lg:gap-10">
+          <div className="flex flex-wrap justify-center items-center gap-6 lg:gap-10">
             {partners.map((partner, index) => (
-              <div key={index} className="flex items-center justify-center transform hover:scale-110 transition-all duration-300">
-                <div className="w-16 h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl lg:rounded-2xl shadow-lg lg:shadow-xl flex items-center justify-center font-black text-gray-300 hover:shadow-xl lg:hover:shadow-2xl hover:shadow-pink-500/25 transition-all duration-300 border-2 border-pink-400/20 text-sm lg:text-base hover:text-pink-400 hover:border-pink-400/50">
-                  {partner.logo}
-                </div>
+              <div
+                key={index}
+                className="flex items-center justify-center bg-white rounded-2xl shadow-lg hover:shadow-xl hover:shadow-pink-500/20 border-2 border-transparent hover:border-pink-400/30 transition-all duration-300 hover:scale-105 p-4"
+                style={{ width: '160px', height: '90px' }}
+              >
+                <img
+                  src={partner.img}
+                  alt={partner.name}
+                  className="max-w-full max-h-full object-contain"
+                />
               </div>
             ))}
           </div>
