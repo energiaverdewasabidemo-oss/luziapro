@@ -95,6 +95,7 @@ export default function SubirFactura({ onPageChange }: SubirFacturaProps) {
     e.preventDefault();
     setIsSubmitting(true);
     setError(null);
+    trackEvent('Lead');
 
     try {
       let facturaUrl: string | undefined;
