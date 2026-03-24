@@ -53,7 +53,7 @@ const ContactPage: React.FC<ContactPageProps> = ({ onBack }) => {
   const faqs = [
     {
       question: "¿Cuánto tiempo tarda el proceso de cambio?",
-      answer: "El cambio de compañía energética tarda entre 15-30 días. Durante este tiempo, tu suministro nunca se interrumpe y nosotros gestionamos todo el papeleo."
+      answer: "El cambio de compañía energética se produce entre los días 1 al 5 del mes. Durante este tiempo, tu suministro nunca se interrumpe y nosotros gestionamos todo el papeleo."
     },
     {
       question: "¿Hay algún coste por usar LUZIA?",

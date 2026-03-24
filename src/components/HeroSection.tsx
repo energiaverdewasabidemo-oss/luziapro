@@ -97,7 +97,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onChatOpen, onGoToSubirFactur
                 <div className="text-xs lg:text-sm text-gray-400 font-semibold">Usuarios Activos</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-black bg-gradient-to-r from-pink-300 to-cyan-300 bg-clip-text text-transparent">€487</div>
+                <div className="text-2xl lg:text-3xl font-black bg-gradient-to-r from-pink-300 to-cyan-300 bg-clip-text text-transparent">€287</div>
                 <div className="text-xs lg:text-sm text-gray-400 font-semibold">Ahorro Medio Anual</div>
               </div>
               <div className="text-center">

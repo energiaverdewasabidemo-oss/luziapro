@@ -151,7 +151,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose, initialMessage = '' 
     }
     
     if (message.includes('ahorrar') || message.includes('ahorro')) {
-      return "¡Excelente! Nuestros usuarios ahorran una media de €487 al año. Para calcular tu ahorro exacto, necesito analizar tu factura actual. ¿Puedes subirla para que te consiga la mejor oferta personalizada?";
+      return "¡Excelente! Nuestros usuarios ahorran una media de €287 al año. Para calcular tu ahorro exacto, necesito analizar tu factura actual. ¿Puedes subirla para que te consiga la mejor oferta personalizada?";
     }
     
     if (message.includes('funciona') || message.includes('cómo')) {
@@ -167,7 +167,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose, initialMessage = '' 
     }
     
     if (message.includes('tiempo') || message.includes('cuánto tarda')) {
-      return "El cambio tarda 15-30 días y tu luz nunca se corta. Nosotros gestionamos todo el papeleo. Para empezar ya mismo, ¿puedes subir tu factura?";
+      return "El cambio se produce entre los días 1 al 5 del mes y tu luz nunca se corta. Nosotros gestionamos todo el papeleo. Para empezar ya mismo, ¿puedes subir tu factura?";
     }
     
     if (message.includes('whatsapp') || message.includes('llamar') || message.includes('teléfono')) {

@@ -13,7 +13,7 @@ const ComparatorSection: React.FC<ComparatorSectionProps> = ({ onGoToSubirFactur
     {
       company: "Compañía Verde",
       type: "Dual",
-      price: "0,145 €/kWh",
+      price: "0,129 €/kWh",
       gasPrice: "0,052 €/kWh",
       monthlySavings: 32,
       features: ["Energía 100% renovable", "Sin permanencia", "Atención 24/7"],
@@ -22,16 +22,16 @@ const ComparatorSection: React.FC<ComparatorSectionProps> = ({ onGoToSubirFactur
     {
       company: "Energía Plus",
       type: "Solo Luz",
-      price: "0,138 €/kWh",
+      price: "0,129 €/kWh",
       gasPrice: "-",
       monthlySavings: 28,
       features: ["Precio fijo 12 meses", "Descuento online", "App móvil"],
       recommended: false
     },
     {
-      company: "Gas Natural Pro",
+      company: "Iberdrola",
       type: "Dual",
-      price: "0,152 €/kWh",
+      price: "0,138 €/kWh",
       gasPrice: "0,048 €/kWh",
       monthlySavings: 24,
       features: ["Tarifa indexada", "Sin coste de alta", "Programa puntos"],

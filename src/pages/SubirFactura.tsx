@@ -322,7 +322,7 @@ export default function SubirFactura({ onPageChange }: SubirFacturaProps) {
               <p className="text-gray-300 font-semibold text-xs md:text-base">Clientes</p>
             </div>
             <div className="bg-slate-900/50 rounded-xl md:rounded-2xl p-3 md:p-6 border border-pink-400/30">
-              <p className="text-pink-400 font-black text-2xl md:text-4xl mb-1 md:mb-2">250€</p>
+              <p className="text-pink-400 font-black text-2xl md:text-4xl mb-1 md:mb-2">287€</p>
               <p className="text-gray-300 font-semibold text-xs md:text-base">Ahorro/año</p>
             </div>
             <div className="bg-slate-900/50 rounded-xl md:rounded-2xl p-3 md:p-6 border border-pink-400/30">
@@ -653,7 +653,7 @@ export default function SubirFactura({ onPageChange }: SubirFacturaProps) {
               ))}
             </div>
             <p className="text-gray-400 text-center mt-6">
-              Y más de <span className="text-pink-400 font-bold">15 profesionales certificados</span> listos para ayudarte
+              Y más de <span className="text-pink-400 font-bold">+100 asesores certificados</span> listos para ayudarte
             </p>
           </div>
         </div>
@@ -694,7 +694,7 @@ export default function SubirFactura({ onPageChange }: SubirFacturaProps) {
 
                 {/* Testimonial text */}
                 <p className="text-gray-300 text-lg leading-relaxed mb-4 flex-grow">
-                  Solo con una llamada en 24 horas, ya pude ahorrar <span className="text-pink-400 font-bold">250€ al año</span>. Increíble lo fácil que fue.
+                  Solo con una llamada en 24 horas, ya pude ahorrar <span className="text-pink-400 font-bold">287€ al año</span>. Increíble lo fácil que fue.
                 </p>
 
                 <div className="bg-pink-400/10 rounded-xl p-3 mb-6 border border-pink-400/30">
@@ -714,7 +714,7 @@ export default function SubirFactura({ onPageChange }: SubirFacturaProps) {
 
                 {/* Badge de ahorro */}
                 <div className="absolute -top-4 -right-4 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl px-4 py-2 shadow-xl shadow-yellow-500/30 rotate-6 group-hover:rotate-12 transition-transform duration-300">
-                  <p className="text-slate-900 font-black text-sm">250€/año</p>
+                  <p className="text-slate-900 font-black text-sm">287€/año</p>
                 </div>
               </div>
             </div>
@@ -823,7 +823,7 @@ export default function SubirFactura({ onPageChange }: SubirFacturaProps) {
                 <p className="text-gray-400 font-semibold text-xs md:text-base">Clientes satisfechos</p>
               </div>
               <div>
-                <p className="text-2xl md:text-4xl font-black text-pink-400 mb-1 md:mb-2">250€</p>
+                <p className="text-2xl md:text-4xl font-black text-pink-400 mb-1 md:mb-2">287€</p>
                 <p className="text-gray-400 font-semibold text-xs md:text-base">Ahorro medio/año</p>
               </div>
               <div>

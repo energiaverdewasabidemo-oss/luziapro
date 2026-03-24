@@ -97,7 +97,7 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({ onGoToSubirFactur
                 <p className="text-gray-300 font-semibold text-sm lg:text-base">Comparación Completa</p>
               </div>
               <div className="text-center">
-                <p className="text-lg lg:text-2xl font-black text-cyan-400 mb-2">💰 €487/AÑO</p>
+                <p className="text-lg lg:text-2xl font-black text-cyan-400 mb-2">💰 €287/AÑO</p>
                 <p className="text-gray-300 font-semibold text-sm lg:text-base">Ahorro Medio Garantizado</p>
               </div>
               <div className="text-center">

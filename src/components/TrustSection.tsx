@@ -37,7 +37,7 @@ const TrustSection = () => {
     },
     {
       question: "¿Cuánto tiempo tarda el cambio de compañía?",
-      answer: "El proceso de cambio suele completarse entre 15-30 días. Durante este tiempo, tu suministro nunca se interrumpe y nosotros nos encargamos de todas las gestiones con ambas compañías."
+      answer: "El proceso de cambio se produce entre los días 1 al 5 del mes. Durante este tiempo, tu suministro nunca se interrumpe y nosotros nos encargamos de todas las gestiones con ambas compañías."
     },
     {
       question: "¿LUZIA trabaja con todas las compañías eléctricas?",
