@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { Zap, Mail, Lock, User, Hash, AlertCircle, CheckCircle, Eye, EyeOff } from 'lucide-react';
+import { Zap, Mail, Lock, User, Hash, AlertCircle, CheckCircle, Eye, EyeOff, Sparkles } from 'lucide-react';
 import { useAfiliadosAuth } from '../../lib/afiliadosAuth';
 
 const AfiliadosRegistro = () => {
@@ -51,10 +51,10 @@ const AfiliadosRegistro = () => {
 
   if (success) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-[#1A1A1A] via-[#222] to-[#1A1A1A] flex items-center justify-center px-4">
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center px-4">
         <div className="text-center">
-          <div className="w-20 h-20 bg-[#A8FF00]/20 rounded-full flex items-center justify-center mx-auto mb-6 border border-[#A8FF00]/40">
-            <CheckCircle className="h-10 w-10 text-[#A8FF00]" />
+          <div className="w-20 h-20 bg-gradient-to-br from-pink-500/20 to-cyan-500/20 rounded-full flex items-center justify-center mx-auto mb-6 border border-pink-400/40">
+            <CheckCircle className="h-10 w-10 text-pink-400" />
           </div>
           <h2 className="text-2xl font-black text-white mb-3">Cuenta creada</h2>
           <p className="text-gray-400">Redirigiendo al panel...</p>
@@ -64,27 +64,38 @@ const AfiliadosRegistro = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1A1A1A] via-[#222] to-[#1A1A1A] flex items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center px-4 py-12">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#A8FF00]/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#A8FF00]/8 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-0 w-64 h-64 bg-cyan-500/8 rounded-full blur-2xl" />
       </div>
 
       <div className="relative w-full max-w-md">
         <div className="text-center mb-8">
-          <Link to="/" className="inline-block mb-6">
-            <img
-              src="/wasabi-logo-main.png"
-              alt="Energía Verde Wasabi"
-              className="h-14 w-auto mx-auto"
-              style={{ filter: 'contrast(1.4) brightness(1.3) saturate(1.4) drop-shadow(0 0 15px rgba(168, 255, 0, 0.6))' }}
-            />
+          <Link to="/" className="inline-flex items-center space-x-3 mb-6 group">
+            <div className="relative">
+              <div className="flex items-center justify-center w-14 h-14 bg-gradient-to-br from-pink-500 to-cyan-500 rounded-2xl shadow-2xl group-hover:shadow-pink-500/50 transition-all duration-500 transform group-hover:scale-110 border-2 border-white/20">
+                <Zap className="h-7 w-7 text-white drop-shadow-lg animate-pulse" />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-cyan-500 rounded-2xl blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-500" />
+            </div>
+            <div className="flex flex-col text-left">
+              <span className="text-3xl font-black bg-gradient-to-r from-pink-400 via-white to-cyan-400 bg-clip-text text-transparent">
+                LUZIA
+              </span>
+              <div className="flex items-center space-x-1">
+                <div className="w-1.5 h-1.5 bg-gradient-to-r from-pink-400 to-cyan-400 rounded-full animate-pulse" />
+                <span className="text-xs font-bold text-pink-400 uppercase tracking-wider">COMPARADOR IA</span>
+                <Sparkles className="h-2.5 w-2.5 text-cyan-400 animate-spin" />
+              </div>
+            </div>
           </Link>
           <h1 className="text-3xl font-black text-white mb-2">Hazte Afiliado</h1>
           <p className="text-gray-400">Gana comisiones por cada cliente que refieras</p>
         </div>
 
-        <div className="bg-[#2A2A2A]/80 backdrop-blur-xl border border-[#A8FF00]/20 rounded-2xl p-8 shadow-2xl">
+        <div className="bg-slate-800/80 backdrop-blur-xl border border-pink-400/20 rounded-2xl p-8 shadow-2xl shadow-black/40">
           <form onSubmit={handleSubmit} className="space-y-5">
             {error && (
               <div className="flex items-center space-x-3 bg-red-500/10 border border-red-500/30 rounded-xl p-4">
@@ -104,7 +115,7 @@ const AfiliadosRegistro = () => {
                   value={form.nombre}
                   onChange={handleChange}
                   placeholder="Tu nombre"
-                  className="w-full bg-[#1A1A1A] border border-gray-600 rounded-xl pl-12 pr-4 py-3 text-white placeholder-gray-500 focus:border-[#A8FF00] focus:outline-none focus:ring-1 focus:ring-[#A8FF00]/50 transition-colors"
+                  className="w-full bg-slate-900 border border-slate-600 rounded-xl pl-12 pr-4 py-3 text-white placeholder-gray-500 focus:border-pink-400 focus:outline-none focus:ring-1 focus:ring-pink-400/50 transition-colors"
                 />
               </div>
             </div>
@@ -120,7 +131,7 @@ const AfiliadosRegistro = () => {
                   value={form.email}
                   onChange={handleChange}
                   placeholder="tu@email.com"
-                  className="w-full bg-[#1A1A1A] border border-gray-600 rounded-xl pl-12 pr-4 py-3 text-white placeholder-gray-500 focus:border-[#A8FF00] focus:outline-none focus:ring-1 focus:ring-[#A8FF00]/50 transition-colors"
+                  className="w-full bg-slate-900 border border-slate-600 rounded-xl pl-12 pr-4 py-3 text-white placeholder-gray-500 focus:border-pink-400 focus:outline-none focus:ring-1 focus:ring-pink-400/50 transition-colors"
                 />
               </div>
             </div>
@@ -136,7 +147,7 @@ const AfiliadosRegistro = () => {
                   value={form.password}
                   onChange={handleChange}
                   placeholder="Mínimo 6 caracteres"
-                  className="w-full bg-[#1A1A1A] border border-gray-600 rounded-xl pl-12 pr-12 py-3 text-white placeholder-gray-500 focus:border-[#A8FF00] focus:outline-none focus:ring-1 focus:ring-[#A8FF00]/50 transition-colors"
+                  className="w-full bg-slate-900 border border-slate-600 rounded-xl pl-12 pr-12 py-3 text-white placeholder-gray-500 focus:border-pink-400 focus:outline-none focus:ring-1 focus:ring-pink-400/50 transition-colors"
                 />
                 <button
                   type="button"
@@ -163,12 +174,12 @@ const AfiliadosRegistro = () => {
                   onChange={handleChange}
                   placeholder="MICODIGO"
                   maxLength={20}
-                  className="w-full bg-[#1A1A1A] border border-gray-600 rounded-xl pl-12 pr-4 py-3 text-white placeholder-gray-500 focus:border-[#A8FF00] focus:outline-none focus:ring-1 focus:ring-[#A8FF00]/50 transition-colors font-mono tracking-wider"
+                  className="w-full bg-slate-900 border border-slate-600 rounded-xl pl-12 pr-4 py-3 text-white placeholder-gray-500 focus:border-pink-400 focus:outline-none focus:ring-1 focus:ring-pink-400/50 transition-colors font-mono tracking-wider"
                 />
               </div>
               {form.ref && (
                 <p className="mt-2 text-xs text-gray-500">
-                  Tu link sera: <span className="text-[#A8FF00]">wasabienergia.es/subir-factura?ref={form.ref}</span>
+                  Tu link sera: <span className="text-cyan-400">luzia.es/subir-factura?ref={form.ref}</span>
                 </p>
               )}
             </div>
@@ -176,10 +187,10 @@ const AfiliadosRegistro = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-[#A8FF00] to-[#96E600] text-[#1A1A1A] py-3 rounded-xl font-black text-lg hover:shadow-lg hover:shadow-[#A8FF00]/30 transition-all duration-300 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+              className="w-full bg-gradient-to-r from-pink-500 to-cyan-500 text-white py-3 rounded-xl font-black text-lg hover:shadow-lg hover:shadow-pink-500/40 transition-all duration-300 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
             >
               {loading ? (
-                <div className="w-5 h-5 border-2 border-[#1A1A1A] border-t-transparent rounded-full animate-spin" />
+                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
               ) : (
                 <>
                   <Zap className="h-5 w-5" />
@@ -189,11 +200,11 @@ const AfiliadosRegistro = () => {
             </button>
           </form>
 
-          <div className="mt-6 text-center border-t border-gray-700 pt-6">
+          <div className="mt-6 text-center border-t border-slate-700 pt-6">
             <p className="text-gray-400 text-sm">
-              Ya tienes cuenta?{' '}
-              <Link to="/afiliados/login" className="text-[#A8FF00] font-semibold hover:underline">
-                Inicia sesion
+              ¿Ya tienes cuenta?{' '}
+              <Link to="/afiliados/login" className="text-pink-400 font-semibold hover:text-pink-300 hover:underline transition-colors">
+                Inicia sesión
               </Link>
             </p>
           </div>
