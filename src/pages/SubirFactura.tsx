@@ -258,15 +258,15 @@ export default function SubirFactura({ onPageChange }: SubirFacturaProps) {
           <div className="flex items-center justify-center gap-4 md:gap-8 mt-6 md:mt-10 flex-wrap">
             <div className="flex items-center gap-1.5">
               <Shield className="w-4 h-4 md:w-5 md:h-5 text-pink-400" />
-              <span className="text-gray-400 text-xs md:text-sm">100% Seguro</span>
+              <span className="text-gray-400 text-xs md:text-sm">100% Confidencial</span>
             </div>
             <div className="flex items-center gap-1.5">
               <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-pink-400" />
               <span className="text-gray-400 text-xs md:text-sm">Sin compromiso</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <Star className="w-4 h-4 md:w-5 md:h-5 text-pink-400" />
-              <span className="text-gray-400 text-xs md:text-sm">Gratis</span>
+              <Clock className="w-4 h-4 md:w-5 md:h-5 text-pink-400" />
+              <span className="text-gray-400 text-xs md:text-sm">Menos de 15 min</span>
             </div>
           </div>
         </div>
@@ -337,8 +337,8 @@ export default function SubirFactura({ onPageChange }: SubirFacturaProps) {
 
           <div className="grid grid-cols-3 gap-3 md:gap-8 max-w-4xl mx-auto">
             <div className="bg-slate-900/50 rounded-xl md:rounded-2xl p-3 md:p-6 border border-pink-400/30">
-              <p className="text-pink-400 font-black text-2xl md:text-4xl mb-1 md:mb-2">+30K</p>
-              <p className="text-gray-300 font-semibold text-xs md:text-base">Clientes</p>
+              <p className="text-pink-400 font-black text-2xl md:text-4xl mb-1 md:mb-2">+26K</p>
+              <p className="text-gray-300 font-semibold text-xs md:text-base">Clientes Satisfechos</p>
             </div>
             <div className="bg-slate-900/50 rounded-xl md:rounded-2xl p-3 md:p-6 border border-pink-400/30">
               <p className="text-pink-400 font-black text-2xl md:text-4xl mb-1 md:mb-2">287€</p>
@@ -356,7 +356,9 @@ export default function SubirFactura({ onPageChange }: SubirFacturaProps) {
           <h2 className="text-2xl md:text-5xl font-black text-white mb-2 md:mb-4 text-center">
             Cómo <span className="text-pink-400">funciona</span>
           </h2>
-          <p className="text-sm md:text-xl text-gray-400 text-center mb-6 md:mb-12">Solo 3 pasos simples para empezar a ahorrar</p>
+          <p className="text-sm md:text-xl text-gray-400 text-center mb-6 md:mb-12">
+            Todo el proceso dura <span className="text-pink-400 font-bold">menos de 15 minutos</span>. Tus datos son <span className="text-cyan-400 font-bold">100% confidenciales</span>.
+          </p>
 
           <div className="grid md:grid-cols-3 gap-4 md:gap-8 relative">
             {/* Líneas conectoras en desktop */}
@@ -370,10 +372,10 @@ export default function SubirFactura({ onPageChange }: SubirFacturaProps) {
                   <div className="absolute -top-1 -right-1 w-3 h-3 md:w-4 md:h-4 bg-pink-400 rounded-full animate-ping"></div>
                 </div>
                 <h3 className="text-lg md:text-2xl font-black text-white mb-2 md:mb-4 group-hover:text-pink-400 transition-colors">
-                  Subes tu factura
+                  Envía un WhatsApp a LUZIA
                 </h3>
                 <p className="text-gray-300 text-sm md:text-lg leading-relaxed">
-                  Rellena el formulario y adjunta tu última factura de luz. Tarda menos de 2 minutos.
+                  Envía un WhatsApp a LUZIA con tu factura de la luz. Te la analizará en menos de 2 minutos.
                 </p>
               </div>
             </div>
@@ -386,10 +388,10 @@ export default function SubirFactura({ onPageChange }: SubirFacturaProps) {
                   <div className="absolute -top-1 -right-1 w-3 h-3 md:w-4 md:h-4 bg-pink-400 rounded-full animate-ping" style={{animationDelay: '0.5s'}}></div>
                 </div>
                 <h3 className="text-lg md:text-2xl font-black text-white mb-2 md:mb-4 group-hover:text-pink-400 transition-colors">
-                  Analizamos tu contrato
+                  LUZIA analiza tu factura
                 </h3>
                 <p className="text-gray-300 text-sm md:text-lg leading-relaxed">
-                  Nuestro equipo revisa cada detalle y compara con las mejores opciones del mercado.
+                  LUZIA analizará tu factura y te dirá cuánto ahorrar sin ningún tipo de compromiso. Datos 100% confidenciales.
                 </p>
               </div>
             </div>
@@ -402,10 +404,10 @@ export default function SubirFactura({ onPageChange }: SubirFacturaProps) {
                   <div className="absolute -top-1 -right-1 w-3 h-3 md:w-4 md:h-4 bg-pink-400 rounded-full animate-ping" style={{animationDelay: '1s'}}></div>
                 </div>
                 <h3 className="text-lg md:text-2xl font-black text-white mb-2 md:mb-4 group-hover:text-pink-400 transition-colors">
-                  Te llamamos solo si podemos mejorarlo
+                  Agenda hora con un asesor
                 </h3>
                 <p className="text-gray-300 text-sm md:text-lg leading-relaxed">
-                  Si no hay mejora, no te molestamos. Así de simple.
+                  Si quieres aprovechar el ahorro podrás agendar hora con un asesor para que te aplique la oferta y ahorres hasta €500 al año.
                 </p>
               </div>
             </div>
