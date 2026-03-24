@@ -915,8 +915,8 @@ export default function SubirFactura({ onPageChange }: SubirFacturaProps) {
                 <div className="flex items-start gap-3">
                   <span className="text-gray-500 mt-1">🏢</span>
                   <div>
-                    <p className="text-white font-semibold text-lg">Polígono Campollano - Calle A, 7</p>
-                    <p className="text-gray-400">02006 Albacete</p>
+                    <p className="text-white font-semibold text-lg">Plaza Gabriel Lodares 4</p>
+                    <p className="text-gray-400">02001 Albacete</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -1123,8 +1123,8 @@ export default function SubirFactura({ onPageChange }: SubirFacturaProps) {
                 </div>
                 <div>
                   <p className="font-semibold text-white">Albacete</p>
-                  <p>Pol. Campollano - C/ A, 7</p>
-                  <p>02006 Albacete</p>
+                  <p>Plaza Gabriel Lodares 4</p>
+                  <p>02001 Albacete</p>
                 </div>
               </div>
             </div>
