@@ -1122,8 +1122,8 @@ useEffect(() => {
                 </div>
                 <div>
                   <p className="font-semibold text-white">Albacete</p>
-                  <p>Pol. Campollano - C/ A, 7</p>
-                  <p>02006 Albacete</p>
+                  <p>Plaza Gabriel Lodares 4</p>
+                  <p>02001 Albacete</p>
                 </div>
               </div>
             </div>
