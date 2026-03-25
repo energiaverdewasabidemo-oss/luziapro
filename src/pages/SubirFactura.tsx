@@ -683,7 +683,7 @@ useEffect(() => {
           <div className="text-center mb-8 md:mb-12">
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-400/20 to-cyan-400/20 border border-pink-400/40 rounded-full px-4 md:px-6 py-2 md:py-3 mb-4 md:mb-6 backdrop-blur-sm">
               <Star className="w-4 h-4 md:w-6 md:h-6 text-pink-400 fill-pink-400" />
-              <span className="text-pink-400 font-black text-sm md:text-lg">+30.000 clientes satisfechos</span>
+              <span className="text-pink-400 font-black text-sm md:text-lg">+26.000 clientes satisfechos</span>
             </div>
             <h2 className="text-2xl md:text-5xl lg:text-6xl font-black text-white mb-3 md:mb-4">
               Lo que dicen <span className="text-pink-400">nuestros clientes</span>
@@ -914,8 +914,8 @@ useEffect(() => {
                 <div className="flex items-start gap-3">
                   <span className="text-gray-500 mt-1">🏢</span>
                   <div>
-                    <p className="text-white font-semibold text-lg">Polígono Campollano - Calle A, 7</p>
-                    <p className="text-gray-400">02006 Albacete</p>
+                    <p className="text-white font-semibold text-lg">Plaza Gabriel Lodares 4</p>
+                    <p className="text-gray-400">02001 Albacete</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
