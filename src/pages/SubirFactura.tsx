@@ -20,17 +20,16 @@ export default function SubirFactura({ onPageChange }: SubirFacturaProps) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-  const [whatsappUrl, setWhatsappUrl] = useState('https://wa.me/34610764494?text=Hola%20LuzIA!%20Quiero%20ver%20el%20mejor%20precio%20para%20mi%20factura%20de%20luz.%20Inf%C3%B3rmame%20por%20favor');
+  const [whatsappUrl, setWhatsappUrl] = useState('https://wa.link/bb8kck');
 
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const refParam = urlParams.get('ref');
-
-    if (refParam) {
-      const baseMessage = 'Hola LuzIA! Quiero ver el mejor precio para mi factura de luz. Infórmame por favor';
-      const fullMessage = `${baseMessage}. Vengo de parte de ${refParam.toUpperCase()}`;
-      const encodedMessage = encodeURIComponent(fullMessage);
-      setWhatsappUrl(`https://wa.me/34610764494?text=${encodedMessage}`);
+useEffect(() => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const refParam = urlParams.get('ref');
+  if (refParam) {
+    const baseMessage = 'Hola LuzIA! Quiero ver el mejor precio para mi factura de luz. Infórmame por favor';
+    const fullMessage = `${baseMessage}. Vengo de parte de ${refParam.toUpperCase()}`;
+    const encodedMessage = encodeURIComponent(fullMessage);
+    setWhatsappUrl(`https://wa.me/34610764494?text=${encodedMessage}`);
     }
   }, []);
 
