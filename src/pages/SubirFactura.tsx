@@ -535,6 +535,11 @@ useEffect(() => {
                       href={whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => {
+                      if (typeof window !== 'undefined' && (window as any).fbq) {
+                      (window as any).fbq('track', 'Contact');
+                      }
+                      }}
                       className="group/btn relative inline-flex items-center gap-3 md:gap-4 bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white px-7 md:px-12 py-4 md:py-6 rounded-full text-base md:text-2xl font-black hover:shadow-2xl hover:shadow-[#25D366]/60 transition-all duration-300 transform hover:scale-110 overflow-hidden w-full sm:w-auto justify-center"
                     >
                       <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></span>
