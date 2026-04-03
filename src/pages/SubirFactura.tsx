@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Upload, CheckCircle, FileText, Phone, TrendingDown, ArrowRight, Zap, Shield, Star, Clock } from 'lucide-react';
+import { CheckCircle, FileText, Phone, TrendingDown, ArrowRight, Zap, Shield, Star, Clock } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { trackEvent } from '../lib/metaPixel';
 interface SubirFacturaProps {
@@ -476,14 +476,14 @@ useEffect(() => {
                       </div>
                     </div>
 
-                    
+                    <a
                       href={whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => {
-                      if (typeof window !== 'undefined' && (window as any).fbq) {
-                      (window as any).fbq('track', 'Contact');
-                      }
+                        if (typeof window !== 'undefined' && (window as any).fbq) {
+                          (window as any).fbq('track', 'Contact');
+                        }
                       }}
                       className="group/btn relative inline-flex items-center gap-3 md:gap-4 bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white px-7 md:px-12 py-4 md:py-6 rounded-full text-base md:text-2xl font-black hover:shadow-2xl hover:shadow-[#25D366]/60 transition-all duration-300 transform hover:scale-110 overflow-hidden w-full sm:w-auto justify-center"
                     >
@@ -517,7 +517,7 @@ useEffect(() => {
                 <p className="text-gray-400 text-lg mb-4">
                   O si prefieres, llámanos directamente
                 </p>
-                
+                <a
                   href="tel:+34621508300"
                   className="inline-flex items-center gap-3 bg-slate-800 hover:bg-slate-700 text-white px-8 py-4 rounded-full font-bold transition-all duration-300 border border-[#25D366]/30 hover:border-[#25D366]/60"
                 >
@@ -868,7 +868,7 @@ useEffect(() => {
             <p className="text-base md:text-2xl text-gray-300 mb-7 md:mb-10 max-w-2xl mx-auto">
               Sin compromiso. Sin letra pequeña. Solo te llamamos si podemos ayudarte.
             </p>
-            
+            <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
