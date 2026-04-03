@@ -19,7 +19,6 @@ export default function SubirFactura({ onPageChange }: SubirFacturaProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [whatsappUrl, setWhatsappUrl] = useState('https://wa.link/bb8kck');
 
 useEffect(() => {
@@ -31,40 +30,6 @@ useEffect(() => {
     const encodedMessage = encodeURIComponent(fullMessage);
     setWhatsappUrl(`https://wa.me/34610764494?text=${encodedMessage}`);
     }
-  }, []);
-
-  useEffect(() => {
-    const calculateTimeLeft = () => {
-      const now = new Date().getTime();
-      const storageKey = 'offerEndTime';
-
-      let endTime = localStorage.getItem(storageKey);
-
-      if (!endTime || parseInt(endTime) < now) {
-        const newEndTime = now + (5 * 24 * 60 * 60 * 1000);
-        localStorage.setItem(storageKey, newEndTime.toString());
-        endTime = newEndTime.toString();
-      }
-
-      const difference = parseInt(endTime) - now;
-
-      if (difference > 0) {
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-        setTimeLeft({ days, hours, minutes, seconds });
-      } else {
-        localStorage.removeItem(storageKey);
-        calculateTimeLeft();
-      }
-    };
-
-    calculateTimeLeft();
-    const timer = setInterval(calculateTimeLeft, 1000);
-
-    return () => clearInterval(timer);
   }, []);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -200,18 +165,15 @@ useEffect(() => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 relative overflow-hidden">
-      {/* Efectos de fondo animados */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-20 left-10 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-20 right-10 w-[600px] h-[600px] bg-pink-500/15 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}} />
         <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '4s'}} />
       </div>
 
-      <div className="container mx-auto px-4 py-6 md:py-12 max-w-6xl relative z-10 pb-20">
+      <div className="container mx-auto px-4 py-6 md:py-12 max-w-6xl relative z-10">
 
-        {/* Hero Section con más impacto */}
         <div className="text-center mb-8 md:mb-16 relative">
-          {/* Badge superior */}
           <div className="inline-flex items-center gap-2 bg-pink-400/20 border border-pink-400/40 rounded-full px-4 md:px-6 py-1.5 md:py-2 mb-4 md:mb-6 backdrop-blur-sm animate-pulse">
             <Zap className="w-4 h-4 text-pink-400" />
             <span className="text-pink-400 font-semibold text-sm">Análisis gratuito en menos de 24h</span>
@@ -253,7 +215,6 @@ useEffect(() => {
             </button>
           </div>
 
-          {/* Trust badges */}
           <div className="flex items-center justify-center gap-4 md:gap-8 mt-6 md:mt-10 flex-wrap">
             <div className="flex items-center gap-1.5">
               <Shield className="w-4 h-4 md:w-5 md:h-5 text-pink-400" />
@@ -270,7 +231,6 @@ useEffect(() => {
           </div>
         </div>
 
-        {/* Urgencia - Por qué ahora */}
         <div className="bg-gradient-to-r from-orange-500/20 to-red-500/20 border-2 border-orange-500/50 rounded-2xl md:rounded-3xl p-5 md:p-8 mb-8 md:mb-16 text-center">
           <div className="flex items-center justify-center gap-2 md:gap-3 mb-3 md:mb-4">
             <Zap className="w-5 h-5 md:w-8 md:h-8 text-orange-400 animate-pulse flex-shrink-0" />
@@ -285,7 +245,6 @@ useEffect(() => {
           </p>
         </div>
 
-        {/* Validación del problema */}
         <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl md:rounded-3xl shadow-2xl p-5 md:p-12 mb-8 md:mb-16 border border-pink-400/30">
           <h2 className="text-xl md:text-3xl font-bold text-white mb-4 md:mb-6 text-center">
             La realidad que <span className="text-pink-400">nadie te cuenta</span>
@@ -318,7 +277,6 @@ useEffect(() => {
           </div>
         </div>
 
-        {/* Sección de Autoridad - Barra de progreso */}
         <div className="bg-gradient-to-br from-pink-400/10 to-cyan-500/10 border-2 border-pink-400/40 rounded-2xl md:rounded-3xl p-5 md:p-10 mb-8 md:mb-16 text-center">
           <h3 className="text-xl md:text-4xl font-black text-white mb-5 md:mb-8">
             Somos una de las asesorías energéticas que <span className="text-pink-400">más dinero ha ahorrado</span> a españoles
@@ -350,7 +308,6 @@ useEffect(() => {
           </div>
         </div>
 
-        {/* Cómo funciona */}
         <div className="mb-8 md:mb-16">
           <h2 className="text-2xl md:text-5xl font-black text-white mb-2 md:mb-4 text-center">
             Cómo <span className="text-pink-400">funciona</span>
@@ -360,7 +317,6 @@ useEffect(() => {
           </p>
 
           <div className="grid md:grid-cols-3 gap-4 md:gap-8 relative">
-            {/* Líneas conectoras en desktop */}
             <div className="hidden md:block absolute top-16 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-pink-400/50 via-pink-400/50 to-pink-400/50"></div>
 
             <div className="relative group">
@@ -413,7 +369,6 @@ useEffect(() => {
           </div>
         </div>
 
-        {/* Enemigo Común */}
         <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl md:rounded-3xl p-5 md:p-10 mb-8 md:mb-16 border-2 border-pink-400/40 text-center">
           <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-red-500/20 rounded-full mb-4 md:mb-6">
             <span className="text-2xl md:text-4xl">🚫</span>
@@ -431,7 +386,6 @@ useEffect(() => {
           </div>
         </div>
 
-        {/* Metodología - Objeto Brillante */}
         <div className="bg-gradient-to-br from-pink-400/5 to-cyan-500/5 rounded-2xl md:rounded-3xl p-5 md:p-10 mb-8 md:mb-16 border border-pink-400/30">
           <div className="text-center mb-5 md:mb-8">
             <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-pink-400 rounded-full mb-4 md:mb-6">
@@ -466,732 +420,9 @@ useEffect(() => {
           </div>
         </div>
 
-        {/* WhatsApp LuzIA */}
         <div id="formulario" className="relative mb-16 scroll-mt-20">
           <div className="max-w-5xl mx-auto">
-            {/* Header del formulario */}
             <div className="text-center mb-10">
               <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-[#25D366] to-[#128C7E] rounded-3xl mb-6 shadow-2xl shadow-[#25D366]/50 animate-pulse">
                 <Phone className="w-10 h-10 text-white" />
               </div>
-              <h2 className="text-2xl md:text-5xl lg:text-6xl font-black text-white mb-3 md:mb-4">
-                Habla con <span className="text-[#25D366]">LuzIA</span>
-              </h2>
-              <p className="text-sm md:text-xl text-gray-300">
-                Nuestro comparador inteligente en WhatsApp. Respuesta instantánea.
-              </p>
-            </div>
-
-            {/* WhatsApp CTA Card */}
-            <div className="max-w-4xl mx-auto">
-              <div className="relative group">
-                {/* Glow effect */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-[#25D366] via-[#128C7E] to-[#25D366] rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition duration-500 animate-pulse"></div>
-
-                <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl overflow-hidden border-2 border-[#25D366]/60 shadow-2xl">
-                  {/* Efectos de fondo */}
-                  <div className="absolute inset-0 overflow-hidden">
-                    <div className="absolute top-10 right-10 w-96 h-96 bg-[#25D366]/10 rounded-full blur-3xl animate-pulse"></div>
-                    <div className="absolute bottom-10 left-10 w-96 h-96 bg-[#128C7E]/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
-                  </div>
-
-                  <div className="relative z-10 p-6 md:p-16 text-center">
-                    {/* WhatsApp Icon */}
-                    <div className="inline-flex items-center justify-center w-20 h-20 md:w-32 md:h-32 bg-gradient-to-br from-[#25D366] to-[#128C7E] rounded-full mb-5 md:mb-8 shadow-2xl shadow-[#25D366]/50 group-hover:scale-110 transition-transform duration-500">
-                      <svg className="w-12 h-12 md:w-20 md:h-20 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                      </svg>
-                    </div>
-
-                    {/* Content */}
-                    <h3 className="text-xl md:text-4xl lg:text-5xl font-black text-white mb-3 md:mb-6 leading-tight">
-                      Chatea con <span className="text-[#25D366]">LuzIA</span><br />
-                      <span className="text-base md:text-2xl lg:text-3xl text-gray-400 font-semibold">Tu asesora energética 24/7</span>
-                    </h3>
-
-                    <p className="text-sm md:text-xl text-gray-300 mb-5 md:mb-8 max-w-2xl mx-auto leading-relaxed">
-                      Envía tu factura por WhatsApp y recibe un análisis completo al instante.
-                      Sin formularios, sin esperas.
-                    </p>
-
-                    {/* Benefits */}
-                    <div className="grid grid-cols-3 gap-2 md:gap-4 mb-6 md:mb-10 max-w-3xl mx-auto">
-                      <div className="bg-[#25D366]/10 rounded-xl md:rounded-2xl p-3 md:p-4 border border-[#25D366]/30">
-                        <div className="text-xl md:text-3xl mb-1 md:mb-2">⚡</div>
-                        <p className="text-white font-bold text-xs md:text-sm">Respuesta instantánea</p>
-                      </div>
-                      <div className="bg-[#25D366]/10 rounded-xl md:rounded-2xl p-3 md:p-4 border border-[#25D366]/30">
-                        <div className="text-xl md:text-3xl mb-1 md:mb-2">🤖</div>
-                        <p className="text-white font-bold text-xs md:text-sm">IA especializada</p>
-                      </div>
-                      <div className="bg-[#25D366]/10 rounded-xl md:rounded-2xl p-3 md:p-4 border border-[#25D366]/30">
-                        <div className="text-xl md:text-3xl mb-1 md:mb-2">💰</div>
-                        <p className="text-white font-bold text-xs md:text-sm">Ahorro garantizado</p>
-                      </div>
-                    </div>
-
-                    {/* WhatsApp Button */}
-                    <a
-                      href={whatsappUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => {
-                      if (typeof window !== 'undefined' && (window as any).fbq) {
-                      (window as any).fbq('track', 'Contact');
-                      }
-                      }}
-                      className="group/btn relative inline-flex items-center gap-3 md:gap-4 bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white px-7 md:px-12 py-4 md:py-6 rounded-full text-base md:text-2xl font-black hover:shadow-2xl hover:shadow-[#25D366]/60 transition-all duration-300 transform hover:scale-110 overflow-hidden w-full sm:w-auto justify-center"
-                    >
-                      <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></span>
-
-                      <svg className="w-5 h-5 md:w-8 md:h-8 relative z-10 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                      </svg>
-
-                      <span className="relative z-10">Chatear con LuzIA ahora</span>
-
-                      <ArrowRight className="w-5 h-5 md:w-8 md:h-8 relative z-10 group-hover/btn:translate-x-1 transition-transform flex-shrink-0" />
-                    </a>
-
-                    {/* Footer info */}
-                    <div className="mt-5 md:mt-8 flex flex-wrap items-center justify-center gap-4 md:gap-6 text-gray-400">
-                      <div className="flex items-center gap-1.5">
-                        <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-[#25D366]" />
-                        <span className="text-xs md:text-sm font-semibold">Sin instalación</span>
-                      </div>
-                      <div className="flex items-center gap-1.5">
-                        <Shield className="w-4 h-4 md:w-5 md:h-5 text-[#25D366]" />
-                        <span className="text-xs md:text-sm font-semibold">100% Seguro</span>
-                      </div>
-                      <div className="flex items-center gap-1.5">
-                        <Star className="w-4 h-4 md:w-5 md:h-5 text-[#25D366]" />
-                        <span className="text-xs md:text-sm font-semibold">Gratis</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Extra trust indicators */}
-              <div className="mt-8 text-center">
-                <p className="text-gray-400 text-lg mb-4">
-                  O si prefieres, llámanos directamente
-                </p>
-                <a
-                  href="tel:+34621508300"
-                  className="inline-flex items-center gap-3 bg-slate-800 hover:bg-slate-700 text-white px-8 py-4 rounded-full font-bold transition-all duration-300 border border-[#25D366]/30 hover:border-[#25D366]/60"
-                >
-                  <Phone className="w-5 h-5 text-[#25D366]" />
-                  <span>+34 621 50 83 00</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Nuestro Equipo - Liderazgo */}
-        <div className="mb-16">
-          <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-2xl md:text-5xl lg:text-6xl font-black text-white mb-3 md:mb-4">
-              El <span className="text-pink-400">equipo</span> detrás de LUZIA
-            </h2>
-            <p className="text-sm md:text-xl text-gray-400 max-w-3xl mx-auto">
-              Caras reales, personas reales comprometidas con tu ahorro
-            </p>
-          </div>
-
-          {/* Líderes destacados */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
-            {/* José Calero - CEO */}
-            <div className="group relative">
-              <div className="absolute -inset-1 bg-gradient-to-r from-pink-400 to-cyan-400 rounded-3xl blur-lg opacity-30 group-hover:opacity-50 transition duration-500"></div>
-              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl overflow-hidden border-2 border-pink-400/40 group-hover:border-pink-400 transition-all duration-300">
-                <div className="aspect-[4/5] overflow-hidden">
-                  <img
-                    src="/WhatsApp_Image_2026-03-03_at_20.47.45.jpeg"
-                    alt="José Calero - Fundador de Wasabi"
-                    className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent"></div>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <div className="inline-flex items-center gap-2 bg-pink-400 text-white px-4 py-1 rounded-full text-xs font-black uppercase mb-3">
-                    <span>⭐</span> Fundador de LUZIA
-                  </div>
-                  <h3 className="text-3xl font-black text-white mb-2">José Calero</h3>
-                  <p className="text-pink-400 font-bold text-lg mb-3">CEO & Fundador</p>
-                  <p className="text-gray-300 text-sm leading-relaxed">
-                    Creador de la metodología que ha ayudado a más de 15.000 familias a ahorrar en su factura de luz
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Franco Tenaglia - Patrocinador */}
-            <div className="group relative">
-              <div className="absolute -inset-1 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-3xl blur-lg opacity-30 group-hover:opacity-50 transition duration-500"></div>
-              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl overflow-hidden border-2 border-yellow-500/40 group-hover:border-yellow-500 transition-all duration-300">
-                <div className="aspect-[4/5] overflow-hidden">
-                  <img
-                    src="/641231069_18530982796069231_5302681181679109432_n.jpg"
-                    alt="Franco Tenaglia - Patrocinador"
-                    className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent"></div>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <div className="inline-flex items-center gap-2 bg-yellow-500 text-slate-900 px-4 py-1 rounded-full text-xs font-black uppercase mb-3">
-                    <span>🏆</span> Patrocinador
-                  </div>
-                  <h3 className="text-3xl font-black text-white mb-2">Franco Tenaglia</h3>
-                  <p className="text-yellow-500 font-bold text-lg mb-3">Patrocinador Oficial</p>
-                  <p className="text-gray-300 text-sm leading-relaxed">
-                    Apoyando la misión de hacer el ahorro energético accesible para todos los españoles
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Resto del equipo */}
-          <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-2xl md:rounded-3xl p-5 md:p-8 border border-pink-400/20">
-            <h3 className="text-xl md:text-3xl font-black text-white text-center mb-5 md:mb-8">
-              Nuestro <span className="text-pink-400">equipo de asesores</span>
-            </h3>
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-3 md:gap-4 max-w-5xl mx-auto">
-              {[
-                { name: 'Carlos M.', role: 'Especialista', emoji: '💡' },
-                { name: 'Ana R.', role: 'Asesora', emoji: '⚡' },
-                { name: 'David L.', role: 'Analista', emoji: '📊' },
-                { name: 'Laura G.', role: 'Consultora', emoji: '🎯' },
-                { name: 'Miguel S.', role: 'Técnico', emoji: '🔧' },
-                { name: 'Paula J.', role: 'PYME', emoji: '🏢' }
-              ].map((asesor, index) => (
-                <div
-                  key={index}
-                  className="bg-slate-900/70 rounded-xl p-4 border border-pink-400/20 hover:border-pink-400/60 transition-all duration-300 text-center group hover:scale-105"
-                >
-                  <div className="text-2xl md:text-4xl mb-1 md:mb-2 group-hover:scale-110 transition-transform">{asesor.emoji}</div>
-                  <h4 className="text-white font-bold text-sm mb-1">{asesor.name}</h4>
-                  <p className="text-pink-400 text-xs font-semibold">{asesor.role}</p>
-                </div>
-              ))}
-            </div>
-            <p className="text-gray-400 text-center mt-6">
-              Y más de <span className="text-pink-400 font-bold">+100 asesores certificados</span> listos para ayudarte
-            </p>
-          </div>
-        </div>
-
-        {/* Testimonios Premium */}
-        <div className="mb-16">
-          <div className="text-center mb-8 md:mb-12">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-400/20 to-cyan-400/20 border border-pink-400/40 rounded-full px-4 md:px-6 py-2 md:py-3 mb-4 md:mb-6 backdrop-blur-sm">
-              <Star className="w-4 h-4 md:w-6 md:h-6 text-pink-400 fill-pink-400" />
-              <span className="text-pink-400 font-black text-sm md:text-lg">+26.000 clientes satisfechos</span>
-            </div>
-            <h2 className="text-2xl md:text-5xl lg:text-6xl font-black text-white mb-3 md:mb-4">
-              Lo que dicen <span className="text-pink-400">nuestros clientes</span>
-            </h2>
-            <p className="text-sm md:text-xl text-gray-400 max-w-2xl mx-auto">
-              Miles de personas ya están ahorrando en su factura de luz
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-4 md:gap-8 max-w-7xl mx-auto">
-            {/* Testimonio 1 */}
-            <div className="group relative">
-              {/* Glow effect */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-400 to-cyan-400 rounded-3xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
-
-              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl md:rounded-3xl p-5 md:p-8 border-2 border-pink-400/20 group-hover:border-pink-400/60 transition-all duration-300 h-full flex flex-col">
-                {/* Quote icon */}
-                <div className="text-pink-400/30 text-4xl md:text-6xl font-serif mb-3 md:mb-4 leading-none">"</div>
-
-                {/* Stars */}
-                <div className="flex items-center gap-1 mb-6">
-                  {[...Array(5)].map((_, i) => (
-                    <div key={i} className="relative">
-                      <Star className="w-6 h-6 fill-yellow-400 text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]" />
-                    </div>
-                  ))}
-                </div>
-
-                {/* Testimonial text */}
-                <p className="text-gray-300 text-lg leading-relaxed mb-4 flex-grow">
-                  Solo con una llamada en 24 horas, ya pude ahorrar <span className="text-pink-400 font-bold">287€ al año</span>. Increíble lo fácil que fue.
-                </p>
-
-                <div className="bg-pink-400/10 rounded-xl p-3 mb-6 border border-pink-400/30">
-                  <p className="text-pink-400 text-sm font-semibold">💰 Con ese ahorro me fui de vacaciones a Portugal</p>
-                </div>
-
-                {/* Author */}
-                <div className="flex items-center gap-4 pt-6 border-t border-pink-400/20">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-400 to-cyan-400 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-pink-400/30">
-                    M
-                  </div>
-                  <div>
-                    <p className="text-white font-bold text-lg">María González</p>
-                    <p className="text-gray-400 text-sm">Particular · Madrid</p>
-                  </div>
-                </div>
-
-                {/* Badge de ahorro */}
-                <div className="absolute -top-4 -right-4 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl px-4 py-2 shadow-xl shadow-yellow-500/30 rotate-6 group-hover:rotate-12 transition-transform duration-300">
-                  <p className="text-slate-900 font-black text-sm">287€/año</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Testimonio 2 - Destacado */}
-            <div className="group relative md:-translate-y-4">
-              {/* Glow effect más fuerte */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-pink-400 to-cyan-400 rounded-3xl blur-lg opacity-40 group-hover:opacity-60 transition duration-500 animate-pulse"></div>
-
-              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl md:rounded-3xl p-5 md:p-8 border-2 border-pink-400/60 group-hover:border-pink-400 transition-all duration-300 h-full flex flex-col shadow-2xl shadow-pink-400/20">
-                {/* Quote icon */}
-                <div className="text-pink-400/30 text-4xl md:text-6xl font-serif mb-3 md:mb-4 leading-none">"</div>
-
-                {/* Stars */}
-                <div className="flex items-center gap-1 mb-6">
-                  {[...Array(5)].map((_, i) => (
-                    <div key={i} className="relative">
-                      <Star className="w-6 h-6 fill-yellow-400 text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]" />
-                    </div>
-                  ))}
-                </div>
-
-                {/* Testimonial text */}
-                <p className="text-gray-300 text-lg leading-relaxed mb-4 flex-grow">
-                  En 24 horas me llamaron con un análisis completo. Ahora mi empresa ahorra <span className="text-pink-400 font-bold">6.800€ al año</span>.
-                </p>
-
-                <div className="bg-pink-400/10 rounded-xl p-3 mb-6 border border-pink-400/30">
-                  <p className="text-pink-400 text-sm font-semibold">🏢 Ese dinero lo invertimos en ampliar el negocio</p>
-                </div>
-
-                {/* Author */}
-                <div className="flex items-center gap-4 pt-6 border-t border-pink-400/20">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-400 to-cyan-400 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-pink-400/30">
-                    C
-                  </div>
-                  <div>
-                    <p className="text-white font-bold text-lg">Carlos Martín</p>
-                    <p className="text-gray-400 text-sm">Empresa · Barcelona</p>
-                  </div>
-                </div>
-
-                {/* Badge de ahorro */}
-                <div className="absolute -top-4 -right-4 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl px-4 py-2 shadow-xl shadow-yellow-500/30 rotate-6 group-hover:rotate-12 transition-transform duration-300">
-                  <p className="text-slate-900 font-black text-sm">6.800€/año</p>
-                </div>
-
-                {/* Badge "Más popular" */}
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-pink-400 text-white px-4 py-1 rounded-full text-xs font-black uppercase">
-                  Caso destacado
-                </div>
-              </div>
-            </div>
-
-            {/* Testimonio 3 */}
-            <div className="group relative">
-              {/* Glow effect */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-400 to-cyan-400 rounded-3xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
-
-              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl md:rounded-3xl p-5 md:p-8 border-2 border-pink-400/20 group-hover:border-pink-400/60 transition-all duration-300 h-full flex flex-col">
-                {/* Quote icon */}
-                <div className="text-pink-400/30 text-4xl md:text-6xl font-serif mb-3 md:mb-4 leading-none">"</div>
-
-                {/* Stars */}
-                <div className="flex items-center gap-1 mb-4 md:mb-6">
-                  {[...Array(5)].map((_, i) => (
-                    <div key={i} className="relative">
-                      <Star className="w-5 h-5 md:w-6 md:h-6 fill-yellow-400 text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]" />
-                    </div>
-                  ))}
-                </div>
-
-                {/* Testimonial text */}
-                <p className="text-gray-300 text-sm md:text-lg leading-relaxed mb-4 flex-grow">
-                  Me llamaron en menos de un día y ahora ahorro <span className="text-pink-400 font-bold">240€ al año</span>. Proceso súper rápido y sin complicaciones.
-                </p>
-
-                <div className="bg-pink-400/10 rounded-xl p-3 mb-6 border border-pink-400/30">
-                  <p className="text-pink-400 text-sm font-semibold">✈️ Ese dinero lo usé para un viaje con mi familia</p>
-                </div>
-
-                {/* Author */}
-                <div className="flex items-center gap-4 pt-6 border-t border-pink-400/20">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-400 to-cyan-400 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-pink-400/30">
-                    A
-                  </div>
-                  <div>
-                    <p className="text-white font-bold text-lg">Ana López</p>
-                    <p className="text-gray-400 text-sm">Particular · Valencia</p>
-                  </div>
-                </div>
-
-                {/* Badge de ahorro */}
-                <div className="absolute -top-4 -right-4 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl px-4 py-2 shadow-xl shadow-yellow-500/30 rotate-6 group-hover:rotate-12 transition-transform duration-300">
-                  <p className="text-slate-900 font-black text-sm">240€/año</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Stats bar */}
-          <div className="mt-6 md:mt-12 bg-gradient-to-r from-slate-800 via-slate-900 to-slate-800 rounded-xl md:rounded-2xl p-4 md:p-8 border border-pink-400/30">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center">
-              <div>
-                <p className="text-2xl md:text-4xl font-black text-pink-400 mb-1 md:mb-2">30K+</p>
-                <p className="text-gray-400 font-semibold text-xs md:text-base">Clientes satisfechos</p>
-              </div>
-              <div>
-                <p className="text-2xl md:text-4xl font-black text-pink-400 mb-1 md:mb-2">287€</p>
-                <p className="text-gray-400 font-semibold text-xs md:text-base">Ahorro medio/año*</p>
-              </div>
-              <div>
-                <p className="text-2xl md:text-4xl font-black text-pink-400 mb-1 md:mb-2">24h</p>
-                <p className="text-gray-400 font-semibold text-xs md:text-base">Tiempo de respuesta</p>
-              </div>
-              <div>
-                <p className="text-2xl md:text-4xl font-black text-pink-400 mb-1 md:mb-2">98%</p>
-                <p className="text-gray-400 font-semibold text-xs md:text-base">Tasa de satisfacción</p>
-              </div>
-            </div>
-            <p className="text-gray-500 text-xs text-center mt-4 border-t border-slate-700 pt-4">
-              * Ahorro medio basado en casos reales gestionados por LUZIA. Los resultados varían según el consumo, la tarifa actual y la zona geográfica de cada cliente.
-            </p>
-          </div>
-        </div>
-
-        {/* Oficinas y Ubicación */}
-        <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl md:rounded-3xl p-5 md:p-10 mb-8 md:mb-16 border border-pink-400/30">
-          <div className="text-center mb-6 md:mb-10">
-            <h3 className="text-xl md:text-4xl font-black text-white mb-3 md:mb-4">
-              Visítanos en nuestras <span className="text-pink-400">oficinas</span>
-            </h3>
-            <p className="text-sm md:text-xl text-gray-400">Con presencia física en Valencia y Albacete</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-4 md:gap-8 max-w-5xl mx-auto mb-5 md:mb-8">
-            {/* Oficina Valencia */}
-            <div className="group bg-slate-900/50 rounded-xl md:rounded-2xl p-5 md:p-8 border-2 border-pink-400/20 hover:border-pink-400/60 transition-all duration-300">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 bg-pink-400/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <span className="text-3xl">📍</span>
-                </div>
-                <h4 className="text-pink-400 font-black text-2xl">Valencia</h4>
-              </div>
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-500 mt-1">🏢</span>
-                  <div>
-                    <p className="text-white font-semibold text-lg">Calle Andarella 2</p>
-                    <p className="text-gray-400">46950 Valencia</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-gray-500">📞</span>
-                  <a href="tel:+34621508300" className="text-pink-400 font-semibold hover:text-pink-500 transition-colors">
-                    +34 621 50 83 00
-                  </a>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-gray-500">📧</span>
-                  <a href="mailto:info@luzia.pro" className="text-pink-400 font-semibold hover:text-pink-500 transition-colors">
-                    info@luzia.pro
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Oficina Albacete */}
-            <div className="group bg-slate-900/50 rounded-xl md:rounded-2xl p-5 md:p-8 border-2 border-pink-400/20 hover:border-pink-400/60 transition-all duration-300">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 bg-pink-400/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <span className="text-3xl">📍</span>
-                </div>
-                <h4 className="text-pink-400 font-black text-2xl">Albacete</h4>
-              </div>
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-500 mt-1">🏢</span>
-                  <div>
-                    <p className="text-white font-semibold text-lg">Plaza Gabriel Lodares 4</p>
-                    <p className="text-gray-400">02001 Albacete</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-gray-500">📞</span>
-                  <a href="tel:+34621508300" className="text-pink-400 font-semibold hover:text-pink-500 transition-colors">
-                    +34 621 50 83 00
-                  </a>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-gray-500">📧</span>
-                  <a href="mailto:info@luzia.pro" className="text-pink-400 font-semibold hover:text-pink-500 transition-colors">
-                    info@luzia.pro
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Horario */}
-          <div className="bg-slate-900/50 rounded-xl md:rounded-2xl p-5 md:p-8 border border-pink-400/20 max-w-3xl mx-auto">
-            <div className="flex items-center gap-4 mb-6 justify-center">
-              <div className="w-12 h-12 bg-pink-400/20 rounded-full flex items-center justify-center">
-                <span className="text-2xl">🕐</span>
-              </div>
-              <h4 className="text-pink-400 font-black text-2xl">Horario de Atención</h4>
-            </div>
-            <div className="grid md:grid-cols-2 gap-6 text-center">
-              <div>
-                <p className="text-white font-semibold text-lg mb-2">Lunes a Viernes</p>
-                <p className="text-pink-400 text-2xl font-bold">09:00 - 17:00h</p>
-              </div>
-              <div>
-                <p className="text-white font-semibold text-lg mb-2">Fin de Semana</p>
-                <p className="text-gray-400 text-2xl font-bold">Cerrado</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-8 text-center">
-            <div className="inline-flex items-center gap-3 bg-pink-400/10 rounded-2xl px-6 py-4 border border-pink-400/30">
-              <Shield className="w-6 h-6 text-pink-400" />
-              <p className="text-white font-semibold">Empresa registrada y certificada en España</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Oportunidad actual */}
-        <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border-2 border-yellow-500/30 rounded-2xl md:rounded-3xl p-5 md:p-12 mb-8 md:mb-16">
-          <h2 className="text-xl md:text-3xl font-bold text-white mb-3 md:mb-4 text-center">
-            El mejor momento es <span className="text-pink-400">ahora</span>
-          </h2>
-          <p className="text-sm md:text-xl text-gray-300 text-center max-w-3xl mx-auto mb-4 md:mb-6">
-            El mercado energético está en constante cambio. Cuando los precios están favorables, es cuando debes actuar.
-            El mejor momento para revisar tu contrato no es cuando vuelve a subir.
-          </p>
-          <p className="text-lg md:text-2xl font-bold text-pink-400 text-center">
-            Es ahora.
-          </p>
-        </div>
-
-        {/* Cierre final */}
-        <div className="relative text-center bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 rounded-2xl md:rounded-3xl p-6 md:p-12 lg:p-16 shadow-2xl border-2 border-pink-400/40 overflow-hidden">
-          {/* Efectos de fondo */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-10 left-10 w-64 h-64 bg-pink-400/5 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-10 right-10 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
-          </div>
-
-          <div className="relative z-10">
-            <div className="inline-block p-4 bg-pink-400/20 rounded-2xl mb-6">
-              <Zap className="w-12 h-12 text-pink-400 animate-pulse" />
-            </div>
-
-            <h2 className="text-2xl md:text-5xl lg:text-6xl font-black text-white mb-4 md:mb-6 leading-tight">
-              Sube tu factura y <span className="text-pink-400">sal de dudas</span> hoy mismo
-            </h2>
-
-            <p className="text-base md:text-2xl text-gray-300 mb-7 md:mb-10 max-w-2xl mx-auto">
-              Sin compromiso. Sin letra pequeña. Solo te llamamos si podemos ayudarte.
-            </p>
-
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white px-7 md:px-12 py-4 md:py-6 rounded-full text-base md:text-2xl font-black hover:shadow-2xl hover:shadow-[#25D366]/50 transition-all duration-300 transform hover:scale-110 relative overflow-hidden w-full sm:w-auto justify-center"
-            >
-              <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
-              <svg className="w-7 h-7 relative z-10" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-              </svg>
-              <span className="relative z-10">Chatear con LuzIA ahora</span>
-              <ArrowRight className="w-7 h-7 relative z-10 group-hover:translate-x-1 transition-transform" />
-            </a>
-
-            {/* Garantías */}
-            <div className="flex flex-wrap items-center justify-center gap-6 mt-10">
-              <div className="flex items-center gap-2 bg-slate-800/80 px-4 py-2 rounded-full border border-pink-400/30">
-                <CheckCircle className="w-5 h-5 text-pink-400" />
-                <span className="text-gray-300 font-semibold">Respuesta en 24h</span>
-              </div>
-              <div className="flex items-center gap-2 bg-slate-800/80 px-4 py-2 rounded-full border border-pink-400/30">
-                <Shield className="w-5 h-5 text-pink-400" />
-                <span className="text-gray-300 font-semibold">100% Seguro</span>
-              </div>
-              <div className="flex items-center gap-2 bg-slate-800/80 px-4 py-2 rounded-full border border-pink-400/30">
-                <Star className="w-5 h-5 text-pink-400" />
-                <span className="text-gray-300 font-semibold">Totalmente gratis</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Garantía de confianza */}
-        <div className="mt-8 md:mt-16 text-center">
-          <div className="inline-flex items-center gap-3 md:gap-4 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl md:rounded-2xl p-4 md:p-6 shadow-lg border border-pink-400/30">
-            <Phone className="w-8 h-8 text-pink-400" />
-            <div className="text-left">
-              <p className="font-semibold text-white">
-                Llevamos años analizando facturas energéticas
-              </p>
-              <p className="text-gray-400">
-                Sabemos dónde están los errores y cómo optimizar cada contrato
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Footer Legal */}
-      <footer className="bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 border-t border-pink-400/20 py-12 relative">
-        <div className="container mx-auto px-4 max-w-6xl relative z-10">
-
-          {/* Disclaimer de Meta/Facebook */}
-          <div className="bg-slate-900/80 rounded-xl md:rounded-2xl p-5 md:p-8 mb-6 md:mb-10 border border-gray-700/50">
-            <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-2">
-              <Shield className="w-5 h-5 text-gray-400" />
-              Aviso Legal sobre Publicidad
-            </h3>
-            <div className="text-gray-400 text-sm leading-relaxed space-y-3">
-              <p>
-                Este sitio web no forma parte de Facebook, Meta Platforms Inc., ni está respaldado por Facebook o Meta.
-                FACEBOOK y META son marcas registradas de Meta Platforms, Inc.
-              </p>
-              <p>
-                Esta página web utiliza publicidad de pago en plataformas de Meta (Facebook e Instagram) para promocionar
-                nuestros servicios de asesoría energética. Los resultados mostrados son ejemplos reales de clientes, pero
-                los resultados individuales pueden variar según cada caso particular.
-              </p>
-              <p className="text-xs text-gray-500">
-                Descargo de responsabilidad: No garantizamos ahorros específicos. El ahorro real dependerá de tu contrato
-                actual, consumo y las tarifas disponibles en el momento del análisis.
-              </p>
-            </div>
-          </div>
-
-          {/* Enlaces Legales */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-            <div>
-              <h4 className="text-pink-400 font-bold mb-4 text-lg">Información Legal</h4>
-              <div className="space-y-2">
-                <button
-                  onClick={() => onPageChange?.('privacy')}
-                  className="block text-gray-400 hover:text-pink-400 transition-colors text-sm text-left"
-                >
-                  Política de Privacidad
-                </button>
-                <button
-                  onClick={() => onPageChange?.('legal')}
-                  className="block text-gray-400 hover:text-pink-400 transition-colors text-sm text-left"
-                >
-                  Aviso Legal
-                </button>
-                <button
-                  onClick={() => onPageChange?.('terms')}
-                  className="block text-gray-400 hover:text-pink-400 transition-colors text-sm text-left"
-                >
-                  Términos y Condiciones
-                </button>
-                <button
-                  onClick={() => onPageChange?.('cookies')}
-                  className="block text-gray-400 hover:text-pink-400 transition-colors text-sm text-left"
-                >
-                  Política de Cookies
-                </button>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="text-pink-400 font-bold mb-4 text-lg">Contacto</h4>
-              <div className="space-y-2 text-gray-400 text-sm">
-                <p>Email: info@luzia.pro</p>
-                <p>Teléfono: +34 621 50 83 00</p>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="text-pink-400 font-bold mb-4 text-lg">Oficinas</h4>
-              <div className="space-y-3 text-gray-400 text-sm">
-                <div>
-                  <p className="font-semibold text-white">Valencia</p>
-                  <p>Calle Andarella 2</p>
-                  <p>46950 Valencia</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-white">Albacete</p>
-                  <p>Plaza Gabriel Lodares 4</p>
-                  <p>02001 Albacete</p>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="text-pink-400 font-bold mb-4 text-lg">Horario</h4>
-              <div className="space-y-2 text-gray-400 text-sm">
-                <p>Lunes a Viernes</p>
-                <p className="text-white font-semibold">09:00 - 17:00h</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Copyright y CIF */}
-          <div className="border-t border-gray-700/50 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-              <div className="text-gray-400 text-sm">
-                <p className="mb-1">© 2025 LUZIA - Todos los derechos reservados</p>
-                <p className="text-xs text-gray-500">CIF: B42709378 | Energía 100% renovable certificada</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <Shield className="w-5 h-5 text-pink-400" />
-                <span className="text-gray-400 text-sm">Sitio web seguro y protegido</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </footer>
-
-      {/* Contador fijo minimalista en el footer */}
-      <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-slate-900/95 via-blue-950/95 to-slate-900/95 backdrop-blur-lg border-t border-pink-400/30 py-2 md:py-3 px-3 md:px-4 z-50 shadow-lg shadow-pink-400/20">
-        <div className="container mx-auto max-w-6xl">
-          <div className="flex items-center justify-between gap-2">
-            {/* Texto + Contador juntos en mobile */}
-            <div className="flex items-center gap-1.5 md:gap-2">
-              <Clock className="w-3.5 h-3.5 md:w-4 md:h-4 text-pink-400 flex-shrink-0" />
-              <span className="text-white text-xs md:text-sm font-semibold hidden sm:inline">Oferta termina en:</span>
-              <div className="flex items-center gap-1 md:gap-2 ml-0 sm:ml-1">
-                <span className="text-pink-400 text-base md:text-2xl font-black tabular-nums">{String(timeLeft.days).padStart(2, '0')}</span>
-                <span className="text-gray-400 text-xs">d</span>
-                <span className="text-gray-600">:</span>
-                <span className="text-pink-400 text-base md:text-2xl font-black tabular-nums">{String(timeLeft.hours).padStart(2, '0')}</span>
-                <span className="text-gray-400 text-xs">h</span>
-                <span className="text-gray-600">:</span>
-                <span className="text-pink-400 text-base md:text-2xl font-black tabular-nums">{String(timeLeft.minutes).padStart(2, '0')}</span>
-                <span className="text-gray-400 text-xs">m</span>
-                <span className="text-gray-600">:</span>
-                <span className="text-pink-400 text-base md:text-2xl font-black tabular-nums">{String(timeLeft.seconds).padStart(2, '0')}</span>
-                <span className="text-gray-400 text-xs">s</span>
-              </div>
-            </div>
-
-            {/* CTA */}
-            <button
-              onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-              className="bg-pink-400 hover:bg-pink-500 text-white px-4 md:px-5 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-bold transition-all duration-300 hover:scale-105 whitespace-nowrap flex-shrink-0"
-            >
-              Chatear ahora
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
