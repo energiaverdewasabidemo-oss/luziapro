@@ -17,6 +17,7 @@ const Footer: React.FC<FooterProps> = ({ onPageChange }) => {
       { name: "Sobre nosotros", href: "#sobre-nosotros", page: "about" },
       { name: "Confianza", href: "#confianza", scroll: true, page: "trust" },
       { name: "Contacto", href: "#contacto", page: "contact" },
+      { name: "Energía Solar", href: "/solar", external: true },
       { name: "Programa de afiliados", href: "/afiliados", external: true },
       { name: "Subir factura", href: "/subir-factura", external: true }
     ],
