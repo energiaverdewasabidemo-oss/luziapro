@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import App from './App.tsx';
 import SubirFactura from './pages/SubirFactura.tsx';
+import SolarPage from './pages/SolarPage.tsx';
 import AfiliadosLogin from './pages/afiliados/Login.tsx';
 import AfiliadosRegistro from './pages/afiliados/Registro.tsx';
 import AfiliadosPanel from './pages/afiliados/Panel.tsx';
@@ -38,6 +39,7 @@ createRoot(document.getElementById('root')!).render(
         <ScrollToTop />
         <Routes>
           <Route path="/subir-factura" element={<SubirFacturaWrapper />} />
+          <Route path="/solar" element={<SolarPage />} />
           <Route path="/afiliados" element={<AfiliadosPanel />} />
           <Route path="/afiliados/login" element={<AfiliadosLogin />} />
           <Route path="/afiliados/registro" element={<AfiliadosRegistro />} />
