@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
+const WHATSAPP_URL = 'https://wa.me/34621508300?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20la%20instalaci%C3%B3n%20de%20placas%20solares%20para%20mi%20hogar.';
+
 export default function SolarPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white">
@@ -151,9 +153,15 @@ export default function SolarPage() {
                   </div>
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold py-4 px-6 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all">
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold py-4 px-6 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
+                >
+                  <Phone className="w-5 h-5" />
                   Solicitar Conecta 8
-                </button>
+                </a>
                 <p className="text-center text-sm text-gray-600 mt-3">Financiación desde 80€/mes</p>
               </div>
             </div>
@@ -248,9 +256,15 @@ export default function SolarPage() {
                   </div>
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-700 hover:to-amber-600 text-white font-bold py-4 px-6 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all">
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-700 hover:to-amber-600 text-white font-bold py-4 px-6 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
+                >
+                  <Phone className="w-5 h-5" />
                   Solicitar Conecta 12
-                </button>
+                </a>
                 <p className="text-center text-sm text-gray-600 mt-3">Financiación desde 105€/mes</p>
               </div>
             </div>
@@ -323,11 +337,13 @@ export default function SolarPage() {
               Calcular mi ahorro
             </Link>
             <a
-              href="tel:+34900000000"
-              className="bg-purple-900 hover:bg-purple-800 text-white font-bold py-4 px-8 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all inline-flex items-center justify-center gap-2"
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all inline-flex items-center justify-center gap-2"
             >
               <Phone className="w-6 h-6" />
-              Llamar ahora
+              Contactar por WhatsApp
             </a>
           </div>
         </div>
