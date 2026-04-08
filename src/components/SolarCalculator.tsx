@@ -91,7 +91,10 @@ export default function SolarCalculator() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">25 años</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-xl mx-auto">
-            Ajusta tu factura mensual y elige tu instalación para ver la proyección real de ahorro año a año.
+            Ajusta tu factura mensual y elige tu instalación para ver la proyección de ahorro año a año.
+          </p>
+          <p className="text-gray-500 text-sm mt-3 max-w-lg mx-auto">
+            * Los resultados mostrados son estimativos y aproximados. El ahorro real puede variar en función del consumo, la orientación de los paneles, las horas de sol y la evolución del precio de la electricidad.
           </p>
         </div>
 
