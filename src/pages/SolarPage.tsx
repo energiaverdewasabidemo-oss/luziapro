@@ -11,46 +11,84 @@ export default function SolarPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-6 py-3 rounded-full text-lg font-bold mb-6 shadow-lg">
-              <Sun className="w-6 h-6" />
-              Instalaciones Fotovoltaicas para Hogares
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Ahorra hasta un <span className="text-orange-600">77%</span> con Energía Solar
-            </h1>
-            <p className="text-2xl text-gray-700 mb-8">
-              Financia el 100% • Ahorra el 60% en el IRPF • Seis primeras facturas gratis
-            </p>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://images.pexels.com/photos/9875441/pexels-photo-9875441.jpeg?auto=compress&cs=tinysrgb&w=1920')"
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+
+        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-24 pb-16">
+          <div className="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-400/50 backdrop-blur-sm text-amber-300 px-5 py-2 rounded-full text-sm font-semibold mb-8 tracking-wide uppercase">
+            <Sun className="w-4 h-4" />
+            Instalaciones Fotovoltaicas para Hogares
           </div>
 
-          {/* Key Benefits */}
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
-            <div className="bg-white rounded-2xl p-8 shadow-xl border-2 border-orange-200 hover:border-orange-400 transition-all">
-              <div className="bg-gradient-to-br from-orange-500 to-amber-500 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <Euro className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">Financiación 100%</h3>
-              <p className="text-gray-600 text-lg">Desde 80€/mes sin entrada inicial. Empieza a ahorrar desde el primer día.</p>
-            </div>
+          <h1 className="text-6xl md:text-8xl font-black text-white mb-6 leading-tight tracking-tight">
+            Ahorra hasta un{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">
+              77%
+            </span>
+            <br />
+            con Energía Solar
+          </h1>
 
-            <div className="bg-white rounded-2xl p-8 shadow-xl border-2 border-orange-200 hover:border-orange-400 transition-all">
-              <div className="bg-gradient-to-br from-orange-500 to-amber-500 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <TrendingDown className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">60% Deducible IRPF</h3>
-              <p className="text-gray-600 text-lg">Hasta 4.470€ de deducción en tu declaración de la renta.</p>
-            </div>
+          <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed">
+            Financia el 100% &nbsp;·&nbsp; Ahorra el 60% en el IRPF &nbsp;·&nbsp; Seis primeras facturas gratis
+          </p>
 
-            <div className="bg-white rounded-2xl p-8 shadow-xl border-2 border-orange-200 hover:border-orange-400 transition-all">
-              <div className="bg-gradient-to-br from-orange-500 to-amber-500 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <Zap className="w-8 h-8 text-white" />
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white font-bold py-5 px-10 rounded-2xl text-lg shadow-2xl hover:shadow-amber-500/40 transition-all transform hover:scale-105 inline-flex items-center justify-center gap-3"
+            >
+              <Phone className="w-5 h-5" />
+              Pedir información gratis
+            </a>
+            <Link
+              to="/subir-factura"
+              className="bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-white/20 text-white font-bold py-5 px-10 rounded-2xl text-lg transition-all transform hover:scale-105 inline-flex items-center justify-center gap-3"
+            >
+              <Calculator className="w-5 h-5" />
+              Calcular mi ahorro
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto">
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5 text-center">
+              <div className="bg-gradient-to-br from-amber-400 to-orange-500 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <Euro className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">6 Facturas Gratis</h3>
-              <p className="text-gray-600 text-lg">Contratando la luz con Alumbra, tus primeras seis facturas son gratis.</p>
+              <p className="text-white font-bold text-lg leading-tight">Financiación</p>
+              <p className="text-amber-300 font-black text-2xl">100%</p>
+              <p className="text-white/60 text-xs mt-1">Desde 80€/mes</p>
             </div>
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5 text-center">
+              <div className="bg-gradient-to-br from-amber-400 to-orange-500 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <TrendingDown className="w-6 h-6 text-white" />
+              </div>
+              <p className="text-white font-bold text-lg leading-tight">Deducción</p>
+              <p className="text-amber-300 font-black text-2xl">IRPF 60%</p>
+              <p className="text-white/60 text-xs mt-1">Hasta 4.470€</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5 text-center">
+              <div className="bg-gradient-to-br from-amber-400 to-orange-500 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <Zap className="w-6 h-6 text-white" />
+              </div>
+              <p className="text-white font-bold text-lg leading-tight">Facturas</p>
+              <p className="text-amber-300 font-black text-2xl">6 gratis</p>
+              <p className="text-white/60 text-xs mt-1">Con Alumbra luz</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white/40 rounded-full flex items-start justify-center pt-2">
+            <div className="w-1 h-2 bg-white/60 rounded-full animate-pulse" />
           </div>
         </div>
       </section>
