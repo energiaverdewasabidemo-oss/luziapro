@@ -27,7 +27,7 @@ export default function SolarPage() {
             Instalaciones Fotovoltaicas para Hogares
           </div>
 
-          <h1 className="text-6xl md:text-8xl font-black text-white mb-6 leading-tight tracking-tight">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-black text-white mb-6 leading-tight tracking-tight">
             Ahorra hasta un{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">
               77%
@@ -59,12 +59,12 @@ export default function SolarPage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto w-full">
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5 text-center">
               <div className="bg-gradient-to-br from-amber-400 to-orange-500 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3">
                 <Euro className="w-6 h-6 text-white" />
               </div>
-              <p className="text-white font-bold text-lg leading-tight">Financiación</p>
+              <p className="text-white font-bold text-base leading-tight">Financiación</p>
               <p className="text-amber-300 font-black text-2xl">100%</p>
               <p className="text-white/60 text-xs mt-1">Desde 80€/mes</p>
             </div>
@@ -72,15 +72,15 @@ export default function SolarPage() {
               <div className="bg-gradient-to-br from-amber-400 to-orange-500 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3">
                 <TrendingDown className="w-6 h-6 text-white" />
               </div>
-              <p className="text-white font-bold text-lg leading-tight">Deducción</p>
-              <p className="text-amber-300 font-black text-2xl">IRPF 60%</p>
+              <p className="text-white font-bold text-base leading-tight">Deducción IRPF</p>
+              <p className="text-amber-300 font-black text-2xl">60%</p>
               <p className="text-white/60 text-xs mt-1">Hasta 4.470€</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5 text-center">
               <div className="bg-gradient-to-br from-amber-400 to-orange-500 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3">
                 <Zap className="w-6 h-6 text-white" />
               </div>
-              <p className="text-white font-bold text-lg leading-tight">Facturas</p>
+              <p className="text-white font-bold text-base leading-tight">Facturas</p>
               <p className="text-amber-300 font-black text-2xl">6 gratis</p>
               <p className="text-white/60 text-xs mt-1">Con Alumbra luz</p>
             </div>
@@ -95,24 +95,24 @@ export default function SolarPage() {
       </section>
 
       {/* Products Section */}
-      <section className="py-16 px-6 bg-gradient-to-br from-purple-900 to-purple-800">
+      <section className="py-16 px-6 bg-gradient-to-br from-slate-900 to-slate-800">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-4">
             Elige tu solución Alumbra Conecta
           </h2>
-          <p className="text-xl text-purple-200 text-center mb-12">
+          <p className="text-xl text-slate-300 text-center mb-12">
             Una solución adaptada a cada estilo de vida según tu consumo
           </p>
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Conecta 8 */}
             <div className="bg-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-orange-500/20 transition-all transform hover:scale-105">
-              <div className="bg-gradient-to-r from-purple-700 to-purple-600 p-6 text-white">
+              <div className="bg-gradient-to-r from-slate-700 to-slate-600 p-6 text-white">
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="text-3xl font-bold">Alumbra Conecta 8</h3>
                   <Sun className="w-12 h-12 text-amber-300" />
                 </div>
-                <p className="text-purple-200 text-lg">Consumo medio</p>
+                <p className="text-slate-300 text-lg">Consumo medio</p>
               </div>
 
               <div className="p-8">
@@ -154,12 +154,12 @@ export default function SolarPage() {
                   </ul>
                 </div>
 
-                <div className="bg-purple-50 rounded-xl p-6 mb-6">
+                <div className="bg-slate-50 rounded-xl p-6 mb-6">
                   <h4 className="font-bold text-lg text-gray-900 mb-3">Producción y ahorro</h4>
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div>
                       <p className="text-gray-600">Producción asegurada</p>
-                      <p className="text-2xl font-bold text-purple-700">6.637 kWh</p>
+                      <p className="text-2xl font-bold text-slate-700">6.637 kWh</p>
                     </div>
                     <div>
                       <p className="text-gray-600">Ahorro estimado año 1</p>
