@@ -2,6 +2,7 @@ import { Sun, Zap, TrendingDown, Shield, Battery, Euro, Calculator, CheckCircle,
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import SolarCalculator from '../components/SolarCalculator';
 
 const WHATSAPP_URL = 'https://wa.me/34621508300?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20la%20instalaci%C3%B3n%20de%20placas%20solares%20para%20mi%20hogar.';
 
@@ -15,7 +16,7 @@ export default function SolarPage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://images.pexels.com/photos/9875441/pexels-photo-9875441.jpeg?auto=compress&cs=tinysrgb&w=1920')"
+            backgroundImage: "url('https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg?auto=compress&cs=tinysrgb&w=1920')"
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
@@ -313,6 +314,8 @@ export default function SolarPage() {
           </p>
         </div>
       </section>
+
+      <SolarCalculator />
 
       {/* Additional Benefits */}
       <section className="py-16 px-6 bg-white">
