@@ -52,7 +52,8 @@ export default function SolarCalculator() {
     for (let y = 1; y <= SYSTEM_LIFE_YEARS; y++) {
       const currentPrice = pricePerKwh * Math.pow(1 + PRICE_INCREASE_RATE, y - 1);
       const degradedProduction = sys.annualProduction * Math.pow(1 - PANEL_DEGRADATION, y - 1);
-      const selfConsumed = Math.min(degradedProduction * sys.selfConsumptionRate, annualBill / pricePerKwh);
+      const maxKwhFromBill = annualBill / currentPrice;
+      const selfConsumed = Math.min(degradedProduction * sys.selfConsumptionRate, maxKwhFromBill);
       const annualSaving = selfConsumed * currentPrice;
       cumulative += annualSaving;
 
@@ -61,7 +62,7 @@ export default function SolarCalculator() {
         annualSaving: Math.round(annualSaving),
         cumulativeSaving: Math.round(cumulative),
         electricityPrice: Math.round(currentPrice * 100) / 100,
-        roi: Math.round((cumulative / sys.netCost) * 100),
+        roi: Math.round(((cumulative + sys.netCost) / sys.netCost) * 100),
       });
     }
     return years;
@@ -207,38 +208,57 @@ export default function SolarCalculator() {
             {/* Visual Bar Chart */}
             <div className="bg-gray-800/60 border border-gray-700/50 rounded-2xl p-6">
               <h3 className="text-white font-bold mb-5 text-sm uppercase tracking-wide">Beneficio acumulado (€)</h3>
-              <div className="flex items-end gap-1 h-40">
-                {projectionData.map((d, i) => {
-                  const isPositive = d.cumulativeSaving >= 0;
-                  const height = Math.abs(d.cumulativeSaving - minCumulative) / chartRange;
-                  const zeroLine = Math.abs(0 - minCumulative) / chartRange;
-                  const barHeight = Math.abs(d.cumulativeSaving) / (maxCumulative || 1);
-                  const isBreakEven = d.year === breakEvenYear;
-
+              <div className="relative h-40">
+                {(() => {
+                  const absMax = Math.max(Math.abs(maxCumulative), Math.abs(minCumulative)) || 1;
+                  const zeroPercent = (Math.abs(minCumulative) / (Math.abs(maxCumulative) + Math.abs(minCumulative))) * 100;
                   return (
-                    <div
-                      key={i}
-                      className="flex-1 flex flex-col items-center justify-end group relative"
-                      style={{ height: '100%' }}
-                    >
+                    <>
                       <div
-                        className={`w-full rounded-t transition-all group-hover:opacity-80 ${
-                          isPositive
-                            ? isBreakEven
-                              ? 'bg-gradient-to-t from-amber-500 to-amber-300'
-                              : 'bg-gradient-to-t from-green-600 to-green-400'
-                            : 'bg-gradient-to-t from-red-700 to-red-500'
-                        }`}
-                        style={{
-                          height: `${Math.max(2, (Math.abs(d.cumulativeSaving) / Math.max(Math.abs(maxCumulative), Math.abs(minCumulative))) * 100)}%`,
-                        }}
+                        className="absolute w-full border-t border-gray-500/50"
+                        style={{ top: `${100 - zeroPercent}%` }}
                       />
-                      <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10">
-                        Año {d.year}: {d.cumulativeSaving >= 0 ? '+' : ''}{d.cumulativeSaving.toLocaleString('es-ES')}€
+                      <div className="flex items-stretch gap-0.5 h-full">
+                        {projectionData.map((d, i) => {
+                          const isPositive = d.cumulativeSaving >= 0;
+                          const isBreakEven = d.year === breakEvenYear;
+                          const posHeightPct = isPositive ? (d.cumulativeSaving / absMax) * zeroPercent : 0;
+                          const negHeightPct = !isPositive ? (Math.abs(d.cumulativeSaving) / absMax) * (100 - zeroPercent) : 0;
+
+                          return (
+                            <div
+                              key={i}
+                              className="flex-1 flex flex-col group relative"
+                              style={{ height: '100%' }}
+                            >
+                              <div style={{ height: `${100 - zeroPercent - posHeightPct}%` }} />
+                              {isPositive && (
+                                <div
+                                  className={`w-full rounded-t transition-all group-hover:opacity-80 ${
+                                    isBreakEven
+                                      ? 'bg-gradient-to-t from-amber-500 to-amber-300'
+                                      : 'bg-gradient-to-t from-green-600 to-green-400'
+                                  }`}
+                                  style={{ height: `${Math.max(1, posHeightPct)}%` }}
+                                />
+                              )}
+                              {!isPositive && (
+                                <div
+                                  className="w-full rounded-b bg-gradient-to-b from-red-700 to-red-500 transition-all group-hover:opacity-80"
+                                  style={{ height: `${Math.max(1, negHeightPct)}%` }}
+                                />
+                              )}
+                              <div style={{ height: `${zeroPercent - negHeightPct}%` }} />
+                              <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10">
+                                Año {d.year}: {d.cumulativeSaving >= 0 ? '+' : ''}{d.cumulativeSaving.toLocaleString('es-ES')}€
+                              </div>
+                            </div>
+                          );
+                        })}
                       </div>
-                    </div>
+                    </>
                   );
-                })}
+                })()}
               </div>
               <div className="flex justify-between text-xs text-gray-500 mt-2">
                 <span>Año 1</span>
