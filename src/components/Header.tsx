@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, Sparkles, Brain } from 'lucide-react';
+import { Sparkles, Brain } from 'lucide-react';
 
 interface HeaderProps {
   onChatOpen: (message?: string) => void;
@@ -23,7 +23,7 @@ const Header: React.FC<HeaderProps> = ({ onChatOpen, onPageChange, onGoToSubirFa
           <div className="flex items-center space-x-2 md:space-x-4 group">
             <div className="relative">
               <div className="flex items-center justify-center w-10 h-10 md:w-16 md:h-16 bg-gradient-to-br from-pink-500 to-cyan-500 rounded-xl md:rounded-2xl shadow-lg md:shadow-2xl group-hover:shadow-pink-500/50 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-12 border border-white/20 md:border-2">
-                <Zap className="h-5 w-5 md:h-8 md:w-8 text-white drop-shadow-lg animate-pulse" />
+                <span className="text-xl md:text-3xl leading-none select-none">🤖</span>
               </div>
               <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-cyan-500 rounded-xl md:rounded-2xl blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
             </div>
@@ -34,7 +34,6 @@ const Header: React.FC<HeaderProps> = ({ onChatOpen, onPageChange, onGoToSubirFa
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-gradient-to-r from-pink-400 to-cyan-400 rounded-full animate-pulse"></div>
                 <span className="text-xs md:text-xs font-bold text-pink-400 uppercase tracking-wider">COMPARADOR IA</span>
-                <Sparkles className="h-2 w-2 md:h-3 md:w-3 text-cyan-400 animate-spin" />
               </div>
             </div>
           </div>
