@@ -38,7 +38,7 @@ const ComparatorSection: React.FC<ComparatorSectionProps> = ({ onGoToSubirFactur
       company: "Iberdrola",
       categories: ["dual", "luz"],
       price: "0,138 €/kWh",
-      gasPrice: "0,048 €/kWh",
+      gasPrice: "0,068 €/kWh",
       monthlySavings: 24,
       features: ["Tarifa indexada", "Sin coste de alta", "Programa puntos"],
       recommended: false,
@@ -70,7 +70,7 @@ const ComparatorSection: React.FC<ComparatorSectionProps> = ({ onGoToSubirFactur
     {
       company: "Mantenimiento Luz Pro",
       categories: ["mant-luz"],
-      price: "9,99 €/mes",
+      price: "4,99 €/mes",
       gasPrice: "-",
       monthlySavings: 15,
       features: ["Revisión anual", "Asistencia 24h", "Sin coste de visita"],
@@ -81,7 +81,7 @@ const ComparatorSection: React.FC<ComparatorSectionProps> = ({ onGoToSubirFactur
     {
       company: "Mantenimiento Gas Total",
       categories: ["mant-gas"],
-      price: "12,99 €/mes",
+      price: "8,00 €/mes",
       gasPrice: "-",
       monthlySavings: 18,
       features: ["Revisión caldera", "Urgencias incluidas", "Certificado oficial"],
