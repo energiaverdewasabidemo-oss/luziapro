@@ -59,7 +59,7 @@ const TermsOfService: React.FC<TermsOfServiceProps> = ({ onBack }) => {
                 </div>
                 <div className="flex items-start gap-2">
                   <MapPin className="h-4 w-4 text-purple-600 mt-0.5 flex-shrink-0" />
-                  <p className="text-gray-700">Polígono Campollano - Calle A, 7<br />02006, Albacete, España</p>
+                  <p className="text-gray-700">Plaza Gabriel Lodares 4<br />02001, Albacete, España</p>
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
@@ -330,7 +330,7 @@ const TermsOfService: React.FC<TermsOfServiceProps> = ({ onBack }) => {
                   </div>
                   <div className="flex items-center gap-2 text-gray-700">
                     <MapPin className="h-4 w-4 text-purple-600" />
-                    <span>Pol. Campollano - C/ A, 7, Albacete</span>
+                    <span>Plaza Gabriel Lodares 4, Albacete</span>
                   </div>
                   <p className="text-gray-500 text-xs pt-1">Lunes a Viernes, 9:00 - 17:00h</p>
                 </div>
@@ -455,7 +455,7 @@ const TermsOfService: React.FC<TermsOfServiceProps> = ({ onBack }) => {
                   <MapPin className="h-5 w-5 text-purple-600 flex-shrink-0" />
                   <div>
                     <p className="text-xs text-gray-500 font-semibold uppercase">Dirección</p>
-                    <p className="font-semibold text-gray-800 text-sm">Pol. Campollano - C/ A, 7<br />02006 Albacete</p>
+                    <p className="font-semibold text-gray-800 text-sm">Plaza Gabriel Lodares 4<br />02001 Albacete</p>
                   </div>
                 </div>
               </div>

@@ -40,7 +40,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onBack }) => {
               </p>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-purple-600" />
-                <span className="font-semibold">Dirección: Polígono Campollano - Calle A, 7. 02006 Albacete, España</span>
+                <span className="font-semibold">Dirección: Plaza Gabriel Lodares 4. 02001 Albacete, España</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-purple-600" />

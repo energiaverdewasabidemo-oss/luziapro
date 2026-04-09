@@ -346,7 +346,7 @@ const CookiePolicy: React.FC<CookiePolicyProps> = ({ onBack }) => {
                   <MapPin className="h-5 w-5 text-purple-600 flex-shrink-0" />
                   <div>
                     <p className="text-xs text-gray-500 font-semibold uppercase">Dirección</p>
-                    <p className="font-semibold text-gray-800 text-sm">Pol. Campollano - C/ A, 7<br />02006 Albacete</p>
+                    <p className="font-semibold text-gray-800 text-sm">Plaza Gabriel Lodares 4<br />02001 Albacete</p>
                   </div>
                 </div>
               </div>

@@ -58,7 +58,7 @@ const LegalNotice: React.FC<LegalNoticeProps> = ({ onBack }) => {
                     <MapPin className="h-4 w-4 text-purple-600 mt-1 flex-shrink-0" />
                     <div>
                       <span className="text-xs font-bold text-purple-700 uppercase tracking-wide">Domicilio Social</span>
-                      <p className="text-gray-700 text-sm">Polígono Campollano - Calle A, 7<br />02006, Albacete, España</p>
+                      <p className="text-gray-700 text-sm">Plaza Gabriel Lodares 4<br />02001, Albacete, España</p>
                     </div>
                   </div>
                 </div>
@@ -262,7 +262,7 @@ const LegalNotice: React.FC<LegalNoticeProps> = ({ onBack }) => {
                   <MapPin className="h-5 w-5 text-purple-600 flex-shrink-0" />
                   <div>
                     <p className="text-xs text-gray-500 font-semibold uppercase">Dirección</p>
-                    <p className="font-semibold text-gray-800 text-sm">Pol. Campollano - C/ A, 7<br />02006 Albacete</p>
+                    <p className="font-semibold text-gray-800 text-sm">Plaza Gabriel Lodares 4<br />02001 Albacete</p>
                   </div>
                 </div>
               </div>
