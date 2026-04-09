@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Filter, Zap, Flame, BarChart3, CheckCircle } from 'lucide-react';
+import { Filter, Zap, Flame, BarChart3, CheckCircle, Sun, Wrench, Settings } from 'lucide-react';
 
 interface ComparatorSectionProps {
   onGoToSubirFactura: () => void;
@@ -42,7 +42,10 @@ const ComparatorSection: React.FC<ComparatorSectionProps> = ({ onGoToSubirFactur
   const filters = [
     { id: 'luz', label: 'Solo Luz', icon: Zap },
     { id: 'gas', label: 'Solo Gas', icon: Flame },
-    { id: 'dual', label: 'Luz + Gas', icon: BarChart3 }
+    { id: 'dual', label: 'Luz + Gas', icon: BarChart3 },
+    { id: 'solar', label: 'Solar', icon: Sun },
+    { id: 'mant-luz', label: 'Mant. Luz', icon: Wrench },
+    { id: 'mant-gas', label: 'Mant. Gas', icon: Settings }
   ];
 
   return (
@@ -71,7 +74,7 @@ const ComparatorSection: React.FC<ComparatorSectionProps> = ({ onGoToSubirFactur
                 <Filter className="h-5 w-5 inline mr-3 text-pink-400" />
                 Tipo de suministro
               </label>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                 {filters.map((filter) => (
                   <button
                     key={filter.id}
