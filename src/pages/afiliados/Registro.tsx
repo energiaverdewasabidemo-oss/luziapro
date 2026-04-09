@@ -179,7 +179,7 @@ const AfiliadosRegistro = () => {
               </div>
               {form.ref && (
                 <p className="mt-2 text-xs text-gray-500">
-                  Tu link sera: <span className="text-cyan-400">luzia.es/subir-factura?ref={form.ref}</span>
+                  Tu link sera: <span className="text-cyan-400">luzia.pro/subir-factura?ref={form.ref}</span>
                 </p>
               )}
             </div>

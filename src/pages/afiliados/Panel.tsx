@@ -68,7 +68,7 @@ const AfiliadosPanel = () => {
 
   const handleCopy = () => {
     if (!afiliado) return;
-    const link = `https://luzia.es/subir-factura?ref=${afiliado.ref}`;
+    const link = `https://luzia.pro/subir-factura?ref=${afiliado.ref}`;
     navigator.clipboard.writeText(link);
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
@@ -120,7 +120,7 @@ const AfiliadosPanel = () => {
   const comisionMes = hogaresEsteMes * 2 + negociosEsteMes * 10;
   const comisionTotal = hogaresActivos * 2 + negociosActivos * 10;
 
-  const refLink = `https://luzia.es/subir-factura?ref=${afiliado.ref}`;
+  const refLink = `https://luzia.pro/subir-factura?ref=${afiliado.ref}`;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
