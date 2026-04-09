@@ -14,7 +14,7 @@ const ComparatorSection: React.FC<ComparatorSectionProps> = ({ onGoToSubirFactur
   const allTariffs = [
     {
       company: "Compañía Verde",
-      category: "dual",
+      categories: ["dual", "luz"],
       price: "0,129 €/kWh",
       gasPrice: "0,052 €/kWh",
       monthlySavings: 32,
@@ -25,7 +25,7 @@ const ComparatorSection: React.FC<ComparatorSectionProps> = ({ onGoToSubirFactur
     },
     {
       company: "Energía Plus",
-      category: "luz",
+      categories: ["luz"],
       price: "0,129 €/kWh",
       gasPrice: "-",
       monthlySavings: 28,
@@ -36,7 +36,7 @@ const ComparatorSection: React.FC<ComparatorSectionProps> = ({ onGoToSubirFactur
     },
     {
       company: "Iberdrola",
-      category: "dual",
+      categories: ["dual", "luz"],
       price: "0,138 €/kWh",
       gasPrice: "0,048 €/kWh",
       monthlySavings: 24,
@@ -46,8 +46,19 @@ const ComparatorSection: React.FC<ComparatorSectionProps> = ({ onGoToSubirFactur
       isSolar: false,
     },
     {
+      company: "Energía Verde Gas",
+      categories: ["gas"],
+      price: "0,052 €/kWh",
+      gasPrice: "0,052 €/kWh",
+      monthlySavings: 22,
+      features: ["Gas 100% renovable", "Sin permanencia", "Precio fijo 12 meses"],
+      recommended: true,
+      onContract: onGoToSubirFactura,
+      isSolar: false,
+    },
+    {
       company: "Solar Alumbra",
-      category: "solar",
+      categories: ["solar", "luz"],
       price: "Desde 80 €/mes",
       gasPrice: "-",
       monthlySavings: 85,
@@ -58,7 +69,7 @@ const ComparatorSection: React.FC<ComparatorSectionProps> = ({ onGoToSubirFactur
     },
     {
       company: "Mantenimiento Luz Pro",
-      category: "mant-luz",
+      categories: ["mant-luz"],
       price: "9,99 €/mes",
       gasPrice: "-",
       monthlySavings: 15,
@@ -69,7 +80,7 @@ const ComparatorSection: React.FC<ComparatorSectionProps> = ({ onGoToSubirFactur
     },
     {
       company: "Mantenimiento Gas Total",
-      category: "mant-gas",
+      categories: ["mant-gas"],
       price: "12,99 €/mes",
       gasPrice: "-",
       monthlySavings: 18,
@@ -80,7 +91,7 @@ const ComparatorSection: React.FC<ComparatorSectionProps> = ({ onGoToSubirFactur
     },
   ];
 
-  const visibleTariffs = allTariffs.filter(t => t.category === activeFilter);
+  const visibleTariffs = allTariffs.filter(t => t.categories.includes(activeFilter));
 
   const filters = [
     { id: 'luz', label: 'Solo Luz', icon: Zap },
