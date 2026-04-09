@@ -107,12 +107,12 @@ export default function SolarPage() {
           <div className="grid md:grid-cols-2 gap-8">
             {/* Conecta 8 */}
             <div className="bg-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-orange-500/20 transition-all transform hover:scale-105">
-              <div className="bg-gradient-to-r from-slate-700 to-slate-600 p-6 text-white">
+              <div className="bg-gradient-to-r from-purple-700 to-purple-500 p-6 text-white">
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="text-3xl font-bold">Alumbra Conecta 8</h3>
                   <Sun className="w-12 h-12 text-amber-300" />
                 </div>
-                <p className="text-slate-300 text-lg">Consumo medio</p>
+                <p className="text-purple-200 text-lg">Consumo medio</p>
               </div>
 
               <div className="p-8">
