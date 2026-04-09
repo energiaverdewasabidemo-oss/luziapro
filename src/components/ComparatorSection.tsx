@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Filter, Zap, Flame, BarChart3, CheckCircle, Sun, Wrench, Settings } from 'lucide-react';
 
 interface ComparatorSectionProps {
@@ -8,36 +9,78 @@ interface ComparatorSectionProps {
 const ComparatorSection: React.FC<ComparatorSectionProps> = ({ onGoToSubirFactura }) => {
   const [activeFilter, setActiveFilter] = useState('dual');
   const [consumption, setConsumption] = useState('medio');
+  const navigate = useNavigate();
 
-  const getTariffs = () => [
+  const allTariffs = [
     {
       company: "Compañía Verde",
-      type: "Dual",
+      category: "dual",
       price: "0,129 €/kWh",
       gasPrice: "0,052 €/kWh",
       monthlySavings: 32,
       features: ["Energía 100% renovable", "Sin permanencia", "Atención 24/7"],
-      recommended: true
+      recommended: true,
+      onContract: onGoToSubirFactura,
+      isSolar: false,
     },
     {
       company: "Energía Plus",
-      type: "Solo Luz",
+      category: "luz",
       price: "0,129 €/kWh",
       gasPrice: "-",
       monthlySavings: 28,
       features: ["Precio fijo 12 meses", "Descuento online", "App móvil"],
-      recommended: false
+      recommended: false,
+      onContract: onGoToSubirFactura,
+      isSolar: false,
     },
     {
       company: "Iberdrola",
-      type: "Dual",
+      category: "dual",
       price: "0,138 €/kWh",
       gasPrice: "0,048 €/kWh",
       monthlySavings: 24,
       features: ["Tarifa indexada", "Sin coste de alta", "Programa puntos"],
-      recommended: false
-    }
+      recommended: false,
+      onContract: onGoToSubirFactura,
+      isSolar: false,
+    },
+    {
+      company: "Solar Alumbra",
+      category: "solar",
+      price: "Desde 80 €/mes",
+      gasPrice: "-",
+      monthlySavings: 85,
+      features: ["Financiación 100%", "Deducción IRPF 60%", "6 facturas gratis", "Batería incluida"],
+      recommended: true,
+      onContract: () => { navigate('/solar'); window.scrollTo({ top: 0, behavior: 'smooth' }); },
+      isSolar: true,
+    },
+    {
+      company: "Mantenimiento Luz Pro",
+      category: "mant-luz",
+      price: "9,99 €/mes",
+      gasPrice: "-",
+      monthlySavings: 15,
+      features: ["Revisión anual", "Asistencia 24h", "Sin coste de visita"],
+      recommended: false,
+      onContract: onGoToSubirFactura,
+      isSolar: false,
+    },
+    {
+      company: "Mantenimiento Gas Total",
+      category: "mant-gas",
+      price: "12,99 €/mes",
+      gasPrice: "-",
+      monthlySavings: 18,
+      features: ["Revisión caldera", "Urgencias incluidas", "Certificado oficial"],
+      recommended: false,
+      onContract: onGoToSubirFactura,
+      isSolar: false,
+    },
   ];
+
+  const visibleTariffs = allTariffs.filter(t => t.category === activeFilter);
 
   const filters = [
     { id: 'luz', label: 'Solo Luz', icon: Zap },
@@ -50,12 +93,11 @@ const ComparatorSection: React.FC<ComparatorSectionProps> = ({ onGoToSubirFactur
 
   return (
     <section id="comparador" className="py-20 bg-transparent relative overflow-hidden">
-      {/* Background Effects */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/3 left-0 w-64 h-64 bg-pink-500/10 rounded-full blur-2xl"></div>
         <div className="absolute bottom-1/3 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-2xl"></div>
       </div>
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6">
@@ -66,7 +108,6 @@ const ComparatorSection: React.FC<ComparatorSectionProps> = ({ onGoToSubirFactur
           </p>
         </div>
 
-        {/* Filters */}
         <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl lg:rounded-3xl p-6 lg:p-8 mb-8 lg:mb-12 border-2 border-pink-400/30 shadow-xl backdrop-blur-xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             <div>
@@ -91,7 +132,7 @@ const ComparatorSection: React.FC<ComparatorSectionProps> = ({ onGoToSubirFactur
                 ))}
               </div>
             </div>
-            
+
             <div>
               <label className="block text-base lg:text-lg font-black text-white mb-4 lg:mb-6">
                 Consumo mensual
@@ -109,73 +150,97 @@ const ComparatorSection: React.FC<ComparatorSectionProps> = ({ onGoToSubirFactur
           </div>
         </div>
 
-        {/* Results */}
         <div className="space-y-4 lg:space-y-6">
-          {getTariffs().map((tariff, index) => (
-            <div key={index} className={`bg-gradient-to-br from-slate-800 to-slate-900 backdrop-blur-xl rounded-2xl lg:rounded-3xl p-6 lg:p-8 border-2 transition-all duration-500 hover:shadow-xl lg:hover:shadow-2xl transform hover:-translate-y-1 lg:hover:-translate-y-2 ${
-              tariff.recommended
-                ? 'border-pink-400/60 shadow-2xl shadow-pink-500/20'
-                : 'border-pink-400/20 hover:border-pink-400/40'
-            }`}>
-              <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-6 lg:space-y-0">
-                <div className="flex-1">
-                  <div className="flex flex-col lg:flex-row lg:items-center space-y-2 lg:space-y-0 lg:space-x-3 mb-4">
-                    <h3 className="text-xl lg:text-2xl font-black text-white">{tariff.company}</h3>
-                    {tariff.recommended && (
-                      <span className="bg-gradient-to-r from-pink-500 to-cyan-500 text-white px-3 lg:px-4 py-1 lg:py-2 rounded-full text-xs lg:text-sm font-black shadow-lg animate-pulse inline-block">
-                        🚀 RECOMENDADO POR LUZIA IA
-                      </span>
-                    )}
-                  </div>
-                  
-                  <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-4 lg:mb-6">
-                    <div>
-                      <span className="text-xs lg:text-sm text-gray-400 font-semibold">Precio luz</span>
-                      <div className="font-black text-white text-base lg:text-lg">{tariff.price}</div>
-                    </div>
-                    {tariff.gasPrice !== "-" && (
-                      <div>
-                        <span className="text-xs lg:text-sm text-gray-400 font-semibold">Precio gas</span>
-                        <div className="font-black text-white text-base lg:text-lg">{tariff.gasPrice}</div>
+          {visibleTariffs.length === 0 ? (
+            <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-10 text-center border-2 border-pink-400/20">
+              <p className="text-gray-400 text-lg font-semibold">No hay tarifas disponibles para este filtro. Prueba con otro tipo de suministro.</p>
+            </div>
+          ) : (
+            visibleTariffs.map((tariff, index) => (
+              <div key={index} className={`backdrop-blur-xl rounded-2xl lg:rounded-3xl p-6 lg:p-8 border-2 transition-all duration-500 hover:shadow-xl lg:hover:shadow-2xl transform hover:-translate-y-1 lg:hover:-translate-y-2 ${
+                tariff.isSolar
+                  ? 'bg-gradient-to-br from-amber-900/40 to-orange-900/30'
+                  : 'bg-gradient-to-br from-slate-800 to-slate-900'
+              } ${
+                tariff.recommended
+                  ? tariff.isSolar
+                    ? 'border-amber-400/60 shadow-2xl shadow-amber-500/20'
+                    : 'border-pink-400/60 shadow-2xl shadow-pink-500/20'
+                  : 'border-pink-400/20 hover:border-pink-400/40'
+              }`}>
+                <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-6 lg:space-y-0">
+                  <div className="flex-1">
+                    <div className="flex flex-col lg:flex-row lg:items-center space-y-2 lg:space-y-0 lg:space-x-3 mb-4">
+                      <div className="flex items-center space-x-3">
+                        {tariff.isSolar && <Sun className="h-6 w-6 text-amber-400 flex-shrink-0" />}
+                        <h3 className="text-xl lg:text-2xl font-black text-white">{tariff.company}</h3>
                       </div>
-                    )}
-                    <div>
-                      <span className="text-xs lg:text-sm text-gray-400 font-semibold">Ahorro mensual</span>
-                      <div className="font-black text-green-600 text-lg lg:text-xl">€{tariff.monthlySavings}</div>
+                      {tariff.recommended && (
+                        <span className={`px-3 lg:px-4 py-1 lg:py-2 rounded-full text-xs lg:text-sm font-black shadow-lg animate-pulse inline-block ${
+                          tariff.isSolar
+                            ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white'
+                            : 'bg-gradient-to-r from-pink-500 to-cyan-500 text-white'
+                        }`}>
+                          {tariff.isSolar ? '☀️ RECOMENDADO SOLAR' : '🚀 RECOMENDADO POR LUZIA IA'}
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-4 lg:mb-6">
+                      <div>
+                        <span className="text-xs lg:text-sm text-gray-400 font-semibold">{tariff.isSolar ? 'Financiación' : 'Precio luz'}</span>
+                        <div className="font-black text-white text-base lg:text-lg">{tariff.price}</div>
+                      </div>
+                      {tariff.gasPrice !== "-" && (
+                        <div>
+                          <span className="text-xs lg:text-sm text-gray-400 font-semibold">Precio gas</span>
+                          <div className="font-black text-white text-base lg:text-lg">{tariff.gasPrice}</div>
+                        </div>
+                      )}
+                      <div>
+                        <span className="text-xs lg:text-sm text-gray-400 font-semibold">Ahorro mensual</span>
+                        <div className={`font-black text-lg lg:text-xl ${tariff.isSolar ? 'text-amber-400' : 'text-green-400'}`}>€{tariff.monthlySavings}</div>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2 lg:gap-3">
+                      {tariff.features.map((feature, idx) => (
+                        <span key={idx} className={`inline-flex items-center space-x-1 lg:space-x-2 text-xs lg:text-sm px-2 lg:px-3 py-1 lg:py-2 rounded-full font-semibold border ${
+                          tariff.isSolar
+                            ? 'bg-amber-900/30 border-amber-400/30'
+                            : 'bg-slate-700 border-pink-400/20'
+                        }`}>
+                          <CheckCircle className={`h-3 w-3 lg:h-4 lg:w-4 ${tariff.isSolar ? 'text-amber-400' : 'text-green-400'}`} />
+                          <span className="text-gray-300">{feature}</span>
+                        </span>
+                      ))}
                     </div>
                   </div>
-                  
-                  <div className="flex flex-wrap gap-2 lg:gap-3">
-                    {tariff.features.map((feature, idx) => (
-                      <span key={idx} className="inline-flex items-center space-x-1 lg:space-x-2 text-xs lg:text-sm bg-slate-700 px-2 lg:px-3 py-1 lg:py-2 rounded-full font-semibold border border-pink-400/20">
-                        <CheckCircle className="h-3 w-3 lg:h-4 lg:w-4 text-green-400" />
-                        <span className="text-gray-300">{feature}</span>
-                      </span>
-                    ))}
+
+                  <div className="flex flex-col space-y-2 lg:space-y-3 w-full lg:w-auto">
+                    <button
+                      onClick={tariff.onContract}
+                      className={`px-6 lg:px-8 py-3 lg:py-4 rounded-xl lg:rounded-2xl font-black text-base lg:text-lg transition-all duration-500 transform hover:scale-105 shadow-xl lg:shadow-2xl ${
+                        tariff.isSolar
+                          ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 hover:shadow-amber-500/50'
+                          : tariff.recommended
+                            ? 'bg-gradient-to-r from-pink-500 to-cyan-500 text-white hover:from-pink-400 hover:to-cyan-400 hover:shadow-pink-500/50'
+                            : 'bg-slate-700 text-white hover:bg-slate-600 shadow-lg lg:shadow-xl border border-pink-400/20'
+                      }`}
+                    >
+                      {tariff.isSolar ? '☀️ VER OFERTA SOLAR' : '🚀 CONTRATAR AHORA'}
+                    </button>
+                    <button
+                      onClick={tariff.onContract}
+                      className="text-gray-400 text-xs lg:text-sm hover:text-pink-400 transition-colors font-semibold text-center lg:text-left"
+                    >
+                      Ver detalles completos
+                    </button>
                   </div>
-                </div>
-                
-                <div className="flex flex-col space-y-2 lg:space-y-3 w-full lg:w-auto">
-                  <button
-                    onClick={onGoToSubirFactura}
-                    className={`px-6 lg:px-8 py-3 lg:py-4 rounded-xl lg:rounded-2xl font-black text-base lg:text-lg transition-all duration-500 transform hover:scale-105 ${
-                    tariff.recommended
-                      ? 'bg-gradient-to-r from-pink-500 to-cyan-500 text-white hover:from-pink-400 hover:to-cyan-400 shadow-xl lg:shadow-2xl'
-                      : 'bg-slate-700 text-white hover:bg-slate-600 shadow-lg lg:shadow-xl border border-pink-400/20'
-                  }`}
-                  >
-                    🚀 CONTRATAR AHORA
-                  </button>
-                  <button
-                    onClick={onGoToSubirFactura}
-                    className="text-gray-400 text-xs lg:text-sm hover:text-pink-400 transition-colors font-semibold text-center lg:text-left"
-                  >
-                    Ver detalles completos
-                  </button>
                 </div>
               </div>
-            </div>
-          ))}
+            ))
+          )}
         </div>
 
         <div className="text-center mt-8 lg:mt-12">
