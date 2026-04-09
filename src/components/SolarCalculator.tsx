@@ -336,7 +336,7 @@ export default function SolarCalculator() {
               rel="noopener noreferrer"
               className="block w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white font-bold py-4 px-6 rounded-xl text-center text-lg shadow-2xl hover:shadow-amber-500/30 transition-all transform hover:scale-[1.02]"
             >
-              Quiero ahorrar {year1Saving.toLocaleString('es-ES')}€ este ano
+              Quiero ahorrar {year1Saving.toLocaleString('es-ES')}€ este año
             </a>
           </div>
         </div>
