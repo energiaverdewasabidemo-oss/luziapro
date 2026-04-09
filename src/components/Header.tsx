@@ -105,7 +105,7 @@ const Header: React.FC<HeaderProps> = ({ onChatOpen, onPageChange, onGoToSubirFa
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-slate-900/98 backdrop-blur-xl border-b border-pink-400/20 shadow-lg">
+          <div className="md:hidden fixed top-16 left-0 right-0 bg-slate-900 border-b border-pink-400/20 shadow-2xl shadow-black/50 z-50">
             <nav className="px-4 py-6 space-y-4">
               <a 
                 href="#como-funciona" 
